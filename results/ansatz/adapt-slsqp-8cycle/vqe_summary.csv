@@ -1,0 +1,2 @@
+method,trial,optimizer,num_parameters,macrocycles,final_max_gradient,termination_criterion,total_energy_hartree,total_energy_offset_hartree,num_energy_evaluations,elapsed_seconds,absolute_error_vs_active_casci_hartree,within_chemical_accuracy_of_active_casci,variational_bound_check
+adapt_vqe,0,slsqp,8,8,-0.050143100699166276,TerminationCriterion.MAXIMUM,-74.85654158093311,-53.49728430218077,29,2259.5946302819975,0.004435517586159676,False,pass

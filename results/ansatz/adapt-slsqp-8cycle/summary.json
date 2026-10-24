@@ -1,0 +1,74 @@
+{
+  "reference": {
+    "rhf_hartree": -74.62389238073561,
+    "full_sto3g_fci_hartree": -74.86101422491716,
+    "full_sto3g_fci_converged": true,
+    "full_sto3g_fci_determinant_dimension": 441,
+    "full_sto3g_fci_pspace_size": 441,
+    "frozen_core_casci_hartree": -74.86097709851927,
+    "active_space_bias_vs_full_fci_hartree": 3.712639788489014e-05,
+    "active_natural_occupations": [
+      1.9991889396333462,
+      1.9985416431320566,
+      1.973229022795641,
+      1.3176550169607415,
+      0.682656709788571,
+      0.02872866768964118
+    ],
+    "num_electrons": 10,
+    "num_spatial_orbitals_full": 7,
+    "active_electrons_alpha_beta": [
+      4,
+      4
+    ],
+    "active_spatial_orbitals": 6,
+    "casci_inactive_orbitals": 1,
+    "casci_active_mo_indices_zero_based": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "scf_converged": true,
+    "rhf_internal_stable": true,
+    "rhf_external_stable": false,
+    "mapped_qubit_exact_hartree": -74.86097709851923,
+    "mapped_qubit_exact_abs_difference_from_casci_hartree": 4.263256414560601e-14
+  },
+  "mapping": {
+    "qiskit_nature_full_spatial_orbitals": 7,
+    "qiskit_nature_full_particles": [
+      5,
+      5
+    ],
+    "active_spatial_orbitals": 6,
+    "active_particles": [
+      4,
+      4
+    ],
+    "qubits_before_mapper_reduction": 12,
+    "mapped_qubits": 10,
+    "mapper": "ParityMapper with particle-number reduction",
+    "pauli_terms": 1079
+  },
+  "vqe_runs": [
+    {
+      "method": "adapt_vqe",
+      "trial": 0,
+      "optimizer": "slsqp",
+      "num_parameters": 8,
+      "macrocycles": 8,
+      "final_max_gradient": -0.050143100699166276,
+      "termination_criterion": "TerminationCriterion.MAXIMUM",
+      "total_energy_hartree": -74.85654158093311,
+      "total_energy_offset_hartree": -53.49728430218077,
+      "num_energy_evaluations": 29,
+      "elapsed_seconds": 2259.5946302819975,
+      "absolute_error_vs_active_casci_hartree": 0.004435517586159676,
+      "within_chemical_accuracy_of_active_casci": false,
+      "variational_bound_check": "pass"
+    }
+  ]
+}

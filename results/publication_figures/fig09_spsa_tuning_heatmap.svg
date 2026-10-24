@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900"><title>SPSA calibration grid: development-stage results</title><desc>Numeric grid varies learning-rate scale a and perturbation scale c; auto-calibration is separate.</desc><rect width="100%" height="100%" fill="white"/>
+<text x="58.0" y="48.0" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#596575" font-weight="700" text-anchor="start" >FIGURE 9</text>
+<text x="58.0" y="91.0" font-family="Arial,Helvetica,sans-serif" font-size="30" fill="#19212b" font-weight="700" text-anchor="start" >SPSA calibration grid: development-stage results</text>
+<text x="58.0" y="123.0" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#596575" font-weight="400" text-anchor="start" >Numeric grid varies learning-rate scale a and perturbation scale c; auto-calibration is separate.</text>
+<text x="295.0" y="190.0" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#19212b" font-weight="600" text-anchor="start" >Median gap vs empirical SLSQP anchor (mHa; development data)</text>
+<text x="395.0" y="230.0" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#19212b" font-weight="600" text-anchor="middle" >c=0.01</text>
+<text x="595.0" y="230.0" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#19212b" font-weight="600" text-anchor="middle" >c=0.03</text>
+<text x="795.0" y="230.0" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#19212b" font-weight="600" text-anchor="middle" >c=0.1</text>
+<text x="275.0" y="302.5" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#19212b" font-weight="600" text-anchor="end" >a=0.001</text>
+<rect x="295" y="250" width="195" height="90" rx="4" fill="#84b3e1" stroke="white" stroke-width="2"/>
+<text x="392.5" y="303.5" font-family="Arial,Helvetica,sans-serif" font-size="18" fill="#19212b" font-weight="700" text-anchor="middle" >1264</text>
+<rect x="495" y="250" width="195" height="90" rx="4" fill="#86b4e2" stroke="white" stroke-width="2"/>
+<text x="592.5" y="303.5" font-family="Arial,Helvetica,sans-serif" font-size="18" fill="#19212b" font-weight="700" text-anchor="middle" >1207</text>
+<rect x="695" y="250" width="195" height="90" rx="4" fill="#94bde5" stroke="white" stroke-width="2"/>
+<text x="792.5" y="303.5" font-family="Arial,Helvetica,sans-serif" font-size="18" fill="#19212b" font-weight="700" text-anchor="middle" >904</text>
+<text x="275.0" y="397.5" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#19212b" font-weight="600" text-anchor="end" >a=0.003</text>
+<rect x="295" y="345" width="195" height="90" rx="4" fill="#8eb9e3" stroke="white" stroke-width="2"/>
+<text x="392.5" y="398.5" font-family="Arial,Helvetica,sans-serif" font-size="18" fill="#19212b" font-weight="700" text-anchor="middle" >1031</text>
+<rect x="495" y="345" width="195" height="90" rx="4" fill="#90bbe4" stroke="white" stroke-width="2"/>
+<text x="592.5" y="398.5" font-family="Arial,Helvetica,sans-serif" font-size="18" fill="#19212b" font-weight="700" text-anchor="middle" >975</text>
+<rect x="695" y="345" width="195" height="90" rx="4" fill="#99c0e6" stroke="white" stroke-width="2"/>
+<text x="792.5" y="398.5" font-family="Arial,Helvetica,sans-serif" font-size="18" fill="#19212b" font-weight="700" text-anchor="middle" >811</text>
+<text x="275.0" y="492.5" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#19212b" font-weight="600" text-anchor="end" >a=0.01</text>
+<rect x="295" y="440" width="195" height="90" rx="4" fill="#b0d0ec" stroke="white" stroke-width="2"/>
+<text x="392.5" y="493.5" font-family="Arial,Helvetica,sans-serif" font-size="18" fill="#19212b" font-weight="700" text-anchor="middle" >487</text>
+<rect x="495" y="440" width="195" height="90" rx="4" fill="#b3d2ed" stroke="white" stroke-width="2"/>
+<text x="592.5" y="493.5" font-family="Arial,Helvetica,sans-serif" font-size="18" fill="#19212b" font-weight="700" text-anchor="middle" >460</text>
+<rect x="695" y="440" width="195" height="90" rx="4" fill="#b8d5ee" stroke="white" stroke-width="2"/>
+<text x="792.5" y="493.5" font-family="Arial,Helvetica,sans-serif" font-size="18" fill="#19212b" font-weight="700" text-anchor="middle" >414</text>
+<text x="275.0" y="587.5" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#19212b" font-weight="600" text-anchor="end" >a=0.03</text>
+<rect x="295" y="535" width="195" height="90" rx="4" fill="#e7f4fa" stroke="white" stroke-width="2"/>
+<text x="392.5" y="588.5" font-family="Arial,Helvetica,sans-serif" font-size="18" fill="#19212b" font-weight="700" text-anchor="middle" >149</text>
+<rect x="495" y="535" width="195" height="90" rx="4" fill="#e8f4fa" stroke="white" stroke-width="2"/>
+<text x="592.5" y="588.5" font-family="Arial,Helvetica,sans-serif" font-size="18" fill="#19212b" font-weight="700" text-anchor="middle" >147</text>
+<rect x="695" y="535" width="195" height="90" rx="4" fill="#dbecf7" stroke="white" stroke-width="2"/>
+<text x="792.5" y="588.5" font-family="Arial,Helvetica,sans-serif" font-size="18" fill="#19212b" font-weight="700" text-anchor="middle" >193</text>
+<text x="1050.0" y="280.0" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#19212b" font-weight="700" text-anchor="start" >Auto-calibration</text>
+<rect x="1050" y="300" width="255" height="95" rx="4" fill="#f1f3f5" stroke="#697586" stroke-width="2"/>
+<text x="1178.0" y="340.0" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#19212b" font-weight="600" text-anchor="middle" >median 59.4 mHa</text>
+<text x="1178.0" y="372.0" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#596575" font-weight="400" text-anchor="middle" >n=4 development starts</text>
+<text x="295.0" y="735.0" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#19212b" font-weight="600" text-anchor="middle" >SPSA perturbation scale c</text>
+<text x="115.0" y="455.0" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#19212b" font-weight="600" text-anchor="middle" transform="rotate(-90 115 455)">Learning rate a</text>
+<text x="295.0" y="785.0" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#596575" font-weight="400" text-anchor="start" >Each numeric cell summarizes four tuning starts; smaller is better.</text>
+<line x1="58.0" y1="824.0" x2="1342.0" y2="824.0" stroke="#d9e0e8" stroke-width="1.5"/>
+<text x="58.0" y="855.0" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#596575" font-weight="400" text-anchor="start" >Tuning data only, not held-out performance. The selected auto-calibration schedule is run-dependent.</text>
+<text x="1342.0" y="855.0" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#596575" font-weight="400" text-anchor="end" >H₂O · STO-3G · frozen-core CAS(8e,6o)</text>
+</svg>

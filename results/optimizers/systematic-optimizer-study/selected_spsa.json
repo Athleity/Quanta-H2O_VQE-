@@ -1,0 +1,19 @@
+{
+  "a": null,
+  "alpha": 0.602,
+  "c": null,
+  "gamma": 0.101,
+  "selected": {
+    "a": null,
+    "c": null,
+    "iqr": 114.0578497077307,
+    "label": "auto_calibration",
+    "median": 59.385096059237696,
+    "median_casci_error_mha": 67.91351594016959,
+    "n": 4,
+    "q1": 38.0988460925451,
+    "q3": 152.1566958002758,
+    "total_objective_evaluations": 1200
+  },
+  "selection_data": "development set only"
+}

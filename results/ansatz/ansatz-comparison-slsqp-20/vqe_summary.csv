@@ -1,0 +1,3 @@
+method,trial,seed,optimizer,ansatz_depth,ansatz_circuit_size,ansatz_cx_count,num_parameters,requested_maxiter,effective_maxiter,total_energy_hartree,num_energy_evaluations,optimizer_reported_cost_function_evals,elapsed_seconds,optimizer_success,optimizer_message,absolute_error_vs_active_casci_hartree,within_chemical_accuracy_of_active_casci
+uccsd,0,20261023,slsqp,2739,3954,2472,92,20,20,-74.8609126717189,22,22,50.637523179999334,True,,6.442680037821447e-05,True
+puccsd,0,20261023,slsqp,570,986,582,30,20,20,-74.8524145059372,17,17,17.251472403000662,True,,0.008562592582080697,False

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900"><title>Correlation recovery along the asymmetric stretch</title><desc>Absolute total-energy error against frozen-core CASCI; shaded region is the 1.6 mHa target.</desc><rect width="100%" height="100%" fill="white"/>
+<text x="58.0" y="48.0" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#596575" font-weight="700" text-anchor="start" >FIGURE 2</text>
+<text x="58.0" y="91.0" font-family="Arial,Helvetica,sans-serif" font-size="30" fill="#19212b" font-weight="700" text-anchor="start" >Correlation recovery along the asymmetric stretch</text>
+<text x="58.0" y="123.0" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#596575" font-weight="400" text-anchor="start" >Absolute total-energy error against frozen-core CASCI; shaded region is the 1.6 mHa target.</text>
+<rect x="160" y="672.1" width="1130" height="2.5" fill="#e7f4ef"/>
+<line x1="160.0" y1="690.0" x2="1290.0" y2="690.0" stroke="#344054" stroke-width="2"/>
+<line x1="160.0" y1="180.0" x2="160.0" y2="690.0" stroke="#344054" stroke-width="2"/>
+<line x1="160.0" y1="690.0" x2="160.0" y2="697.0" stroke="#344054" stroke-width="1.5"/>
+<text x="160.0" y="721.0" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#596575" font-weight="400" text-anchor="middle" >1.8</text>
+<line x1="725.0" y1="690.0" x2="725.0" y2="697.0" stroke="#344054" stroke-width="1.5"/>
+<text x="725.0" y="721.0" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#596575" font-weight="400" text-anchor="middle" >2.2</text>
+<line x1="1290.0" y1="690.0" x2="1290.0" y2="697.0" stroke="#344054" stroke-width="1.5"/>
+<text x="1290.0" y="721.0" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#596575" font-weight="400" text-anchor="middle" >2.6</text>
+<line x1="153.0" y1="674.5" x2="160.0" y2="674.5" stroke="#344054" stroke-width="1.5"/>
+<text x="146.0" y="679.5" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#596575" font-weight="400" text-anchor="end" >0</text>
+<line x1="153.0" y1="597.3" x2="160.0" y2="597.3" stroke="#344054" stroke-width="1.5"/>
+<text x="146.0" y="602.3" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#596575" font-weight="400" text-anchor="end" >50</text>
+<line x1="153.0" y1="520.0" x2="160.0" y2="520.0" stroke="#344054" stroke-width="1.5"/>
+<text x="146.0" y="525.0" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#596575" font-weight="400" text-anchor="end" >100</text>
+<line x1="153.0" y1="442.7" x2="160.0" y2="442.7" stroke="#344054" stroke-width="1.5"/>
+<text x="146.0" y="447.7" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#596575" font-weight="400" text-anchor="end" >150</text>
+<line x1="153.0" y1="365.5" x2="160.0" y2="365.5" stroke="#344054" stroke-width="1.5"/>
+<text x="146.0" y="370.5" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#596575" font-weight="400" text-anchor="end" >200</text>
+<line x1="153.0" y1="288.2" x2="160.0" y2="288.2" stroke="#344054" stroke-width="1.5"/>
+<text x="146.0" y="293.2" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#596575" font-weight="400" text-anchor="end" >250</text>
+<line x1="153.0" y1="210.9" x2="160.0" y2="210.9" stroke="#344054" stroke-width="1.5"/>
+<text x="146.0" y="215.9" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#596575" font-weight="400" text-anchor="end" >300</text>
+<text x="725.0" y="742.0" font-family="Arial,Helvetica,sans-serif" font-size="18" fill="#19212b" font-weight="600" text-anchor="middle" >Stretched O–H distance R₂ (Å)</text>
+<text x="78.0" y="435.0" font-family="Arial,Helvetica,sans-serif" font-size="18" fill="#19212b" font-weight="600" text-anchor="middle" transform="rotate(-90 78 435.0)">Absolute error vs CASCI (mHa)</text>
+<line x1="160.0" y1="672.1" x2="1290.0" y2="672.1" stroke="#009e73" stroke-width="2" stroke-dasharray="8 6"/>
+<polyline points="160.0,424.7 725.0,308.1 1290.0,219.9" fill="none" stroke="#0072b2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="160.0" cy="424.66063949429014" r="8" fill="#0072b2" stroke="#0072b2" stroke-width="2"/>
+<circle cx="725.0000000000001" cy="308.141799788824" r="8" fill="#0072b2" stroke="#0072b2" stroke-width="2"/>
+<circle cx="1290.0" cy="219.89412682273837" r="8" fill="#0072b2" stroke="#0072b2" stroke-width="2"/>
+<polyline points="160.0,673.9 725.0,674.1 1290.0,673.7" fill="none" stroke="#e69f00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<polygon points="160.0,664.929746728407 151.0,681.929746728407 169.0,681.929746728407" fill="#e69f00" stroke="#e69f00" stroke-width="2"/>
+<polygon points="725.0000000000001,665.0978258506373 716.0000000000001,682.0978258506373 734.0000000000001,682.0978258506373" fill="#e69f00" stroke="#e69f00" stroke-width="2"/>
+<polygon points="1290.0,664.6887070498572 1281.0,681.6887070498572 1299.0,681.6887070498572" fill="#e69f00" stroke="#e69f00" stroke-width="2"/>
+<text x="1285.0" y="663.1" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#009e73" font-weight="700" text-anchor="end" >1.6 mHa</text>
+<circle cx="618" cy="770" r="6" fill="#0072b2" stroke="#0072b2" stroke-width="2"/>
+<text x="635.0" y="775.0" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#19212b" font-weight="400" text-anchor="start" >RHF</text>
+<polygon points="618,793 611,806 625,806" fill="#e69f00" stroke="#e69f00" stroke-width="2"/>
+<text x="635.0" y="805.0" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#19212b" font-weight="400" text-anchor="start" >PUCCSD(3)</text>
+<line x1="58.0" y1="824.0" x2="1342.0" y2="824.0" stroke="#d9e0e8" stroke-width="1.5"/>
+<text x="58.0" y="855.0" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#596575" font-weight="400" text-anchor="start" >Three geometry points only. No values between the sampled geometries are inferred.</text>
+<text x="1342.0" y="855.0" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#596575" font-weight="400" text-anchor="end" >H₂O · STO-3G · frozen-core CAS(8e,6o)</text>
+</svg>

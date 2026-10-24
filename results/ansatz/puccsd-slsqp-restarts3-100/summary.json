@@ -1,0 +1,113 @@
+{
+  "reference": {
+    "rhf_hartree": -74.62389238073565,
+    "full_sto3g_fci_hartree": -74.8610142249149,
+    "frozen_core_casci_hartree": -74.8609770985193,
+    "active_space_bias_vs_full_fci_hartree": 3.712639559694253e-05,
+    "active_natural_occupations": [
+      1.9991889396333464,
+      1.9985416431320566,
+      1.9732290227956406,
+      1.3176550169607528,
+      0.6826567097885594,
+      0.02872866768964064
+    ],
+    "num_electrons": 10,
+    "num_spatial_orbitals_full": 7,
+    "active_electrons_alpha_beta": [
+      4,
+      4
+    ],
+    "active_spatial_orbitals": 6,
+    "casci_inactive_orbitals": 1,
+    "casci_active_mo_indices_zero_based": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "scf_converged": true,
+    "mapped_qubit_exact_hartree": -74.86097709851924,
+    "mapped_qubit_exact_abs_difference_from_casci_hartree": 5.684341886080802e-14
+  },
+  "mapping": {
+    "qiskit_nature_full_spatial_orbitals": 7,
+    "qiskit_nature_full_particles": [
+      5,
+      5
+    ],
+    "active_spatial_orbitals": 6,
+    "active_particles": [
+      4,
+      4
+    ],
+    "qubits_before_mapper_reduction": 12,
+    "mapped_qubits": 10,
+    "mapper": "ParityMapper with particle-number reduction",
+    "pauli_terms": 1079
+  },
+  "vqe_runs": [
+    {
+      "method": "puccsd",
+      "trial": 0,
+      "seed": 20261023,
+      "optimizer": "slsqp",
+      "ansatz_depth": 570,
+      "ansatz_circuit_size": 986,
+      "ansatz_cx_count": 582,
+      "num_parameters": 30,
+      "requested_maxiter": 100,
+      "effective_maxiter": 100,
+      "total_energy_hartree": -74.85241450593725,
+      "num_energy_evaluations": 17,
+      "optimizer_reported_cost_function_evals": 17,
+      "elapsed_seconds": 10.930402422000043,
+      "optimizer_success": true,
+      "optimizer_message": "",
+      "absolute_error_vs_active_casci_hartree": 0.008562592582052275,
+      "within_chemical_accuracy_of_active_casci": false
+    },
+    {
+      "method": "puccsd",
+      "trial": 1,
+      "seed": 20261024,
+      "optimizer": "slsqp",
+      "ansatz_depth": 570,
+      "ansatz_circuit_size": 986,
+      "ansatz_cx_count": 582,
+      "num_parameters": 30,
+      "requested_maxiter": 100,
+      "effective_maxiter": 100,
+      "total_energy_hartree": -74.85242417653295,
+      "num_energy_evaluations": 19,
+      "optimizer_reported_cost_function_evals": 19,
+      "elapsed_seconds": 18.67653091200009,
+      "optimizer_success": true,
+      "optimizer_message": "",
+      "absolute_error_vs_active_casci_hartree": 0.00855292198635027,
+      "within_chemical_accuracy_of_active_casci": false
+    },
+    {
+      "method": "puccsd",
+      "trial": 2,
+      "seed": 20261025,
+      "optimizer": "slsqp",
+      "ansatz_depth": 570,
+      "ansatz_circuit_size": 986,
+      "ansatz_cx_count": 582,
+      "num_parameters": 30,
+      "requested_maxiter": 100,
+      "effective_maxiter": 100,
+      "total_energy_hartree": -74.85243645264431,
+      "num_energy_evaluations": 21,
+      "optimizer_reported_cost_function_evals": 21,
+      "elapsed_seconds": 16.634714801999507,
+      "optimizer_success": true,
+      "optimizer_message": "",
+      "absolute_error_vs_active_casci_hartree": 0.008540645874987263,
+      "within_chemical_accuracy_of_active_casci": false
+    }
+  ]
+}

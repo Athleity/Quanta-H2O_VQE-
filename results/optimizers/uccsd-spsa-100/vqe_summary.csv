@@ -1,0 +1,2 @@
+method,trial,seed,optimizer,num_parameters,requested_maxiter,effective_maxiter,total_energy_hartree,num_energy_evaluations,elapsed_seconds,optimizer_success,optimizer_message,absolute_error_vs_active_casci_hartree,within_chemical_accuracy_of_active_casci
+uccsd,0,20261023,spsa,92,100,100,-74.10790751299639,200,70.96048082900052,True,,0.7530695855228942,False

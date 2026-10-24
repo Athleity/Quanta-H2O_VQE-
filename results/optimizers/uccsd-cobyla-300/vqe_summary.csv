@@ -1,0 +1,2 @@
+method,trial,seed,optimizer,num_parameters,requested_maxiter,effective_maxiter,total_energy_hartree,num_energy_evaluations,elapsed_seconds,optimizer_success,optimizer_message,absolute_error_vs_active_casci_hartree,within_chemical_accuracy_of_active_casci
+uccsd,0,20261023,cobyla,92,300,300,-74.72826833130067,300,97.47157530300046,True,,0.1327087672186309,False

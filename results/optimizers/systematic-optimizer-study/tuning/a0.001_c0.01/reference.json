@@ -1,0 +1,77 @@
+{
+  "model": "H2O, asymmetric single O-H extension; STO-3G",
+  "geometry": {
+    "fixed_oh_angstrom": 0.96,
+    "stretched_oh_angstrom": 2.2,
+    "hoh_angle_deg": 104.5
+  },
+  "atom_spec_angstrom": "O 0.0 0.0 0.0; H 0.0 0.0 0.96; H 2.12992480883 0.0 -0.55083600892",
+  "active_space": "CAS(8e,6o), closed-shell (4 alpha, 4 beta), lowest inactive MO frozen",
+  "active_space_is_approximation_to_full_sto3g": true,
+  "measurement_model": "exact statevector expectation values; no noise or finite shots",
+  "chemical_accuracy_threshold_hartree": 0.0016,
+  "references": {
+    "rhf_hartree": -74.6238923807356,
+    "full_sto3g_fci_hartree": -74.86101422491718,
+    "full_sto3g_fci_converged": true,
+    "full_sto3g_fci_determinant_dimension": 441,
+    "full_sto3g_fci_pspace_size": 441,
+    "frozen_core_casci_hartree": -74.86097709851929,
+    "active_space_bias_vs_full_fci_hartree": 3.7126397899100994e-05,
+    "active_natural_occupations": [
+      1.999188939633347,
+      1.9985416431320566,
+      1.9732290227956404,
+      1.3176550169607284,
+      0.6826567097885835,
+      0.02872866768964075
+    ],
+    "num_electrons": 10,
+    "num_spatial_orbitals_full": 7,
+    "active_electrons_alpha_beta": [
+      4,
+      4
+    ],
+    "active_spatial_orbitals": 6,
+    "casci_inactive_orbitals": 1,
+    "casci_active_mo_indices_zero_based": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "scf_converged": true,
+    "rhf_internal_stable": true,
+    "rhf_external_stable": false,
+    "mapped_qubit_exact_hartree": -74.86097709851926,
+    "mapped_qubit_exact_abs_difference_from_casci_hartree": 2.842170943040401e-14
+  },
+  "mapping": {
+    "qiskit_nature_full_spatial_orbitals": 7,
+    "qiskit_nature_full_particles": [
+      5,
+      5
+    ],
+    "active_spatial_orbitals": 6,
+    "active_particles": [
+      4,
+      4
+    ],
+    "qubits_before_mapper_reduction": 12,
+    "mapped_qubits": 10,
+    "mapper": "ParityMapper with particle-number reduction",
+    "pauli_terms": 1079
+  },
+  "software": {
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "pyscf": "2.14.0",
+    "qiskit": "2.6.1",
+    "qiskit_nature": "0.8.0",
+    "qiskit_algorithms": "0.4.0"
+  }
+}

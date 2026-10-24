@@ -1,0 +1,29 @@
+{
+  "angle": 104.5,
+  "configs": [
+    [
+      "uccsd",
+      1
+    ],
+    [
+      "puccsd",
+      1
+    ],
+    [
+      "puccsd",
+      2
+    ],
+    [
+      "puccsd",
+      3
+    ]
+  ],
+  "evaluation_budget": 150,
+  "fixed_oh": 0.96,
+  "maxiter": 200,
+  "optimizer": "lbfgsb",
+  "restart_scale": 0.5,
+  "restarts": 2,
+  "seed": 20261023,
+  "stretched_oh": 2.2
+}

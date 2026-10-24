@@ -1,0 +1,162 @@
+[
+  {
+    "fixed_oh_angstrom": 0.96,
+    "stretched_oh_angstrom": 1.8,
+    "hoh_angle_deg": 104.5,
+    "atom_spec_angstrom": "O 0.0 0.0 0.0; H 0.0 0.0 0.96; H 1.74266575268 0.0 -0.450684007298",
+    "rhf_hartree": -74.72598836444803,
+    "rhf_converged": true,
+    "rhf_internal_stable": true,
+    "rhf_external_stable": false,
+    "casci_8e6o_rhf_orbitals_hartree": -74.88767853889291,
+    "casscf_8e6o_orbital_optimized_hartree": -74.88770429724515,
+    "casscf_converged": true,
+    "casscf_macro_iterations": 0,
+    "casscf_minus_casci_mha": -0.025758352236948667,
+    "casci_active_natural_occupations": [
+      1.9988547690178926,
+      1.9981923117433713,
+      1.9730379433558007,
+      1.60169526854587,
+      0.3993992703252933,
+      0.028820437011775897
+    ],
+    "casscf_active_natural_occupations": [
+      1.9988589863730413,
+      1.9981925481252893,
+      1.9730442044460192,
+      1.6017069992939412,
+      0.3993831889740148,
+      0.028814072787692595
+    ],
+    "interpretation": "CASSCF and CASCI values use different orbital optimization; an existing VQE CASCI Hamiltonian must not be compared directly to the CASSCF number."
+  },
+  {
+    "fixed_oh_angstrom": 0.96,
+    "stretched_oh_angstrom": 2.0,
+    "hoh_angle_deg": 104.5,
+    "atom_spec_angstrom": "O 0.0 0.0 0.0; H 0.0 0.0 0.96; H 1.93629528076 0.0 -0.500760008109",
+    "rhf_hartree": -74.66978065077038,
+    "rhf_converged": true,
+    "rhf_internal_stable": true,
+    "rhf_external_stable": false,
+    "casci_8e6o_rhf_orbitals_hartree": -74.870402869094,
+    "casscf_8e6o_orbital_optimized_hartree": -74.87042709235733,
+    "casscf_converged": true,
+    "casscf_macro_iterations": 0,
+    "casscf_minus_casci_mha": -0.024223263338285506,
+    "casci_active_natural_occupations": [
+      1.9990645806172145,
+      1.9984051529539995,
+      1.9731384295911452,
+      1.448981512800884,
+      0.5516320431482786,
+      0.028778280888477555
+    ],
+    "casscf_active_natural_occupations": [
+      1.9990679470478294,
+      1.99840587274305,
+      1.973143667466089,
+      1.4489926463033267,
+      0.5516179743881772,
+      0.02877189205152793
+    ],
+    "interpretation": "CASSCF and CASCI values use different orbital optimization; an existing VQE CASCI Hamiltonian must not be compared directly to the CASSCF number."
+  },
+  {
+    "fixed_oh_angstrom": 0.96,
+    "stretched_oh_angstrom": 2.2,
+    "hoh_angle_deg": 104.5,
+    "atom_spec_angstrom": "O 0.0 0.0 0.0; H 0.0 0.0 0.96; H 2.12992480883 0.0 -0.55083600892",
+    "rhf_hartree": -74.62389238073563,
+    "rhf_converged": true,
+    "rhf_internal_stable": true,
+    "rhf_external_stable": false,
+    "casci_8e6o_rhf_orbitals_hartree": -74.86097709851929,
+    "casscf_8e6o_orbital_optimized_hartree": -74.86100012751439,
+    "casscf_converged": true,
+    "casscf_macro_iterations": 0,
+    "casscf_minus_casci_mha": -0.02302899510198131,
+    "casci_active_natural_occupations": [
+      1.999188939633346,
+      1.9985416431320566,
+      1.9732290227956413,
+      1.317655016960766,
+      0.6826567097885468,
+      0.02872866768963987
+    ],
+    "casscf_active_natural_occupations": [
+      1.9991917095914518,
+      1.9985426451962707,
+      1.9732334155821898,
+      1.3176639882080527,
+      0.6826460561547106,
+      0.028722185267319914
+    ],
+    "interpretation": "CASSCF and CASCI values use different orbital optimization; an existing VQE CASCI Hamiltonian must not be compared directly to the CASSCF number."
+  },
+  {
+    "fixed_oh_angstrom": 0.96,
+    "stretched_oh_angstrom": 2.4,
+    "hoh_angle_deg": 104.5,
+    "atom_spec_angstrom": "O 0.0 0.0 0.0; H 0.0 0.0 0.96; H 2.32355433691 0.0 -0.600912009731",
+    "rhf_hartree": -74.58769863031114,
+    "rhf_converged": true,
+    "rhf_internal_stable": true,
+    "rhf_external_stable": false,
+    "casci_8e6o_rhf_orbitals_hartree": -74.85620014539236,
+    "casscf_8e6o_orbital_optimized_hartree": -74.85622236347544,
+    "casscf_converged": true,
+    "casscf_macro_iterations": 0,
+    "casscf_minus_casci_mha": -0.022218083074676542,
+    "casci_active_natural_occupations": [
+      1.9992524467690023,
+      1.9986160690709343,
+      1.9732842606116168,
+      1.2172381375944588,
+      0.7829106279868465,
+      0.028698457967139695
+    ],
+    "casscf_active_natural_occupations": [
+      1.9992548909941097,
+      1.998617178350201,
+      1.973288162818237,
+      1.2172450994651896,
+      0.7829028112414103,
+      0.028691857130854467
+    ],
+    "interpretation": "CASSCF and CASCI values use different orbital optimization; an existing VQE CASCI Hamiltonian must not be compared directly to the CASSCF number."
+  },
+  {
+    "fixed_oh_angstrom": 0.96,
+    "stretched_oh_angstrom": 2.6,
+    "hoh_angle_deg": 104.5,
+    "atom_spec_angstrom": "O 0.0 0.0 0.0; H 0.0 0.0 0.96; H 2.51718386498 0.0 -0.650988010542",
+    "rhf_hartree": -74.55969458082964,
+    "rhf_converged": true,
+    "rhf_internal_stable": true,
+    "rhf_external_stable": false,
+    "casci_8e6o_rhf_orbitals_hartree": -74.853880734062,
+    "casscf_8e6o_orbital_optimized_hartree": -74.85390245598792,
+    "casscf_converged": true,
+    "casscf_macro_iterations": 0,
+    "casscf_minus_casci_mha": -0.021721925918427587,
+    "casci_active_natural_occupations": [
+      1.9992824340212993,
+      1.9986529577610763,
+      1.9733127207469985,
+      1.1451702534607224,
+      0.8548975947337626,
+      0.028684039276136584
+    ],
+    "casscf_active_natural_occupations": [
+      1.9992847307385326,
+      1.9986540718673003,
+      1.9733164653056596,
+      1.1451749157063367,
+      0.8548925303279754,
+      0.028677286054197677
+    ],
+    "interpretation": "CASSCF and CASCI values use different orbital optimization; an existing VQE CASCI Hamiltonian must not be compared directly to the CASSCF number."
+  }
+]

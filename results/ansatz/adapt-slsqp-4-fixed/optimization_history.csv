@@ -1,0 +1,5 @@
+method,trial,macrocycle,energy_total_hartree
+adapt_vqe,0,1,-74.83302088872148
+adapt_vqe,0,2,-74.84717729130772
+adapt_vqe,0,3,-74.84967646787234
+adapt_vqe,0,4,-74.85233668566694

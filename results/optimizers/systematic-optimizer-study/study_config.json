@@ -1,0 +1,37 @@
+{
+  "a_grid": [
+    0.001,
+    0.003,
+    0.01,
+    0.03
+  ],
+  "ansatz": "PUCCSD",
+  "c_grid": [
+    0.01,
+    0.03,
+    0.1
+  ],
+  "engine": "h2o_vqe.py",
+  "final_budget": 500,
+  "geometry": {
+    "angle_deg": 104.5,
+    "fixed_oh_angstrom": 0.96,
+    "stretched_oh_angstrom": 2.2
+  },
+  "holdout_restarts": 10,
+  "holdout_seed_offset": 800000,
+  "include_auto_calibration": true,
+  "maxiter": 10000,
+  "reference_budget": 1000,
+  "reference_maxiter": 500,
+  "reference_restarts": 10,
+  "reference_seed_offset": 400000,
+  "repetitions": 1,
+  "restart_scale": 0.5,
+  "seed": 20261023,
+  "selection_metric": "development median energy gap to multi-start SLSQP reference",
+  "spsa_alpha": 0.602,
+  "spsa_gamma": 0.101,
+  "tune_budget": 300,
+  "tune_restarts": 4
+}

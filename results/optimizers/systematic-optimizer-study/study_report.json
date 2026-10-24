@@ -1,0 +1,360 @@
+{
+  "best_energy_observed_across_all_phases_hartree": -74.8524596087711,
+  "best_energy_observed_source": {
+    "error_vs_casci_mha": 8.517489748172125,
+    "optimizer": "lbfgsb",
+    "phase": "heldout",
+    "trial": 2
+  },
+  "casci_reference_hartree": -74.86097709851927,
+  "development_tuning_ranked": [
+    {
+      "a": null,
+      "c": null,
+      "iqr": 114.0578497077307,
+      "label": "auto_calibration",
+      "median": 59.385096059237696,
+      "median_casci_error_mha": 67.91351594016959,
+      "n": 4,
+      "q1": 38.0988460925451,
+      "q3": 152.1566958002758,
+      "total_objective_evaluations": 1200
+    },
+    {
+      "a": 0.03,
+      "c": 0.03,
+      "iqr": 148.90181114011014,
+      "label": "a0.03_c0.03",
+      "median": 147.14792027354662,
+      "median_casci_error_mha": 155.67634015449272,
+      "n": 4,
+      "q1": 88.99398325436536,
+      "q3": 237.8957943944755,
+      "total_objective_evaluations": 1200
+    },
+    {
+      "a": 0.03,
+      "c": 0.01,
+      "iqr": 152.74920342392662,
+      "label": "a0.03_c0.01",
+      "median": 148.93192941213584,
+      "median_casci_error_mha": 157.46034929308195,
+      "n": 4,
+      "q1": 89.88971914834565,
+      "q3": 242.63892257227226,
+      "total_objective_evaluations": 1200
+    },
+    {
+      "a": 0.03,
+      "c": 0.1,
+      "iqr": 126.88939916819922,
+      "label": "a0.03_c0.1",
+      "median": 192.79007832685835,
+      "median_casci_error_mha": 201.31849820780445,
+      "n": 4,
+      "q1": 134.2851332962205,
+      "q3": 261.1745324644197,
+      "total_objective_evaluations": 1200
+    },
+    {
+      "a": 0.01,
+      "c": 0.1,
+      "iqr": 250.33685387481694,
+      "label": "a0.01_c0.1",
+      "median": 413.6446120983237,
+      "median_casci_error_mha": 422.1730319792698,
+      "n": 4,
+      "q1": 291.0128189828356,
+      "q3": 541.3496728576525,
+      "total_objective_evaluations": 1200
+    },
+    {
+      "a": 0.01,
+      "c": 0.03,
+      "iqr": 261.65645606437954,
+      "label": "a0.01_c0.03",
+      "median": 459.54032884921503,
+      "median_casci_error_mha": 468.06874873016113,
+      "n": 4,
+      "q1": 324.5092708035777,
+      "q3": 586.1657268679572,
+      "total_objective_evaluations": 1200
+    },
+    {
+      "a": 0.01,
+      "c": 0.01,
+      "iqr": 258.971079162059,
+      "label": "a0.01_c0.01",
+      "median": 487.22609185500687,
+      "median_casci_error_mha": 495.75451173592455,
+      "n": 4,
+      "q1": 350.89594789656076,
+      "q3": 609.8670270586198,
+      "total_objective_evaluations": 1200
+    },
+    {
+      "a": 0.003,
+      "c": 0.1,
+      "iqr": 241.07921897975973,
+      "label": "a0.003_c0.1",
+      "median": 811.3789011280659,
+      "median_casci_error_mha": 819.9073210089978,
+      "n": 4,
+      "q1": 633.3681523396813,
+      "q3": 874.447371319441,
+      "total_objective_evaluations": 1200
+    },
+    {
+      "a": 0.001,
+      "c": 0.1,
+      "iqr": 222.19638339941025,
+      "label": "a0.001_c0.1",
+      "median": 903.5321246857393,
+      "median_casci_error_mha": 912.0605445666712,
+      "n": 4,
+      "q1": 715.5938270820634,
+      "q3": 937.7902104814737,
+      "total_objective_evaluations": 1200
+    },
+    {
+      "a": 0.003,
+      "c": 0.03,
+      "iqr": 272.6206911579252,
+      "label": "a0.003_c0.03",
+      "median": 975.3919272788636,
+      "median_casci_error_mha": 983.9203471598097,
+      "n": 4,
+      "q1": 754.7301321573664,
+      "q3": 1027.3508233152916,
+      "total_objective_evaluations": 1200
+    },
+    {
+      "a": 0.003,
+      "c": 0.01,
+      "iqr": 270.8585390918935,
+      "label": "a0.003_c0.01",
+      "median": 1030.5112591163308,
+      "median_casci_error_mha": 1039.0396789972626,
+      "n": 4,
+      "q1": 802.947475085702,
+      "q3": 1073.8060141775954,
+      "total_objective_evaluations": 1200
+    },
+    {
+      "a": 0.001,
+      "c": 0.03,
+      "iqr": 269.28717801157734,
+      "label": "a0.001_c0.03",
+      "median": 1207.3820813735451,
+      "median_casci_error_mha": 1215.9105012545056,
+      "n": 4,
+      "q1": 950.4005949571948,
+      "q3": 1219.6877729687722,
+      "total_objective_evaluations": 1200
+    },
+    {
+      "a": 0.001,
+      "c": 0.01,
+      "iqr": 299.71910254068484,
+      "label": "a0.001_c0.01",
+      "median": 1264.1317935418358,
+      "median_casci_error_mha": 1272.6602134227676,
+      "n": 4,
+      "q1": 986.6605512673098,
+      "q3": 1286.3796538079946,
+      "total_objective_evaluations": 1200
+    }
+  ],
+  "estimated_ansatz_reference_hartree": -74.85244867863835,
+  "estimated_ansatz_reference_source": "minimum verified energy from multi-start, budgeted SLSQP search; not a global-optimum proof",
+  "heldout_optimizer_summary": {
+    "cobyla": {
+      "budget_exhaustions": 10,
+      "chemical_accuracy_successes": 0,
+      "error_vs_casci_mha": {
+        "iqr": 12.253638919791143,
+        "median": 9.573994161151234,
+        "q1": 9.055336969964856,
+        "q3": 21.308975889756
+      },
+      "gap_vs_reference_mha": {
+        "iqr": 12.253638919791143,
+        "median": 1.0455742801909196,
+        "q1": 0.5269170890045416,
+        "q3": 12.780556008795685
+      },
+      "median_elapsed_seconds": 72.917339849997,
+      "paired_error_difference_vs_slsqp_mha": {
+        "iqr": 12.271611823777562,
+        "median": 1.0365385795623183,
+        "paired_runs": 10,
+        "q1": 0.5060851636073949,
+        "q3": 12.777696987384957,
+        "ties": 0,
+        "wins_lower_error": 0
+      },
+      "runs": 10
+    },
+    "lbfgsb": {
+      "budget_exhaustions": 0,
+      "chemical_accuracy_successes": 0,
+      "error_vs_casci_mha": {
+        "iqr": 0.0006299162755851739,
+        "median": 8.518193090381487,
+        "q1": 8.517912433600117,
+        "q3": 8.518542349875702
+      },
+      "gap_vs_reference_mha": {
+        "iqr": 0.0006299162755851739,
+        "median": -0.01022679053619413,
+        "q1": -0.010507447317564811,
+        "q3": -0.009877531041979637
+      },
+      "median_elapsed_seconds": 54.97900718150049,
+      "paired_error_difference_vs_slsqp_mha": {
+        "iqr": 0.022208827413550125,
+        "median": -0.015655724205032584,
+        "paired_runs": 10,
+        "q1": -0.03536757900235443,
+        "q3": -0.013158751588804307,
+        "ties": 0,
+        "wins_lower_error": 10
+      },
+      "runs": 10
+    },
+    "powell": {
+      "budget_exhaustions": 10,
+      "chemical_accuracy_successes": 0,
+      "error_vs_casci_mha": {
+        "iqr": 98.7236724772842,
+        "median": 273.6815966108139,
+        "q1": 264.82740994691056,
+        "q3": 363.55108242419476
+      },
+      "gap_vs_reference_mha": {
+        "iqr": 98.7236724772842,
+        "median": 265.15317672989624,
+        "q1": 256.2989900659929,
+        "q3": 355.0226625432771
+      },
+      "median_elapsed_seconds": 70.4216094300009,
+      "paired_error_difference_vs_slsqp_mha": {
+        "iqr": 98.6726336159229,
+        "median": 265.15060882507413,
+        "paired_runs": 10,
+        "q1": 256.29938768603466,
+        "q3": 354.97202130195757,
+        "ties": 0,
+        "wins_lower_error": 0
+      },
+      "runs": 10
+    },
+    "selected_spsa": {
+      "budget_exhaustions": 10,
+      "chemical_accuracy_successes": 0,
+      "error_vs_casci_mha": {
+        "iqr": 119.30881097524093,
+        "median": 106.58637751325983,
+        "q1": 78.15332438417144,
+        "q3": 197.46213535941237
+      },
+      "gap_vs_reference_mha": {
+        "iqr": 119.30881097524093,
+        "median": 98.05795763234215,
+        "q1": 69.62490450325376,
+        "q3": 188.9337154784947
+      },
+      "median_elapsed_seconds": 73.119993074999,
+      "paired_error_difference_vs_slsqp_mha": {
+        "iqr": 119.34383838332963,
+        "median": 98.05626099659293,
+        "paired_runs": 10,
+        "q1": 69.57789499398004,
+        "q3": 188.92173337730966,
+        "ties": 0,
+        "wins_lower_error": 0
+      },
+      "runs": 10
+    },
+    "slsqp": {
+      "budget_exhaustions": 0,
+      "chemical_accuracy_successes": 0,
+      "error_vs_casci_mha": {
+        "iqr": 0.022802826109113994,
+        "median": 8.534185392768734,
+        "q1": 8.531009977446047,
+        "q3": 8.55381280355516
+      },
+      "gap_vs_reference_mha": {
+        "iqr": 0.022802826109113994,
+        "median": 0.005765511822630742,
+        "q1": 0.0025900964999436837,
+        "q3": 0.025392922609057678
+      },
+      "median_elapsed_seconds": 20.82557982649996,
+      "runs": 10
+    }
+  },
+  "interpretation_limits": [
+    "All objectives are ideal exact-statevector energies; no finite-shot or hardware-noise claim.",
+    "The SLSQP multi-start minimum is an empirical ansatz reference, not a mathematical global-optimum certificate.",
+    "SLSQP reverse-mode gradients are counted separately from objective calls; equal objective-call budgets do not imply equal classical wall-clock work.",
+    "The tuning and held-out seed ranges are disjoint; held-out results do not select SPSA settings."
+  ],
+  "selected_spsa_setting": {
+    "a": null,
+    "alpha": 0.602,
+    "c": null,
+    "gamma": 0.101,
+    "selected": {
+      "a": null,
+      "c": null,
+      "iqr": 114.0578497077307,
+      "label": "auto_calibration",
+      "median": 59.385096059237696,
+      "median_casci_error_mha": 67.91351594016959,
+      "n": 4,
+      "q1": 38.0988460925451,
+      "q3": 152.1566958002758,
+      "total_objective_evaluations": 1200
+    },
+    "selection_data": "development set only"
+  },
+  "study_config": {
+    "a_grid": [
+      0.001,
+      0.003,
+      0.01,
+      0.03
+    ],
+    "ansatz": "PUCCSD",
+    "c_grid": [
+      0.01,
+      0.03,
+      0.1
+    ],
+    "engine": "h2o_vqe.py",
+    "final_budget": 500,
+    "geometry": {
+      "angle_deg": 104.5,
+      "fixed_oh_angstrom": 0.96,
+      "stretched_oh_angstrom": 2.2
+    },
+    "holdout_restarts": 10,
+    "holdout_seed_offset": 800000,
+    "include_auto_calibration": true,
+    "maxiter": 10000,
+    "reference_budget": 1000,
+    "reference_maxiter": 500,
+    "reference_restarts": 10,
+    "reference_seed_offset": 400000,
+    "repetitions": 1,
+    "restart_scale": 0.5,
+    "seed": 20261023,
+    "selection_metric": "development median energy gap to multi-start SLSQP reference",
+    "spsa_alpha": 0.602,
+    "spsa_gamma": 0.101,
+    "tune_budget": 300,
+    "tune_restarts": 4
+  }
+}

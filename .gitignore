@@ -1,0 +1,31 @@
+# Python caches and local tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+work/
+
+# Packaging/build artifacts
+build/
+dist/
+*.egg-info/
+
+# Local environments and secrets
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+*.pem
+*.token
+
+# Logs are reproducible runtime output; keep curated data, exclude logs
+*.log
+
+# Temporary or incomplete high-cost runs (do not publish partial state)
+/results/puccsd3-lbfgsb-1500/
+/results/puccsd3-extra-lbfgsb-seed20261024/
+/results/backend-noise-fast/
+/results/noise-ansatz-study/

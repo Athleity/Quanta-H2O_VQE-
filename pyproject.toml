@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "h2o-vqe-study"
+version = "0.1.0"
+description = "Reproducible VQE study of asymmetric O-H stretching in water"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.26,<3",
+  "scipy>=1.11",
+  "pyscf>=2.10",
+  "qiskit>=1.2,<3",
+  "qiskit-algorithms>=0.4,<0.5",
+  "qiskit-nature>=0.8,<0.9",
+  "matplotlib>=3.8",
+]
+
+[project.optional-dependencies]
+noise = [
+  "qiskit-aer>=0.15,<0.19",
+]
+backend-noise = [
+  "qiskit-aer>=0.15,<0.19",
+  "qiskit-ibm-runtime>=0.50,<0.51",
+]
+
+[project.scripts]
+h2o-vqe = "h2o_vqe.engine:main"
+h2o-vqe-noise = "h2o_vqe.noise:main"
+h2o-vqe-backend-noise = "h2o_vqe.backend_noise:main"
+h2o-vqe-ibm-qpu = "h2o_vqe.ibm_qpu:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

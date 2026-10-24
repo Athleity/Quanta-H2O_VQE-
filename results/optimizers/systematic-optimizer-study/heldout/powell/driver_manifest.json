@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/home/priya/venvs/h2o-vqe/bin/python",
+    "/mnt/c/Users/priya/Documents/Codex/2026-10-23/https-chatgpt-com-share-6adb8a65-fe9c/outputs/h2o-vqe-study/h2o_vqe.py",
+    "--methods",
+    "puccsd",
+    "--optimizer",
+    "powell",
+    "--ansatz-reps",
+    "1",
+    "--restarts",
+    "10",
+    "--restart-scale",
+    "0.5",
+    "--seed",
+    "21061023",
+    "--maxiter",
+    "10000",
+    "--evaluation-budget",
+    "500",
+    "--output",
+    "/mnt/c/Users/priya/Documents/Codex/2026-10-23/https-chatgpt-com-share-6adb8a65-fe9c/outputs/h2o-vqe-study/results/systematic-optimizer-study/heldout/powell",
+    "--random-restarts-only"
+  ],
+  "label": "powell",
+  "phase": "heldout"
+}

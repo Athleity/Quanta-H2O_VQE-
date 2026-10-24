@@ -1,0 +1,16 @@
+{
+  "status": "complete",
+  "method": "puccsd",
+  "ansatz_reps": 1,
+  "completed_seed_energies": [
+    {
+      "seed": 11,
+      "total_energy_hartree": -74.07166622652048,
+      "standard_error_hartree": 0.5704140976121006,
+      "absolute_error_vs_active_casci_hartree": 0.789310871998822
+    }
+  ],
+  "last_completed_seed": 11,
+  "groups_total": 276,
+  "updated_unix_time": 1792873078.0973322
+}
