@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Compare H2O UCCSD/PUCCSD repetition counts at matched geometry and budgets.
 
-Runs the maintained h2o_vqe.py engine; each run retains its reference checks,
+Runs the maintained scripts/compat/h2o_vqe.py engine; each run retains its reference checks,
 independent mapped-CASCI validation, histories, and transpilation metrics. The
 driver does not claim that a finite multi-start search proves a global minimum.
 
@@ -27,7 +27,7 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
-ENGINE = ROOT / "h2o_vqe.py"
+ENGINE = ROOT / "scripts" / "compat" / "h2o_vqe.py"
 DEFAULT_CONFIGS = (("uccsd", 1), ("puccsd", 1), ("puccsd", 2), ("puccsd", 3))
 
 
@@ -231,7 +231,7 @@ def consolidate(args: argparse.Namespace, output: Path) -> None:
     except ImportError as exc:
         raise RuntimeError(
             "matplotlib is required for the summary plot; install the project's "
-            "requirements-wsl.txt and rerun with --resume"
+            "config/requirements/requirements-wsl.txt and rerun with --resume"
         ) from exc
     fig, ax = plt.subplots(figsize=(8.4, 5.4), constrained_layout=True)
     colors = {"uccsd": "#2364AA", "puccsd": "#D1495B"}

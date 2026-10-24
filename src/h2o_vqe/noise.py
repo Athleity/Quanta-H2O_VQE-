@@ -36,7 +36,7 @@ def evaluate(
     except ImportError as exc:
         raise RuntimeError(
             "Noisy evaluation requires Qiskit Aer. Install it in the active WSL "
-            "environment with: python -m pip install -r requirements-noise.txt"
+            "environment with: python -m pip install -r config/requirements/requirements-noise.txt"
         ) from exc
 
     summary_path = run_dir / "summary.json"
@@ -52,7 +52,7 @@ def evaluate(
     ]
     if not candidates:
         raise ValueError(
-            "No saved fixed-ansatz optimum found. Rerun with the updated h2o_vqe.py; "
+            "No saved fixed-ansatz optimum found. Rerun with the updated scripts/compat/h2o_vqe.py; "
             "older summaries do not store optimal_point."
         )
     # Evaluate the best converged or capped fixed-ansatz result for each ansatz;

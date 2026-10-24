@@ -10,7 +10,7 @@
 
 ## Entry points and workflows
 
-- `h2o_vqe.py`, `noisy_energy.py` — compatibility launchers; scientific code stays in `src/h2o_vqe/`.
+- `scripts/compat/h2o_vqe.py` and `scripts/compat/noisy_energy.py` — compatibility launchers; scientific code stays in `src/h2o_vqe/`.
 - `scripts/run_optimizer_study.py` — SPSA tuning plus held-out optimizer comparison.
 - `scripts/run_ansatz_resource_study.py` — fixed-budget ansatz and circuit resource comparison.
 - `scripts/run_orbital_reference_audit.py` — RHF stability and CASCI/CASSCF scan.
@@ -21,7 +21,7 @@
 ## Documentation and outputs
 
 - `README.md` — project, installation, workflow, results, and scope.
-- `docs/RESEARCH.md` — literature and source review; root `RESEARCH.md` points to it.
+- `docs/RESEARCH.md` — literature and source review; the redundant root-level pointer has been removed.
 - `docs/PROJECT_STATUS.md` — dated results snapshot, not live run monitoring.
 - `results/references/`, `ansatz/`, `scans/`, `optimizers/` — reproducible scientific outputs.
 - `results/noisy-demo/` — one deliberately low-shot synthetic noise example, with uncertainty.
@@ -30,4 +30,4 @@
 - `results/README.md` — result index.
 - `tests/` — focused geometry and project checks.
 
-Use `pyproject.toml` for the canonical dependencies and CLI entry points. `requirements-wsl.txt`, `requirements-noise.txt`, and `requirements-backend-noise.txt` are environment-specific dependency sets. Do not commit logs, cache files, credentials, or unfinished run directories.
+Use `pyproject.toml` for the canonical dependencies and CLI entry points. `config/requirements/requirements-wsl.txt`, `config/requirements/requirements-noise.txt`, and `config/requirements/requirements-backend-noise.txt` are environment-specific dependency sets. Do not commit logs, cache files, credentials, or unfinished run directories.

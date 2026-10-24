@@ -18,7 +18,7 @@ if [[ -f "$HOME/venvs/h2o-vqe/bin/activate" ]]; then
 fi
 
 if ! python -c 'import qiskit_aer' >/dev/null 2>&1; then
-  echo "Qiskit Aer is required. Install it with: python -m pip install --prefer-binary -r requirements-noise.txt" >&2
+  echo "Qiskit Aer is required. Install it with: python -m pip install --prefer-binary -r config/requirements/requirements-noise.txt" >&2
   exit 2
 fi
 
@@ -54,7 +54,7 @@ for i in "${!labels[@]}"; do
   run_dir="${run_dirs[$i]}"
   method="${methods[$i]}"
   echo "[$label] fixed-circuit noise estimate; shots/group=$shots; seeds=$seeds"
-  python -u noisy_energy.py "$run_dir" \
+  python -u scripts/compat/noisy_energy.py "$run_dir" \
     --methods "$method" \
     --shots "$shots" \
     --seeds "$seeds" \

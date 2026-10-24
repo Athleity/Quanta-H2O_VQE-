@@ -121,7 +121,7 @@ def run_study(args: argparse.Namespace) -> dict[str, Any]:
     except ImportError as exc:
         raise RuntimeError(
             "Install the project's Aer dependency in the active noise environment: "
-            "python -m pip install --prefer-binary -r requirements-noise.txt"
+            "python -m pip install --prefer-binary -r config/requirements/requirements-noise.txt"
         ) from exc
 
     row, reference = _load_best(args.run_dir.resolve(), args.method)

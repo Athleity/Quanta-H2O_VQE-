@@ -505,7 +505,7 @@ def main() -> int:
     except ImportError as exc:
         print(
             "Backend-calibrated noise needs the optional dependencies. From the project root run:\n"
-            "  python -m pip install --prefer-binary -r requirements-backend-noise.txt",
+            "  python -m pip install --prefer-binary -r config/requirements/requirements-backend-noise.txt",
             file=sys.stderr,
         )
         print(f"Import detail: {exc}", file=sys.stderr)

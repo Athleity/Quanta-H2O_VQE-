@@ -70,7 +70,7 @@ The first pass is ideal statevector evaluation. It isolates ansatz and optimizer
 1. Audit RHF stability and compare CASCI with orbital-optimized CASSCF at the stretched geometries. Any VQE/CASSCF comparison must rebuild the qubit Hamiltonian in the same orbitals.
 2. Run the matched ansatz/resource study using the new `scripts/run_ansatz_resource_study.py`. Its CASCI error, IQR, chemical-accuracy count, parameter count, level-3 CX/depth, evaluation count, and wall time answer whether added expressibility is worth its circuit cost.
 3. Densify the asymmetric O–H scan and compare warm starts against independent starts; report RHF stability and CASCI references at every point.
-4. Only then compare noisy optimizers in a finite-shot loop with common total shot budgets and independent high-shot reevaluation. The present `noisy_energy.py` is a fixed-parameter noise stress test, not noisy VQE training.
+4. Only then compare noisy optimizers in a finite-shot loop with common total shot budgets and independent high-shot reevaluation. The present `scripts/compat/noisy_energy.py` is a fixed-parameter noise stress test, not noisy VQE training.
 
 Do not add more optimizer names, pruning thresholds, or noise filters unless the experiment records the cost and tests the resulting energy after full reoptimization. A lower parameter count or a rejected-shot fraction alone is not evidence of a better chemistry result.
 

@@ -112,9 +112,7 @@ def _require_scientific_stack() -> dict[str, Any]:
         raise RuntimeError(
             f"Missing Python module {exc.name!r}. In the active Ubuntu/WSL project "
             "venv, run: python -m pip install --prefer-binary "
-            "-r /mnt/c/Users/priya/Documents/Codex/2026-10-23/"
-            "https-chatgpt-com-share-6adb8a65-fe9c/outputs/h2o-vqe-study/"
-            "requirements-wsl.txt"
+            "-r config/requirements/requirements-wsl.txt"
         ) from exc
 
     return locals()

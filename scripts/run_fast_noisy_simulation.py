@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Launch the project noisy-Aer module without the root h2o_vqe.py name clash."""
+"""Launch the project noisy-Aer module through the installed project package."""
 
 from __future__ import annotations
 
@@ -12,7 +12,7 @@ SOURCE_ROOT = PROJECT_ROOT / "src"
 if not (SOURCE_ROOT / "h2o_vqe" / "fast_noise.py").is_file():
     raise SystemExit(f"Could not find noisy simulator module under {SOURCE_ROOT}")
 
-# The repository also has a root-level h2o_vqe.py compatibility launcher. Put
+# The repository also has a compatibility launcher under scripts/compat/. Put
 # src first so Python resolves the actual h2o_vqe package instead of that file.
 sys.path.insert(0, str(SOURCE_ROOT))
 

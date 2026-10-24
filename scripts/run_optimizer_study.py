@@ -5,7 +5,7 @@ The driver (1) builds an empirical one-repetition PUCCSD reference with
 multi-start SLSQP, (2) tunes SPSA on a separate fixed development seed set,
 (3) freezes the selected SPSA schedule, and (4) compares SLSQP, COBYLA, and
 the selected SPSA schedule on held-out paired starts. Every VQE run is
-delegated to h2o_vqe.py so its chemistry, mapping checks, energy verification,
+delegated to scripts/compat/h2o_vqe.py so its chemistry, mapping checks, energy verification,
 and raw artifacts remain the single source of truth.
 
 Run inside the activated project WSL environment. The default study is
@@ -30,7 +30,7 @@ from typing import Any
 
 
 BASE = Path(__file__).resolve().parents[1]
-ENGINE = BASE / "h2o_vqe.py"
+ENGINE = BASE / "scripts" / "compat" / "h2o_vqe.py"
 DEFAULT_A_GRID = (0.001, 0.003, 0.01, 0.03)
 DEFAULT_C_GRID = (0.01, 0.03, 0.1)
 
@@ -190,7 +190,7 @@ def run_case(
             if "initial_energy_hartree" not in row:
                 raise RuntimeError(
                     f"{summary_path} lacks initial_energy_hartree. The WSL copy of "
-                    "h2o_vqe.py is stale; sync the updated engine before continuing."
+                    "scripts/compat/h2o_vqe.py is stale; sync the updated engine before continuing."
                 )
     with history_path.open(newline="", encoding="utf-8") as stream:
         history = list(csv.DictReader(stream))

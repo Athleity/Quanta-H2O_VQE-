@@ -173,7 +173,7 @@ python -m pip install --prefer-binary -e .
 For the core WSL environment:
 
 ```bash
-python -m pip install --prefer-binary -r requirements-wsl.txt
+python -m pip install --prefer-binary -r config/requirements/requirements-wsl.txt
 ```
 
 PySCF is intended to run in Linux, WSL, or Colab rather than a native Windows Python environment.
@@ -193,7 +193,7 @@ Regenerate figures from saved data:
 python scripts/make_publication_figures.py
 ```
 
-The runnable project workflow is in `notebooks/h2o_asymmetric_stretch.ipynb`. The maintained VQE implementation is in `src/h2o_vqe/engine.py`; `h2o_vqe.py` is a compatibility launcher. The IBM workflow is separate and evaluates a fixed saved state; it does not optimize parameters on the QPU.
+The runnable project workflow is in `notebooks/h2o_asymmetric_stretch.ipynb`. The maintained VQE implementation is in `src/h2o_vqe/engine.py`; `scripts/compat/h2o_vqe.py` is a compatibility launcher. The IBM workflow is separate and evaluates a fixed saved state; it does not optimize parameters on the QPU.
 
 ## Repository map
 
