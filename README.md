@@ -2,6 +2,14 @@
 
 **A reproducible study of molecular energies, variational quantum circuits, finite measurement shots, and IBM quantum hardware.**
 
+## Interactive H₂O electron-density viewer
+
+[![Screenshot of the interactive H₂O electron-density viewer](visualization/h2o_density/tests/screenshots/desktop_r2-2.20.png)](https://athleity.github.io/Quanta-H2O_VQE-/visualization/h2o_density/web/)
+
+[Open the live 3D viewer](https://athleity.github.io/Quanta-H2O_VQE-/visualization/h2o_density/web/)
+
+The viewer displays classical CASCI electron-density data. It is not a density reconstructed from the optimized VQE state.
+
 This repository studies a small but challenging quantum chemistry problem: a water molecule with one O–H bond stretched away from its usual length. The project asks three related questions:
 
 1. **Can a variational quantum circuit represent a correlated molecular state accurately in an ideal simulation?**
