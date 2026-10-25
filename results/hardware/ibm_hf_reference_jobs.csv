@@ -1,0 +1,5 @@
+label,job_id,observable,hamiltonian_terms,measurement_groups,resilience_level,mitigation,precision_target_hartree,requested_shots,reported_shots,randomizations,qpu_time_seconds,wall_time_seconds,energy_hartree,standard_error_millihartree,offset_from_ideal_hf_millihartree,precision_target_reached,physical_qubits,mean_readout_error_selected_qubits,mean_readout_error_device
+A,dbehvvfgdj9s73flrceg,Full Hamiltonian,1079,276,1,,0.04,,,,,104,-73.967321,346.52,656.571,,,,
+B,dbei45vpc3tc739lomf0,Z-only Hamiltonian terms,79,1,1,TREX and twirling,0.005,,40000,32,21,,-74.542299,2140.26,81.593,False,,,
+C,dbei5tvpc3tc739lop2g,Z-only Hamiltonian terms,79,1,0,,,100000,,,,,-74.327453,3.45,296.439,,,,
+D,dbei8tom94ac738rsp90,Z-only Hamiltonian terms,79,1,0,,,100000,,,,,-74.57342,1.47,50.472,,148;42;117;149;154;44;91;134;40;89,0.0031005859375,0.020158816606570512

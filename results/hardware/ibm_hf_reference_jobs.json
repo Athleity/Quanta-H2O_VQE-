@@ -1,0 +1,108 @@
+{
+  "scope": "All four jobs measured the Hartree-Fock reference state only. No VQE-optimized circuit was run on hardware.",
+  "molecule": "H2O",
+  "basis": "STO-3G",
+  "geometry": {
+    "fixed_oh_angstrom": 0.96,
+    "extended_oh_angstrom": 2.20,
+    "hoh_angle_degrees": 104.5
+  },
+  "active_space": "CAS(8e,6o), oxygen 1s frozen",
+  "mapping": "ParityMapper with two-qubit reduction",
+  "qubits": 10,
+  "measured_state": "Hartree-Fock reference; four X gates; zero entangling gates",
+  "references_hartree": {
+    "ideal_hf": -74.623892,
+    "frozen_core_casci": -74.860977098519,
+    "full_sto3g_fci": -74.861014224915
+  },
+  "backend": "ibm_kingston",
+  "backend_qubits": 156,
+  "calibration_timestamp_utc": "2026-10-24T20:25:00Z",
+  "software": {
+    "qiskit": "1.4.3",
+    "qiskit_ibm_runtime": "0.40.1",
+    "qiskit_nature": "0.7.2"
+  },
+  "jobs": [
+    {
+      "label": "A",
+      "job_id": "dbehvvfgdj9s73flrceg",
+      "observable": "Full Hamiltonian",
+      "hamiltonian_terms": 1079,
+      "measurement_groups": 276,
+      "resilience_level": 1,
+      "precision_target_hartree": 0.04,
+      "requested_shots": null,
+      "reported_shots": null,
+      "randomizations": null,
+      "qpu_time_seconds": null,
+      "wall_time_seconds": 104,
+      "energy_hartree": -73.967321,
+      "standard_error_millihartree": 346.52,
+      "offset_from_ideal_hf_millihartree": 656.571
+    },
+    {
+      "label": "B",
+      "job_id": "dbei45vpc3tc739lomf0",
+      "observable": "Z-only Hamiltonian terms",
+      "hamiltonian_terms": 79,
+      "measurement_groups": 1,
+      "resilience_level": 1,
+      "mitigation": "TREX and twirling",
+      "precision_target_hartree": 0.005,
+      "requested_shots": null,
+      "reported_shots": 40000,
+      "randomizations": 32,
+      "qpu_time_seconds": 21,
+      "wall_time_seconds": null,
+      "energy_hartree": -74.542299,
+      "standard_error_millihartree": 2140.26,
+      "offset_from_ideal_hf_millihartree": 81.593,
+      "precision_target_reached": false
+    },
+    {
+      "label": "C",
+      "job_id": "dbei5tvpc3tc739lop2g",
+      "observable": "Z-only Hamiltonian terms",
+      "hamiltonian_terms": 79,
+      "measurement_groups": 1,
+      "resilience_level": 0,
+      "precision_target_hartree": null,
+      "requested_shots": 100000,
+      "reported_shots": null,
+      "randomizations": null,
+      "qpu_time_seconds": null,
+      "wall_time_seconds": null,
+      "energy_hartree": -74.327453,
+      "standard_error_millihartree": 3.45,
+      "offset_from_ideal_hf_millihartree": 296.439
+    },
+    {
+      "label": "D",
+      "job_id": "dbei8tom94ac738rsp90",
+      "observable": "Z-only Hamiltonian terms",
+      "hamiltonian_terms": 79,
+      "measurement_groups": 1,
+      "resilience_level": 0,
+      "precision_target_hartree": null,
+      "requested_shots": 100000,
+      "reported_shots": null,
+      "randomizations": null,
+      "qpu_time_seconds": null,
+      "wall_time_seconds": null,
+      "energy_hartree": -74.573420,
+      "standard_error_millihartree": 1.47,
+      "offset_from_ideal_hf_millihartree": 50.472,
+      "physical_qubits": [148, 42, 117, 149, 154, 44, 91, 134, 40, 89],
+      "mean_readout_error_selected_qubits": 0.0031005859375,
+      "mean_readout_error_device": 0.020158816606570512
+    }
+  ],
+  "interpretation_limits": [
+    "These jobs validate execution of the fixed Hartree-Fock reference-state measurement pipeline; they are not hardware VQE results.",
+    "The standard errors are statistical and do not include all systematic device errors.",
+    "The cause of Job C's energy offset was not independently verified.",
+    "Job B did not meet its requested precision target."
+  ]
+}
