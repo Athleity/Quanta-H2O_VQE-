@@ -1,4 +1,8 @@
 """Compatibility CLI for finite-shot evaluation of saved VQE parameters."""
+# INSTALL COMMAND (Quanta VQE)
+# From the repository root, install dependencies with:
+# python -m pip install --prefer-binary -r config/requirements/requirements-noise.txt
+
 
 from pathlib import Path
 import sys

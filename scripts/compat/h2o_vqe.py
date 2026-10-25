@@ -3,6 +3,10 @@
 Implementation lives in ``src/h2o_vqe/engine.py``. Keep this small compatibility launcher
 so documented WSL commands and existing saved scripts remain valid.
 """
+# INSTALL COMMAND (Quanta VQE)
+# From the repository root, install dependencies with:
+# python -m pip install --prefer-binary -r config/requirements/requirements-wsl.txt
+
 
 from pathlib import Path
 import sys

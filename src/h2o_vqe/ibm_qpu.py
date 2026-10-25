@@ -6,6 +6,10 @@ and a noiseless reconstruction check happen before any Runtime job is sent.
 """
 
 from __future__ import annotations
+# INSTALL COMMAND (Quanta VQE)
+# From the repository root, install dependencies with:
+# python -m pip install --prefer-binary -r config/requirements/requirements-backend-noise.txt
+
 
 import argparse
 import getpass

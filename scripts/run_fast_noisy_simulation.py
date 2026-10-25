@@ -2,6 +2,10 @@
 """Launch the project noisy-Aer module through the installed project package."""
 
 from __future__ import annotations
+# INSTALL COMMAND (Quanta VQE)
+# From the repository root, install dependencies with:
+# python -m pip install --prefer-binary -r config/requirements/requirements-noise.txt
+
 
 import sys
 from pathlib import Path

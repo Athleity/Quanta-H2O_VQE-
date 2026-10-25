@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+# INSTALL COMMAND (Quanta VQE)
+# From the repository root, install dependencies with:
+# python -m pip install --prefer-binary -r config/requirements/requirements-backend-noise.txt
+
 # Local Aer study using the selected IBM backend's calibration snapshot.
 # This fetches backend metadata but does not submit a QPU job.
 set -Eeuo pipefail

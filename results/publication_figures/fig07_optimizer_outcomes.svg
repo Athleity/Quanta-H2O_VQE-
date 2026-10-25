@@ -79,7 +79,7 @@
 <line x1="906.0" y1="286.3" x2="934.0" y2="286.3" stroke="#19212b" stroke-width="4"/>
 <text x="920.0" y="720.0" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#19212b" font-weight="600" text-anchor="middle" >Powell</text>
 <text x="920.0" y="743.0" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#596575" font-weight="400" text-anchor="middle" >n=10</text>
-<circle cx="1116" cy="295.76244341425456" r="5.8" fill="#697586" stroke="#697586" stroke-width="2"/>
+<circle cx="1116" cy="295.76244341425445" r="5.8" fill="#697586" stroke="#697586" stroke-width="2"/>
 <circle cx="1128" cy="350.5016142071634" r="5.8" fill="#697586" stroke="#697586" stroke-width="2"/>
 <circle cx="1140" cy="375.7271869045879" r="5.8" fill="#697586" stroke="#697586" stroke-width="2"/>
 <circle cx="1152" cy="303.85958913142747" r="5.8" fill="#697586" stroke="#697586" stroke-width="2"/>

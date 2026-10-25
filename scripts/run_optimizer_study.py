@@ -15,6 +15,10 @@ Completed stages are safely reused when resuming the same configuration.
 """
 
 from __future__ import annotations
+# INSTALL COMMAND (Quanta VQE)
+# From the repository root, install dependencies with:
+# python -m pip install --prefer-binary -r config/requirements/requirements-wsl.txt
+
 
 import argparse
 import csv

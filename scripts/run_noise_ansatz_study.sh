@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+# INSTALL COMMAND (Quanta VQE)
+# From the repository root, install dependencies with:
+# python -m pip install --prefer-binary -r config/requirements/requirements-noise.txt
+
 # Sequential, fixed-parameter finite-shot noise comparison for existing H2O runs.
 # This intentionally does not optimize under noise and does not claim hardware results.
 set -Eeuo pipefail

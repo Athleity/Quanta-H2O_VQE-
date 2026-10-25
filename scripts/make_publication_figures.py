@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 """Build research figures from archived H2O VQE results; emits editable SVG using stdlib only."""
+# INSTALL COMMAND (Quanta VQE)
+# From the repository root, install dependencies with:
+# python -m pip install --prefer-binary -r config/requirements/requirements-wsl.txt
+
 import argparse, csv, html, json, math, xml.etree.ElementTree as ET
 from pathlib import Path
 from statistics import median
