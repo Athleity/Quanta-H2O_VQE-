@@ -2,6 +2,12 @@
 
 **A reproducible study of molecular energies, variational quantum circuits, finite measurement shots, and IBM quantum hardware.**
 
+# Quanta: a variational quantum eigensolver study of stretched water
+
+**Submission category: Champion**
+
+A reproducible study of how variational quantum algorithms behave on a water molecule with one O–H bond stretched.
+
 ## Interactive H₂O electron-density viewer
 
 [![Screenshot of the interactive H₂O electron-density viewer](visualization/h2o_density/tests/screenshots/desktop_r2-2.20.png)](https://athleity.github.io/Quanta-H2O_VQE-/visualization/h2o_density/web/)
