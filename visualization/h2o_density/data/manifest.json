@@ -1,0 +1,263 @@
+{
+ "schema": 1,
+ "units": {
+  "density": "electrons / bohr^3 (integrates to N = 10 electrons; NOT a probability density unless divided by 10)",
+  "length": "bohr",
+  "bohr_in_angstrom": 0.52917721092
+ },
+ "software": {
+  "numpy": "2.4.4",
+  "scipy": "1.17.1",
+  "method": "pure-NumPy STO-3G RHF + CASCI(8e,6o), frozen 1s-like core"
+ },
+ "geometry_note": "Asymmetric O-H stretch: R1 = 0.96 A fixed, R2 variable, angle HOH = 104.5 deg. Not equilibrium water.",
+ "vqe": {
+  "available": false,
+  "reason": "Saved PUCCSD optimal_point parameters were not available in the build environment; see README 'Adding the VQE density'."
+ },
+ "datasets": [
+  {
+   "id": "r2-1.80_casci",
+   "geometry_id": "r2-1.80",
+   "source_kind": "casci",
+   "label": "Classical reference: exact CASCI(8e,6o) state (STO-3G)",
+   "file": "r2-1.80_casci.f16",
+   "dtype": "float16-le",
+   "layout": "x fastest, then y, then z",
+   "shape_xyz": [
+    129,
+    101,
+    124
+   ],
+   "origin_bohr": [
+    -6.0,
+    -6.0,
+    -6.8516693425146915
+   ],
+   "spacing_bohr": 0.12,
+   "rho_range": {
+    "min": 7.788817013238598e-25,
+    "max": 190.23931862175868
+   },
+   "geometry": {
+    "r1_angstrom": 0.96,
+    "r2_angstrom": 1.8,
+    "hoh_angle_deg": 104.5,
+    "atoms": [
+     {
+      "element": "O",
+      "xyz_bohr": [
+       0.0,
+       0.0,
+       0.0
+      ]
+     },
+     {
+      "element": "H",
+      "xyz_bohr": [
+       0.0,
+       0.0,
+       1.8141370795824594
+      ]
+     },
+     {
+      "element": "H",
+      "xyz_bohr": [
+       3.2931609992253557,
+       0.0,
+       -0.8516693425146912
+      ]
+     }
+    ]
+   },
+   "energies_hartree": {
+    "rhf": -74.7259883644479,
+    "casci": -74.88767853889253,
+    "casci_gap_to_first_excited": 0.042784258198423686
+   },
+   "checks": {
+    "trace_PS": 9.999999999999998,
+    "grid_sum_float64": 10.041142958246702,
+    "grid_sum_stored_float16": 10.041152010555265,
+    "audit_grid_sum_h0p06": 10.000006153255535,
+    "audit_spacing_bohr": 0.06,
+    "gamma_trace": 8.000000000000004,
+    "natural_occupations": [
+     1.9988547690179823,
+     1.998192311743905,
+     1.9730379433561405,
+     1.6016952685411772,
+     0.39939927032988803,
+     0.028820437010908605
+    ],
+    "rhf_converged": true,
+    "min_natural_occupation": 0.028820437010908605
+   },
+   "notes": "Float16 storage and the 0.12 bohr grid undersample the O 1s cusp region, so grid sums differ from 10 by ~1e-2; trace_PS and the 0.06 bohr audit give the accurate normalization."
+  },
+  {
+   "id": "r2-2.20_casci",
+   "geometry_id": "r2-2.20",
+   "source_kind": "casci",
+   "label": "Classical reference: exact CASCI(8e,6o) state (STO-3G)",
+   "file": "r2-2.20_casci.f16",
+   "dtype": "float16-le",
+   "layout": "x fastest, then y, then z",
+   "shape_xyz": [
+    135,
+    101,
+    125
+   ],
+   "origin_bohr": [
+    -6.0,
+    -6.0,
+    -7.040929196406845
+   ],
+   "spacing_bohr": 0.12,
+   "rho_range": {
+    "min": 3.9478506450232565e-25,
+    "max": 158.28893561840346
+   },
+   "geometry": {
+    "r1_angstrom": 0.96,
+    "r2_angstrom": 2.2,
+    "hoh_angle_deg": 104.5,
+    "atoms": [
+     {
+      "element": "O",
+      "xyz_bohr": [
+       0.0,
+       0.0,
+       0.0
+      ]
+     },
+     {
+      "element": "H",
+      "xyz_bohr": [
+       0.0,
+       0.0,
+       1.8141370795824594
+      ]
+     },
+     {
+      "element": "H",
+      "xyz_bohr": [
+       4.024974554608768,
+       0.0,
+       -1.040929196406845
+      ]
+     }
+    ]
+   },
+   "energies_hartree": {
+    "rhf": -74.62389238073781,
+    "casci": -74.86097709853158,
+    "casci_gap_to_first_excited": 0.010058545035022348
+   },
+   "checks": {
+    "trace_PS": 9.99999999999998,
+    "grid_sum_float64": 10.020766205982046,
+    "grid_sum_stored_float16": 10.02076523169708,
+    "audit_grid_sum_h0p06": 10.000003549133895,
+    "audit_spacing_bohr": 0.06,
+    "gamma_trace": 7.999999999999986,
+    "natural_occupations": [
+     1.999188939633067,
+     1.9985416431258203,
+     1.9732290227968903,
+     1.3176550169689178,
+     0.6826567097809398,
+     0.02872866769435027
+    ],
+    "rhf_converged": true,
+    "min_natural_occupation": 0.02872866769435027,
+    "vs_saved_repo_reference": {
+     "rhf_diff": -2.1742607714259066e-12,
+     "casci_diff": -1.226396761921933e-11,
+     "max_natural_occ_diff": 8.177458710179053e-12,
+     "reference": "results/ansatz/puccsd-reps3-slsqp100/summary.json"
+    }
+   },
+   "notes": "Float16 storage and the 0.12 bohr grid undersample the O 1s cusp region, so grid sums differ from 10 by ~1e-2; trace_PS and the 0.06 bohr audit give the accurate normalization."
+  },
+  {
+   "id": "r2-2.60_casci",
+   "geometry_id": "r2-2.60",
+   "source_kind": "casci",
+   "label": "Classical reference: exact CASCI(8e,6o) state (STO-3G)",
+   "file": "r2-2.60_casci.f16",
+   "dtype": "float16-le",
+   "layout": "x fastest, then y, then z",
+   "shape_xyz": [
+    141,
+    101,
+    127
+   ],
+   "origin_bohr": [
+    -6.0,
+    -6.0,
+    -7.230189050298998
+   ],
+   "spacing_bohr": 0.12,
+   "rho_range": {
+    "min": 1.016951922489209e-25,
+    "max": 171.2798460394872
+   },
+   "geometry": {
+    "r1_angstrom": 0.96,
+    "r2_angstrom": 2.6,
+    "hoh_angle_deg": 104.5,
+    "atoms": [
+     {
+      "element": "O",
+      "xyz_bohr": [
+       0.0,
+       0.0,
+       0.0
+      ]
+     },
+     {
+      "element": "H",
+      "xyz_bohr": [
+       0.0,
+       0.0,
+       1.8141370795824594
+      ]
+     },
+     {
+      "element": "H",
+      "xyz_bohr": [
+       4.75678810999218,
+       0.0,
+       -1.2301890502989985
+      ]
+     }
+    ]
+   },
+   "energies_hartree": {
+    "rhf": -74.55969458082936,
+    "casci": -74.85388073406236,
+    "casci_gap_to_first_excited": 0.002060079552606453
+   },
+   "checks": {
+    "trace_PS": 9.999999999999998,
+    "grid_sum_float64": 10.0278828297166,
+    "grid_sum_stored_float16": 10.027825357200621,
+    "audit_grid_sum_h0p06": 10.000002363718567,
+    "audit_spacing_bohr": 0.06,
+    "gamma_trace": 7.999999999999997,
+    "natural_occupations": [
+     1.9992824340212976,
+     1.998652957761008,
+     1.9733127207470231,
+     1.145170253459089,
+     0.8548975947353974,
+     0.028684039276183043
+    ],
+    "rhf_converged": true,
+    "min_natural_occupation": 0.028684039276183043
+   },
+   "notes": "Float16 storage and the 0.12 bohr grid undersample the O 1s cusp region, so grid sums differ from 10 by ~1e-2; trace_PS and the 0.06 bohr audit give the accurate normalization."
+  }
+ ]
+}
