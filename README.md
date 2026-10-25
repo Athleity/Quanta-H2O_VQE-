@@ -610,3 +610,7 @@ Variational quantum eigensolver. A hybrid approach in which a classical optimize
 ## License and reuse
 
 See the repository’s `LICENSE` file for the terms that apply to the code and project materials. When reusing a scientific result, include the geometry, basis set, active space, method, and reference energy so readers can identify exactly which calculation the value describes.
+
+## AI use
+
+AI tools assisted with coding and documentation. The authors reviewed the project’s results and explanations.
