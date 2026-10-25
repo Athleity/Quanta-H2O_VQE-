@@ -29,3 +29,11 @@ venv/
 /results/puccsd3-extra-lbfgsb-seed20261024/
 /results/backend-noise-fast/
 /results/noise-ansatz-study/
+
+# Legacy generated figures; curated figures live in report/ and analysis/.
+/results/publication_figures/fig*.png
+/results/publication_figures/fig*.svg
+/results/publication_figures/contact_sheet.png
+/results/publication_figures/FIGURE_CATALOG.md
+/results/publication_figures/index.html
+/results/publication_figures/figure_manifest.json

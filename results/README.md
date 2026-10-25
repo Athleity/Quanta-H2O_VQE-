@@ -6,11 +6,11 @@ This directory contains the archived evidence used by the README and figures. En
 
 - `references/` — RHF, all-electron STO-3G FCI, frozen-core CASCI, mapped exact checks, and orbital-stability audit.
 - `ansatz/` — UCCSD, PUCCSD, and fermionic ADAPT comparisons, convergence logs/data, and `puccsd3_params.json` (the saved 90-parameter PUCCSD×3 point).
-- `scans/` — three-point warm-start PUCCSD×3 asymmetric O–H stretch scan.
+- `geometry-scans/` — three-point warm-start PUCCSD×3 asymmetric O–H stretch scan.
 - `optimizers/` — staged PUCCSD×1 optimizer tuning and held-out comparison, plus exploratory runs.
-- `noisy-demo/` — one intentionally low-shot synthetic finite-shot estimate, with reported uncertainty. This is not hardware noise.
-- `publication_figures/` — 11 editable SVG figures, high-resolution PNGs, a contact sheet, HTML gallery, source manifest, and figure captions.
-- `hardware/` — reserved for validated IBM QPU outputs; it currently has no completed hardware result.
+- `simulations/finite-shot-demo/` — one intentionally low-shot synthetic finite-shot estimate, with reported uncertainty. This is not hardware noise.
+- `publication_figures/report/` — 15 report figures in PNG and PDF, plus their contact sheet. `publication_figures/analysis/` contains measurement, ADAPT, optimizer, and pilot analysis figures.
+- `hardware/` — IBM job records for Hartree–Fock reference-state measurements. No optimized VQE state was run on hardware.
 
 ## Headline archived values
 

@@ -354,7 +354,7 @@ h2o-vqe \
   --restarts 1 \
   --scan-r2 1.8,2.2,2.6 \
   --warm-start-scan \
-  --output results/scans/reproduce-puccsd3-scan
+  --output results/geometry-scans/reproduce-puccsd3-scan
 ```
 
 ### Open the notebook

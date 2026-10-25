@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="1180" viewBox="0 0 1700 1180">
+<style>text{font-family:Inter,Segoe UI,Arial,sans-serif} .mono{font-family:Consolas,monospace}</style>
+<rect width="1700" height="1180" fill="#f6f8fb"/>
+<text x="90.00" y="75.00" font-size="40" fill="#153454" font-weight="750" text-anchor="start" >A strong pool gradient does not guarantee a large energy step</text>
+<text x="92.00" y="116.00" font-size="20" fill="#637789" font-weight="400" text-anchor="start" >Each point pairs the largest ADAPT pool gradient with the energy decrease after optimizing that selected operator</text>
+<text x="92.00" y="151.00" font-size="17" fill="#637789" font-weight="400" text-anchor="start" >One run · 11 completed macrocycles · the requested 16-cycle run was interrupted</text>
+<line x1="257.8" y1="235" x2="257.8" y2="935" stroke="#dce5ed"/>
+<text x="257.77" y="965.00" font-size="15" fill="#637789" font-weight="400" text-anchor="middle" >30</text>
+<line x1="461.7" y1="235" x2="461.7" y2="935" stroke="#dce5ed"/>
+<text x="461.66" y="965.00" font-size="15" fill="#637789" font-weight="400" text-anchor="middle" >50</text>
+<line x1="738.3" y1="235" x2="738.3" y2="935" stroke="#dce5ed"/>
+<text x="738.32" y="965.00" font-size="15" fill="#637789" font-weight="400" text-anchor="middle" >100</text>
+<line x1="1015.0" y1="235" x2="1015.0" y2="935" stroke="#dce5ed"/>
+<text x="1014.98" y="965.00" font-size="15" fill="#637789" font-weight="400" text-anchor="middle" >200</text>
+<line x1="1380.7" y1="235" x2="1380.7" y2="935" stroke="#dce5ed"/>
+<text x="1380.70" y="965.00" font-size="15" fill="#637789" font-weight="400" text-anchor="middle" >500</text>
+<line x1="185" y1="935.0" x2="1515" y2="935.0" stroke="#dce5ed"/>
+<text x="167.00" y="940.00" font-size="14" fill="#637789" font-weight="400" text-anchor="end" >0.2</text>
+<line x1="185" y1="896.2" x2="1515" y2="896.2" stroke="#dce5ed"/>
+<text x="167.00" y="901.19" font-size="14" fill="#637789" font-weight="400" text-anchor="end" >0.3</text>
+<line x1="185" y1="847.3" x2="1515" y2="847.3" stroke="#dce5ed"/>
+<text x="167.00" y="852.30" font-size="14" fill="#637789" font-weight="400" text-anchor="end" >0.5</text>
+<line x1="185" y1="780.9" x2="1515" y2="780.9" stroke="#dce5ed"/>
+<text x="167.00" y="785.95" font-size="14" fill="#637789" font-weight="400" text-anchor="end" >1</text>
+<line x1="185" y1="714.6" x2="1515" y2="714.6" stroke="#dce5ed"/>
+<text x="167.00" y="719.60" font-size="14" fill="#637789" font-weight="400" text-anchor="end" >2</text>
+<line x1="185" y1="626.9" x2="1515" y2="626.9" stroke="#dce5ed"/>
+<text x="167.00" y="631.90" font-size="14" fill="#637789" font-weight="400" text-anchor="end" >5</text>
+<line x1="185" y1="560.6" x2="1515" y2="560.6" stroke="#dce5ed"/>
+<text x="167.00" y="565.55" font-size="14" fill="#637789" font-weight="400" text-anchor="end" >10</text>
+<line x1="185" y1="494.2" x2="1515" y2="494.2" stroke="#dce5ed"/>
+<text x="167.00" y="499.21" font-size="14" fill="#637789" font-weight="400" text-anchor="end" >20</text>
+<line x1="185" y1="406.5" x2="1515" y2="406.5" stroke="#dce5ed"/>
+<text x="167.00" y="411.50" font-size="14" fill="#637789" font-weight="400" text-anchor="end" >50</text>
+<line x1="185" y1="340.2" x2="1515" y2="340.2" stroke="#dce5ed"/>
+<text x="167.00" y="345.16" font-size="14" fill="#637789" font-weight="400" text-anchor="end" >100</text>
+<line x1="185" y1="273.8" x2="1515" y2="273.8" stroke="#dce5ed"/>
+<text x="167.00" y="278.81" font-size="14" fill="#637789" font-weight="400" text-anchor="end" >200</text>
+<line x1="185" y1="235" x2="185" y2="935" stroke="#153454" stroke-width="2"/>
+<line x1="185" y1="935" x2="1515" y2="935" stroke="#153454" stroke-width="2"/>
+<text x="850.00" y="1011.00" font-size="19" fill="#1e2b38" font-weight="600" text-anchor="middle" >Largest pool-gradient magnitude for the selected operator (mHa)</text>
+<text x="70" y="585.0" transform="rotate(-90 70 585.0)" font-size="19" fill="#1e2b38" font-weight="600" text-anchor="middle">Energy decrease after that cycle’s optimization (mHa)</text>
+<circle cx="1436.93" cy="269.54" r="11" fill="#153454" stroke="#ffffff" stroke-width="3"><title>Cycle 1: max pool gradient 575.634 mHa; optimized energy decrease 209.129 mHa; error after cycle 27.956 mHa</title></circle>
+<text x="1418.93" y="251.54" font-size="14" fill="#153454" font-weight="700" text-anchor="middle" >1</text>
+<circle cx="1176.25" cy="527.28" r="11" fill="#236b8e" stroke="#ffffff" stroke-width="3"><title>Cycle 2: max pool gradient 299.574 mHa; optimized energy decrease 14.156 mHa; error after cycle 13.800 mHa</title></circle>
+<text x="1194.25" y="511.28" font-size="14" fill="#236b8e" font-weight="700" text-anchor="middle" >2</text>
+<circle cx="939.23" cy="693.28" r="11" fill="#1c8f8a" stroke="#ffffff" stroke-width="3"><title>Cycle 3: max pool gradient 165.430 mHa; optimized energy decrease 2.499 mHa; error after cycle 11.301 mHa</title></circle>
+<text x="913.23" y="677.28" font-size="14" fill="#1c8f8a" font-weight="700" text-anchor="middle" >3</text>
+<circle cx="898.31" cy="687.30" r="11" fill="#49a878" stroke="#ffffff" stroke-width="3"><title>Cycle 4: max pool gradient 149.309 mHa; optimized energy decrease 2.660 mHa; error after cycle 8.640 mHa</title></circle>
+<text x="910.31" y="711.30" font-size="14" fill="#49a878" font-weight="700" text-anchor="middle" >4</text>
+<circle cx="872.66" cy="699.13" r="11" fill="#89b85b" stroke="#ffffff" stroke-width="3"><title>Cycle 5: max pool gradient 140.016 mHa; optimized energy decrease 2.351 mHa; error after cycle 6.290 mHa</title></circle>
+<text x="862.66" y="727.13" font-size="14" fill="#89b85b" font-weight="700" text-anchor="middle" >5</text>
+<circle cx="452.82" cy="855.97" r="11" fill="#c7b34b" stroke="#ffffff" stroke-width="3"><title>Cycle 6: max pool gradient 48.905 mHa; optimized energy decrease 0.457 mHa; error after cycle 5.833 mHa</title></circle>
+<text x="430.82" y="837.97" font-size="14" fill="#c7b34b" font-weight="700" text-anchor="middle" >6</text>
+<circle cx="446.75" cy="819.25" r="11" fill="#e6a12d" stroke="#ffffff" stroke-width="3"><title>Cycle 7: max pool gradient 48.166 mHa; optimized energy decrease 0.670 mHa; error after cycle 5.163 mHa</title></circle>
+<text x="454.75" y="847.25" font-size="14" fill="#e6a12d" font-weight="700" text-anchor="middle" >7</text>
+<circle cx="462.80" cy="811.45" r="11" fill="#db7650" stroke="#ffffff" stroke-width="3"><title>Cycle 8: max pool gradient 50.143 mHa; optimized energy decrease 0.727 mHa; error after cycle 4.436 mHa</title></circle>
+<text x="481.80" y="801.45" font-size="14" fill="#db7650" font-weight="700" text-anchor="middle" >8</text>
+<circle cx="326.68" cy="894.81" r="11" fill="#c95766" stroke="#ffffff" stroke-width="3"><title>Cycle 9: max pool gradient 35.653 mHa; optimized energy decrease 0.304 mHa; error after cycle 4.131 mHa</title></circle>
+<text x="301.68" y="922.81" font-size="14" fill="#c95766" font-weight="700" text-anchor="middle" >9</text>
+<circle cx="347.04" cy="885.19" r="11" fill="#9b5aa6" stroke="#ffffff" stroke-width="3"><title>Cycle 10: max pool gradient 37.519 mHa; optimized energy decrease 0.337 mHa; error after cycle 3.795 mHa</title></circle>
+<text x="365.04" y="866.19" font-size="14" fill="#9b5aa6" font-weight="700" text-anchor="middle" >10</text>
+<circle cx="281.44" cy="889.40" r="11" fill="#6357a5" stroke="#ffffff" stroke-width="3"><title>Cycle 11: max pool gradient 31.833 mHa; optimized energy decrease 0.322 mHa; error after cycle 3.473 mHa</title></circle>
+<text x="267.44" y="870.40" font-size="14" fill="#6357a5" font-weight="700" text-anchor="middle" >11</text>
+<path d="M 1428.9 279.5 L 1321.9 379.5 L 1096.9 379.5" fill="none" stroke="#e9a32b" stroke-width="2"/>
+<rect x="961.9" y="351.5" width="250" height="92" rx="12" fill="#fff8e8" stroke="#f1d08a"/>
+<text x="981.93" y="384.54" font-size="16" fill="#153454" font-weight="700" text-anchor="start" >Cycle 1</text>
+<text x="981.93" y="412.54" font-size="15" fill="#1e2b38" font-weight="400" text-anchor="start" >209.1 mHa energy decrease</text>
+<text x="981.93" y="433.54" font-size="13" fill="#637789" font-weight="400" text-anchor="start" >from a 575.6 mHa pool gradient</text>
+<rect x="185" y="1050" width="1330" height="68" rx="12" fill="#e9eff5"/>
+<text x="210.00" y="1080.00" font-size="13" fill="#637789" font-weight="700" text-anchor="start" >WHAT THIS SHOWS</text>
+<text x="210.00" y="1106.00" font-size="16" fill="#1e2b38" font-weight="550" text-anchor="start" >Gradient magnitude is the operator-selection signal; the plotted energy decrease is measured after re-optimizing the expanded ansatz.</text>
+<text x="92.00" y="1150.00" font-size="14" fill="#637789" font-weight="400" text-anchor="start" >Exploratory diagnostic: 11 sequential observations from one interrupted run; no causal or general scaling claim is made.</text>
+<text x="1605.00" y="1150.00" font-size="13" fill="#637789" font-weight="500" text-anchor="end" >SOURCE: adapt_progress.csv</text>
+</svg>

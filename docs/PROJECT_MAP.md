@@ -24,7 +24,7 @@
 - `docs/RESEARCH.md` — literature and source review; the redundant root-level pointer has been removed.
 - `docs/PROJECT_STATUS.md` — dated results snapshot, not live run monitoring.
 - `results/references/`, `ansatz/`, `scans/`, `optimizers/` — reproducible scientific outputs.
-- `results/noisy-demo/` — one deliberately low-shot synthetic noise example, with uncertainty.
+- `results/simulations/finite-shot-demo/` — one deliberately low-shot synthetic noise example, with uncertainty.
 - `results/publication_figures/` — editable SVGs, high-resolution PNGs, manifest, catalog, and gallery.
 - `results/hardware/` — reserved for completed, auditable IBM QPU output; no API credentials belong here.
 - `results/README.md` — result index.

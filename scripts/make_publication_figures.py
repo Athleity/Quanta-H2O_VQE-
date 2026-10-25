@@ -60,7 +60,7 @@ def main():
     ap=argparse.ArgumentParser();ap.add_argument("--project",type=Path,default=Path(__file__).resolve().parents[1]);ap.add_argument("--output",type=Path);a=ap.parse_args()
     root=a.project.resolve();out=(a.output or root/"results/publication_figures").resolve();out.mkdir(parents=True,exist_ok=True)
     # Bond-scan inputs
-    scan=csvr(root/"results/scans/puccsd-reps3-scan/asymmetric_stretch_scan.csv")
+    scan=csvr(root/"results/geometry-scans/puccsd-reps3-scan/asymmetric_stretch_scan.csv")
     refs={float(r["stretched_oh_angstrom"]):r for r in scan if r["record_type"]=="reference"}
     vr={float(r["stretched_oh_angstrom"]):r for r in scan if r["record_type"]=="vqe"}
     xs=sorted(refs); cas={x:float(refs[x]["frozen_core_casci_hartree"]) for x in xs}
@@ -77,7 +77,7 @@ def main():
             for x,y in pts:p.append(mark(x,y,shape,col,6 if label=="PUCCSD(3)" else 9,"white" if label=="Frozen-core CASCI" else None))
         p.append(txt(1280,155,"R₁ = 0.96 Å · ∠HOH = 104.5°",16,C["muted"],anchor="end"))
         lg(p,[("RHF",C["blue"],"circle"),("Frozen-core CASCI",C["ink"],"square"),("PUCCSD(3)",C["orange"],"triangle")],335,775)
-    save(out,"fig01_asymmetric_stretch_energy","Asymmetric O–H stretch: reference and VQE energies","Only the three calculated geometries are connected; connecting segments are visual guides, not a dense PES.","FIGURE 1",f1,"R₂ = 1.8, 2.2, and 2.6 Å. Energies are total electronic plus nuclear-repulsion values from the saved scan.","results/scans/puccsd-reps3-scan/asymmetric_stretch_scan.csv")
+    save(out,"fig01_asymmetric_stretch_energy","Asymmetric O–H stretch: reference and VQE energies","Only the three calculated geometries are connected; connecting segments are visual guides, not a dense PES.","FIGURE 1",f1,"R₂ = 1.8, 2.2, and 2.6 Å. Energies are total electronic plus nuclear-repulsion values from the saved scan.","results/geometry-scans/puccsd-reps3-scan/asymmetric_stretch_scan.csv")
     # Figure 2: scan errors, highlight chemical accuracy
     def f2(p):
         x0,x1,y0,y1=160,1290,180,690;ym=lambda y:y1-(y+10)/330*(y1-y0);xm=lambda x:x0+(x-min(xs))/(max(xs)-min(xs))*(x1-x0)
@@ -89,7 +89,7 @@ def main():
             for x,y in pts:p.append(mark(x,y,shape,col,8))
         p.append(txt(x1-5,ym(1.6)-9,"1.6 mHa",14,C["green"],"700","end"))
         lg(p,[("RHF",C["blue"],"circle"),("PUCCSD(3)",C["orange"],"triangle")],610,775)
-    save(out,"fig02_scan_error_vs_casci","Correlation recovery along the asymmetric stretch","Absolute total-energy error against frozen-core CASCI; shaded region is the 1.6 mHa target.","FIGURE 2",f2,"Three geometry points only. No values between the sampled geometries are inferred.","results/scans/puccsd-reps3-scan/asymmetric_stretch_scan.csv")
+    save(out,"fig02_scan_error_vs_casci","Correlation recovery along the asymmetric stretch","Absolute total-energy error against frozen-core CASCI; shaded region is the 1.6 mHa target.","FIGURE 2",f2,"Three geometry points only. No values between the sampled geometries are inferred.","results/geometry-scans/puccsd-reps3-scan/asymmetric_stretch_scan.csv")
     # Ansatz pilot
     ar=csvr(root/"results/ansatz/ansatz-resource-pilot/ansatz_runs.csv");groups={}
     for r in ar:groups.setdefault((r["method"],int(float(r["reps"]))),[]).append(r)
@@ -242,7 +242,7 @@ def main():
         p.append(txt(x0,bot2+39,"Interrupted after cycle 11; the remaining five cycles are unobserved.",14,C["red"],"700"))
     save(out,"fig10_adapt_macrocycle_progress","Fermionic ADAPT-VQE: progress through the interrupted run","Accepted macrocycles from the saved checkpoint; no values are inferred for uncompleted cycles.","FIGURE 10",f10,"The run stopped after 11 of 16 requested cycles. Final recorded error: 3.473 mHa vs active-space CASCI; chemical accuracy was not reached.","results/ansatz/adapt-slsqp-final-16cycle/adapt_progress.csv")
     # Figure 11: show the complete one-sigma sampling interval and separate near-zero accuracy scale.
-    nd=jf(root/"results/noisy-demo/puccsd-reps1-16shots.json");casref=float(nd["active_casci_reference_hartree"])
+    nd=jf(root/"results/simulations/finite-shot-demo/puccsd-reps1-16shots.json");casref=float(nd["active_casci_reference_hartree"])
     ideal=(float(nd["ideal_energy_hartree"])-casref)*1000;noisy=(float(nd["noisy_mean_energy_hartree"])-casref)*1000;se=float(nd["propagated_sampling_standard_error_of_mean_hartree"])*1000
     def f11(p):
         # Main panel spans the full ±1 SE interval; inset resolves chemical accuracy near zero.
@@ -271,7 +271,7 @@ def main():
           txt(zmid,zy(ideal)-15,f"{ideal:+.1f}",14,C["blue"],"700","middle"),
           txt(zmid,b1+62,"Noisy interval is outside this zoom",13,C["muted"],"600","middle")])
         p.append(txt((x0+x1)/2,785,"One seed · 16 shots per each of 276 QWC groups · ±1 propagated sampling SE",14,C["muted"],anchor="middle"))
-    save(out,"fig11_synthetic_noise_uncertainty","Low-shot synthetic noise: uncertainty overwhelms the ideal error","Fixed-parameter local Aer result with a two-scale view; not backend-calibrated or IBM hardware data.","FIGURE 11",f11,"One seed; 16 shots/group. Bars show ±1 propagated sampling SE; not QPU data.","results/noisy-demo/puccsd-reps1-16shots.json")
+    save(out,"fig11_synthetic_noise_uncertainty","Low-shot synthetic noise: uncertainty overwhelms the ideal error","Fixed-parameter local Aer result with a two-scale view; not backend-calibrated or IBM hardware data.","FIGURE 11",f11,"One seed; 16 shots/group. Bars show ±1 propagated sampling SE; not QPU data.","results/simulations/finite-shot-demo/puccsd-reps1-16shots.json")
     FIGS[-1]["caption"]="PUCCSD(1), 10 mapped qubits; 4,416 shots total. Synthetic noise p₁=10⁻⁴, p₂=10⁻³, symmetric readout flip=1%. Noisy estimate error +789.3 mHa ±570.4 mHa (one propagated sampling SE, one seed); this is too imprecise to support a chemical-accuracy claim."
     (out/"figure_manifest.json").write_text(json.dumps({"study":"Asymmetric O-H stretch of H2O, STO-3G, frozen-core CAS(8e,6o)","figures":FIGS,
       "not_plotted":["Backend-calibrated Aer run has no completed case in the saved status file.","No completed IBM QPU result was available in the saved project results when this figure set was built; add a hardware comparison after the submitted job finishes."],"vector_primary":True},indent=2),encoding="utf8")

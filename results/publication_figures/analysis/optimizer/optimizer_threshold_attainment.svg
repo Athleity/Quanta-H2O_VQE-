@@ -1,0 +1,260 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2200" height="1440" viewBox="0 0 2200 1440">
+<style>text{font-family:Inter,Segoe UI,Arial,sans-serif} .mono{font-family:Consolas,monospace}</style>
+<rect width="2200" height="1440" fill="#ffffff"/>
+<text x="100.00" y="75.00" font-size="17" fill="#586d7e" font-weight="700" text-anchor="start" >FIGURE 3</text>
+<text x="100.00" y="132.00" font-size="40" fill="#182b3b" font-weight="700" text-anchor="start" >How often does each optimizer reach a target?</text>
+<text x="100.00" y="174.00" font-size="21" fill="#586d7e" font-weight="400" text-anchor="start" >Fraction of 10 held-out starts at or below each absolute energy-error threshold</text>
+<text x="2100.00" y="175.00" font-size="17" fill="#586d7e" font-weight="500" text-anchor="end" >R₂ = 2.20 Å · PUCCSD(1)</text>
+<text x="140.00" y="248.00" font-size="25" fill="#182b3b" font-weight="700" text-anchor="start" >≤ 1.6 mHa  · chemical-accuracy target</text>
+<line x1="216" y1="645.00" x2="985" y2="645.00" stroke="#e7edf1"/>
+<text x="202.00" y="651.00" font-size="14" fill="#586d7e" font-weight="400" text-anchor="end" >0%</text>
+<line x1="216" y1="558.75" x2="985" y2="558.75" stroke="#e7edf1"/>
+<text x="202.00" y="564.75" font-size="14" fill="#586d7e" font-weight="400" text-anchor="end" >25%</text>
+<line x1="216" y1="472.50" x2="985" y2="472.50" stroke="#e7edf1"/>
+<text x="202.00" y="478.50" font-size="14" fill="#586d7e" font-weight="400" text-anchor="end" >50%</text>
+<line x1="216" y1="386.25" x2="985" y2="386.25" stroke="#e7edf1"/>
+<text x="202.00" y="392.25" font-size="14" fill="#586d7e" font-weight="400" text-anchor="end" >75%</text>
+<line x1="216" y1="300.00" x2="985" y2="300.00" stroke="#e7edf1"/>
+<text x="202.00" y="306.00" font-size="14" fill="#586d7e" font-weight="400" text-anchor="end" >100%</text>
+<line x1="216.00" y1="300" x2="216.00" y2="645" stroke="#e7edf1" stroke-dasharray="2 6"/>
+<text x="216.00" y="672.00" font-size="14" fill="#586d7e" font-weight="400" text-anchor="middle" >100</text>
+<line x1="301.44" y1="300" x2="301.44" y2="645" stroke="#e7edf1" stroke-dasharray="2 6"/>
+<text x="301.44" y="672.00" font-size="14" fill="#586d7e" font-weight="400" text-anchor="middle" >200</text>
+<line x1="386.89" y1="300" x2="386.89" y2="645" stroke="#e7edf1" stroke-dasharray="2 6"/>
+<text x="386.89" y="672.00" font-size="14" fill="#586d7e" font-weight="400" text-anchor="middle" >300</text>
+<line x1="557.78" y1="300" x2="557.78" y2="645" stroke="#e7edf1" stroke-dasharray="2 6"/>
+<text x="557.78" y="672.00" font-size="14" fill="#586d7e" font-weight="400" text-anchor="middle" >500</text>
+<line x1="814.11" y1="300" x2="814.11" y2="645" stroke="#e7edf1" stroke-dasharray="2 6"/>
+<text x="814.11" y="672.00" font-size="14" fill="#586d7e" font-weight="400" text-anchor="middle" >800</text>
+<line x1="985.00" y1="300" x2="985.00" y2="645" stroke="#e7edf1" stroke-dasharray="2 6"/>
+<text x="985.00" y="672.00" font-size="14" fill="#586d7e" font-weight="400" text-anchor="middle" >1000</text>
+<polyline points="216.00,645.00 301.44,645.00 386.89,645.00 557.78,645.00 814.11,645.00 985.00,645.00" fill="none" stroke="#0072B2" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="216.00" cy="645.00" r="6" fill="white" stroke="#0072B2" stroke-width="3"><title>L-BFGS-B: 0/10 trials at 1.6 mHa or better by 100 objective evaluations</title></circle>
+<circle cx="301.44" cy="645.00" r="6" fill="white" stroke="#0072B2" stroke-width="3"><title>L-BFGS-B: 0/10 trials at 1.6 mHa or better by 200 objective evaluations</title></circle>
+<circle cx="386.89" cy="645.00" r="6" fill="white" stroke="#0072B2" stroke-width="3"><title>L-BFGS-B: 0/10 trials at 1.6 mHa or better by 300 objective evaluations</title></circle>
+<circle cx="557.78" cy="645.00" r="6" fill="white" stroke="#0072B2" stroke-width="3"><title>L-BFGS-B: 0/10 trials at 1.6 mHa or better by 500 objective evaluations</title></circle>
+<circle cx="814.11" cy="645.00" r="6" fill="white" stroke="#0072B2" stroke-width="3"><title>L-BFGS-B: 0/10 trials at 1.6 mHa or better by 800 objective evaluations</title></circle>
+<circle cx="985.00" cy="645.00" r="6" fill="white" stroke="#0072B2" stroke-width="3"><title>L-BFGS-B: 0/10 trials at 1.6 mHa or better by 1000 objective evaluations</title></circle>
+<polyline points="216.00,645.00 301.44,645.00 386.89,645.00 557.78,645.00 814.11,645.00 985.00,645.00" fill="none" stroke="#009E73" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="216.00" cy="645.00" r="6" fill="white" stroke="#009E73" stroke-width="3"><title>SLSQP: 0/10 trials at 1.6 mHa or better by 100 objective evaluations</title></circle>
+<circle cx="301.44" cy="645.00" r="6" fill="white" stroke="#009E73" stroke-width="3"><title>SLSQP: 0/10 trials at 1.6 mHa or better by 200 objective evaluations</title></circle>
+<circle cx="386.89" cy="645.00" r="6" fill="white" stroke="#009E73" stroke-width="3"><title>SLSQP: 0/10 trials at 1.6 mHa or better by 300 objective evaluations</title></circle>
+<circle cx="557.78" cy="645.00" r="6" fill="white" stroke="#009E73" stroke-width="3"><title>SLSQP: 0/10 trials at 1.6 mHa or better by 500 objective evaluations</title></circle>
+<circle cx="814.11" cy="645.00" r="6" fill="white" stroke="#009E73" stroke-width="3"><title>SLSQP: 0/10 trials at 1.6 mHa or better by 800 objective evaluations</title></circle>
+<circle cx="985.00" cy="645.00" r="6" fill="white" stroke="#009E73" stroke-width="3"><title>SLSQP: 0/10 trials at 1.6 mHa or better by 1000 objective evaluations</title></circle>
+<polyline points="216.00,645.00 301.44,645.00 386.89,645.00 557.78,645.00 814.11,645.00 985.00,645.00" fill="none" stroke="#D55E00" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="216.00" cy="645.00" r="6" fill="white" stroke="#D55E00" stroke-width="3"><title>COBYLA: 0/10 trials at 1.6 mHa or better by 100 objective evaluations</title></circle>
+<circle cx="301.44" cy="645.00" r="6" fill="white" stroke="#D55E00" stroke-width="3"><title>COBYLA: 0/10 trials at 1.6 mHa or better by 200 objective evaluations</title></circle>
+<circle cx="386.89" cy="645.00" r="6" fill="white" stroke="#D55E00" stroke-width="3"><title>COBYLA: 0/10 trials at 1.6 mHa or better by 300 objective evaluations</title></circle>
+<circle cx="557.78" cy="645.00" r="6" fill="white" stroke="#D55E00" stroke-width="3"><title>COBYLA: 0/10 trials at 1.6 mHa or better by 500 objective evaluations</title></circle>
+<circle cx="814.11" cy="645.00" r="6" fill="white" stroke="#D55E00" stroke-width="3"><title>COBYLA: 0/10 trials at 1.6 mHa or better by 800 objective evaluations</title></circle>
+<circle cx="985.00" cy="645.00" r="6" fill="white" stroke="#D55E00" stroke-width="3"><title>COBYLA: 0/10 trials at 1.6 mHa or better by 1000 objective evaluations</title></circle>
+<polyline points="216.00,645.00 301.44,645.00 386.89,645.00 557.78,645.00 814.11,645.00 985.00,645.00" fill="none" stroke="#CC79A7" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="216.00" cy="645.00" r="6" fill="white" stroke="#CC79A7" stroke-width="3"><title>Powell: 0/10 trials at 1.6 mHa or better by 100 objective evaluations</title></circle>
+<circle cx="301.44" cy="645.00" r="6" fill="white" stroke="#CC79A7" stroke-width="3"><title>Powell: 0/10 trials at 1.6 mHa or better by 200 objective evaluations</title></circle>
+<circle cx="386.89" cy="645.00" r="6" fill="white" stroke="#CC79A7" stroke-width="3"><title>Powell: 0/10 trials at 1.6 mHa or better by 300 objective evaluations</title></circle>
+<circle cx="557.78" cy="645.00" r="6" fill="white" stroke="#CC79A7" stroke-width="3"><title>Powell: 0/10 trials at 1.6 mHa or better by 500 objective evaluations</title></circle>
+<circle cx="814.11" cy="645.00" r="6" fill="white" stroke="#CC79A7" stroke-width="3"><title>Powell: 0/10 trials at 1.6 mHa or better by 800 objective evaluations</title></circle>
+<circle cx="985.00" cy="645.00" r="6" fill="white" stroke="#CC79A7" stroke-width="3"><title>Powell: 0/10 trials at 1.6 mHa or better by 1000 objective evaluations</title></circle>
+<polyline points="216.00,645.00 301.44,645.00 386.89,645.00 557.78,645.00 814.11,645.00 985.00,645.00" fill="none" stroke="#667085" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="216.00" cy="645.00" r="6" fill="white" stroke="#667085" stroke-width="3"><title>SPSA: 0/10 trials at 1.6 mHa or better by 100 objective evaluations</title></circle>
+<circle cx="301.44" cy="645.00" r="6" fill="white" stroke="#667085" stroke-width="3"><title>SPSA: 0/10 trials at 1.6 mHa or better by 200 objective evaluations</title></circle>
+<circle cx="386.89" cy="645.00" r="6" fill="white" stroke="#667085" stroke-width="3"><title>SPSA: 0/10 trials at 1.6 mHa or better by 300 objective evaluations</title></circle>
+<circle cx="557.78" cy="645.00" r="6" fill="white" stroke="#667085" stroke-width="3"><title>SPSA: 0/10 trials at 1.6 mHa or better by 500 objective evaluations</title></circle>
+<circle cx="814.11" cy="645.00" r="6" fill="white" stroke="#667085" stroke-width="3"><title>SPSA: 0/10 trials at 1.6 mHa or better by 800 objective evaluations</title></circle>
+<circle cx="985.00" cy="645.00" r="6" fill="white" stroke="#667085" stroke-width="3"><title>SPSA: 0/10 trials at 1.6 mHa or better by 1000 objective evaluations</title></circle>
+<line x1="216" y1="645" x2="985" y2="645" stroke="#34495e" stroke-width="2"/>
+<text x="600.50" y="698.00" font-size="15" fill="#182b3b" font-weight="500" text-anchor="middle" >Objective evaluations (checkpoint budget)</text>
+<text x="1170.00" y="248.00" font-size="25" fill="#182b3b" font-weight="700" text-anchor="start" >≤ 10 mHa</text>
+<line x1="1246" y1="645.00" x2="2015" y2="645.00" stroke="#e7edf1"/>
+<text x="1232.00" y="651.00" font-size="14" fill="#586d7e" font-weight="400" text-anchor="end" >0%</text>
+<line x1="1246" y1="558.75" x2="2015" y2="558.75" stroke="#e7edf1"/>
+<text x="1232.00" y="564.75" font-size="14" fill="#586d7e" font-weight="400" text-anchor="end" >25%</text>
+<line x1="1246" y1="472.50" x2="2015" y2="472.50" stroke="#e7edf1"/>
+<text x="1232.00" y="478.50" font-size="14" fill="#586d7e" font-weight="400" text-anchor="end" >50%</text>
+<line x1="1246" y1="386.25" x2="2015" y2="386.25" stroke="#e7edf1"/>
+<text x="1232.00" y="392.25" font-size="14" fill="#586d7e" font-weight="400" text-anchor="end" >75%</text>
+<line x1="1246" y1="300.00" x2="2015" y2="300.00" stroke="#e7edf1"/>
+<text x="1232.00" y="306.00" font-size="14" fill="#586d7e" font-weight="400" text-anchor="end" >100%</text>
+<line x1="1246.00" y1="300" x2="1246.00" y2="645" stroke="#e7edf1" stroke-dasharray="2 6"/>
+<text x="1246.00" y="672.00" font-size="14" fill="#586d7e" font-weight="400" text-anchor="middle" >100</text>
+<line x1="1331.44" y1="300" x2="1331.44" y2="645" stroke="#e7edf1" stroke-dasharray="2 6"/>
+<text x="1331.44" y="672.00" font-size="14" fill="#586d7e" font-weight="400" text-anchor="middle" >200</text>
+<line x1="1416.89" y1="300" x2="1416.89" y2="645" stroke="#e7edf1" stroke-dasharray="2 6"/>
+<text x="1416.89" y="672.00" font-size="14" fill="#586d7e" font-weight="400" text-anchor="middle" >300</text>
+<line x1="1587.78" y1="300" x2="1587.78" y2="645" stroke="#e7edf1" stroke-dasharray="2 6"/>
+<text x="1587.78" y="672.00" font-size="14" fill="#586d7e" font-weight="400" text-anchor="middle" >500</text>
+<line x1="1844.11" y1="300" x2="1844.11" y2="645" stroke="#e7edf1" stroke-dasharray="2 6"/>
+<text x="1844.11" y="672.00" font-size="14" fill="#586d7e" font-weight="400" text-anchor="middle" >800</text>
+<line x1="2015.00" y1="300" x2="2015.00" y2="645" stroke="#e7edf1" stroke-dasharray="2 6"/>
+<text x="2015.00" y="672.00" font-size="14" fill="#586d7e" font-weight="400" text-anchor="middle" >1000</text>
+<polyline points="1246.00,300.00 1331.44,300.00 1416.89,300.00 1587.78,300.00 1844.11,300.00 2015.00,300.00" fill="none" stroke="#0072B2" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="1246.00" cy="300.00" r="6" fill="white" stroke="#0072B2" stroke-width="3"><title>L-BFGS-B: 10/10 trials at 10 mHa or better by 100 objective evaluations</title></circle>
+<circle cx="1331.44" cy="300.00" r="6" fill="white" stroke="#0072B2" stroke-width="3"><title>L-BFGS-B: 10/10 trials at 10 mHa or better by 200 objective evaluations</title></circle>
+<circle cx="1416.89" cy="300.00" r="6" fill="white" stroke="#0072B2" stroke-width="3"><title>L-BFGS-B: 10/10 trials at 10 mHa or better by 300 objective evaluations</title></circle>
+<circle cx="1587.78" cy="300.00" r="6" fill="white" stroke="#0072B2" stroke-width="3"><title>L-BFGS-B: 10/10 trials at 10 mHa or better by 500 objective evaluations</title></circle>
+<circle cx="1844.11" cy="300.00" r="6" fill="white" stroke="#0072B2" stroke-width="3"><title>L-BFGS-B: 10/10 trials at 10 mHa or better by 800 objective evaluations</title></circle>
+<circle cx="2015.00" cy="300.00" r="6" fill="white" stroke="#0072B2" stroke-width="3"><title>L-BFGS-B: 10/10 trials at 10 mHa or better by 1000 objective evaluations</title></circle>
+<polyline points="1246.00,300.00 1331.44,300.00 1416.89,300.00 1587.78,300.00 1844.11,300.00 2015.00,300.00" fill="none" stroke="#009E73" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="1246.00" cy="300.00" r="6" fill="white" stroke="#009E73" stroke-width="3"><title>SLSQP: 10/10 trials at 10 mHa or better by 100 objective evaluations</title></circle>
+<circle cx="1331.44" cy="300.00" r="6" fill="white" stroke="#009E73" stroke-width="3"><title>SLSQP: 10/10 trials at 10 mHa or better by 200 objective evaluations</title></circle>
+<circle cx="1416.89" cy="300.00" r="6" fill="white" stroke="#009E73" stroke-width="3"><title>SLSQP: 10/10 trials at 10 mHa or better by 300 objective evaluations</title></circle>
+<circle cx="1587.78" cy="300.00" r="6" fill="white" stroke="#009E73" stroke-width="3"><title>SLSQP: 10/10 trials at 10 mHa or better by 500 objective evaluations</title></circle>
+<circle cx="1844.11" cy="300.00" r="6" fill="white" stroke="#009E73" stroke-width="3"><title>SLSQP: 10/10 trials at 10 mHa or better by 800 objective evaluations</title></circle>
+<circle cx="2015.00" cy="300.00" r="6" fill="white" stroke="#009E73" stroke-width="3"><title>SLSQP: 10/10 trials at 10 mHa or better by 1000 objective evaluations</title></circle>
+<polyline points="1246.00,645.00 1331.44,645.00 1416.89,610.50 1587.78,438.00 1844.11,438.00 2015.00,438.00" fill="none" stroke="#D55E00" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="1246.00" cy="645.00" r="6" fill="white" stroke="#D55E00" stroke-width="3"><title>COBYLA: 0/10 trials at 10 mHa or better by 100 objective evaluations</title></circle>
+<circle cx="1331.44" cy="645.00" r="6" fill="white" stroke="#D55E00" stroke-width="3"><title>COBYLA: 0/10 trials at 10 mHa or better by 200 objective evaluations</title></circle>
+<circle cx="1416.89" cy="610.50" r="6" fill="white" stroke="#D55E00" stroke-width="3"><title>COBYLA: 1/10 trials at 10 mHa or better by 300 objective evaluations</title></circle>
+<circle cx="1587.78" cy="438.00" r="6" fill="white" stroke="#D55E00" stroke-width="3"><title>COBYLA: 6/10 trials at 10 mHa or better by 500 objective evaluations</title></circle>
+<circle cx="1844.11" cy="438.00" r="6" fill="white" stroke="#D55E00" stroke-width="3"><title>COBYLA: 6/10 trials at 10 mHa or better by 800 objective evaluations</title></circle>
+<circle cx="2015.00" cy="438.00" r="6" fill="white" stroke="#D55E00" stroke-width="3"><title>COBYLA: 6/10 trials at 10 mHa or better by 1000 objective evaluations</title></circle>
+<polyline points="1246.00,645.00 1331.44,645.00 1416.89,645.00 1587.78,645.00 1844.11,645.00 2015.00,645.00" fill="none" stroke="#CC79A7" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="1246.00" cy="645.00" r="6" fill="white" stroke="#CC79A7" stroke-width="3"><title>Powell: 0/10 trials at 10 mHa or better by 100 objective evaluations</title></circle>
+<circle cx="1331.44" cy="645.00" r="6" fill="white" stroke="#CC79A7" stroke-width="3"><title>Powell: 0/10 trials at 10 mHa or better by 200 objective evaluations</title></circle>
+<circle cx="1416.89" cy="645.00" r="6" fill="white" stroke="#CC79A7" stroke-width="3"><title>Powell: 0/10 trials at 10 mHa or better by 300 objective evaluations</title></circle>
+<circle cx="1587.78" cy="645.00" r="6" fill="white" stroke="#CC79A7" stroke-width="3"><title>Powell: 0/10 trials at 10 mHa or better by 500 objective evaluations</title></circle>
+<circle cx="1844.11" cy="645.00" r="6" fill="white" stroke="#CC79A7" stroke-width="3"><title>Powell: 0/10 trials at 10 mHa or better by 800 objective evaluations</title></circle>
+<circle cx="2015.00" cy="645.00" r="6" fill="white" stroke="#CC79A7" stroke-width="3"><title>Powell: 0/10 trials at 10 mHa or better by 1000 objective evaluations</title></circle>
+<polyline points="1246.00,645.00 1331.44,645.00 1416.89,645.00 1587.78,645.00 1844.11,645.00 2015.00,645.00" fill="none" stroke="#667085" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="1246.00" cy="645.00" r="6" fill="white" stroke="#667085" stroke-width="3"><title>SPSA: 0/10 trials at 10 mHa or better by 100 objective evaluations</title></circle>
+<circle cx="1331.44" cy="645.00" r="6" fill="white" stroke="#667085" stroke-width="3"><title>SPSA: 0/10 trials at 10 mHa or better by 200 objective evaluations</title></circle>
+<circle cx="1416.89" cy="645.00" r="6" fill="white" stroke="#667085" stroke-width="3"><title>SPSA: 0/10 trials at 10 mHa or better by 300 objective evaluations</title></circle>
+<circle cx="1587.78" cy="645.00" r="6" fill="white" stroke="#667085" stroke-width="3"><title>SPSA: 0/10 trials at 10 mHa or better by 500 objective evaluations</title></circle>
+<circle cx="1844.11" cy="645.00" r="6" fill="white" stroke="#667085" stroke-width="3"><title>SPSA: 0/10 trials at 10 mHa or better by 800 objective evaluations</title></circle>
+<circle cx="2015.00" cy="645.00" r="6" fill="white" stroke="#667085" stroke-width="3"><title>SPSA: 0/10 trials at 10 mHa or better by 1000 objective evaluations</title></circle>
+<line x1="1246" y1="645" x2="2015" y2="645" stroke="#34495e" stroke-width="2"/>
+<text x="1630.50" y="698.00" font-size="15" fill="#182b3b" font-weight="500" text-anchor="middle" >Objective evaluations (checkpoint budget)</text>
+<text x="140.00" y="778.00" font-size="25" fill="#182b3b" font-weight="700" text-anchor="start" >≤ 50 mHa</text>
+<line x1="216" y1="1175.00" x2="985" y2="1175.00" stroke="#e7edf1"/>
+<text x="202.00" y="1181.00" font-size="14" fill="#586d7e" font-weight="400" text-anchor="end" >0%</text>
+<line x1="216" y1="1088.75" x2="985" y2="1088.75" stroke="#e7edf1"/>
+<text x="202.00" y="1094.75" font-size="14" fill="#586d7e" font-weight="400" text-anchor="end" >25%</text>
+<line x1="216" y1="1002.50" x2="985" y2="1002.50" stroke="#e7edf1"/>
+<text x="202.00" y="1008.50" font-size="14" fill="#586d7e" font-weight="400" text-anchor="end" >50%</text>
+<line x1="216" y1="916.25" x2="985" y2="916.25" stroke="#e7edf1"/>
+<text x="202.00" y="922.25" font-size="14" fill="#586d7e" font-weight="400" text-anchor="end" >75%</text>
+<line x1="216" y1="830.00" x2="985" y2="830.00" stroke="#e7edf1"/>
+<text x="202.00" y="836.00" font-size="14" fill="#586d7e" font-weight="400" text-anchor="end" >100%</text>
+<line x1="216.00" y1="830" x2="216.00" y2="1175" stroke="#e7edf1" stroke-dasharray="2 6"/>
+<text x="216.00" y="1202.00" font-size="14" fill="#586d7e" font-weight="400" text-anchor="middle" >100</text>
+<line x1="301.44" y1="830" x2="301.44" y2="1175" stroke="#e7edf1" stroke-dasharray="2 6"/>
+<text x="301.44" y="1202.00" font-size="14" fill="#586d7e" font-weight="400" text-anchor="middle" >200</text>
+<line x1="386.89" y1="830" x2="386.89" y2="1175" stroke="#e7edf1" stroke-dasharray="2 6"/>
+<text x="386.89" y="1202.00" font-size="14" fill="#586d7e" font-weight="400" text-anchor="middle" >300</text>
+<line x1="557.78" y1="830" x2="557.78" y2="1175" stroke="#e7edf1" stroke-dasharray="2 6"/>
+<text x="557.78" y="1202.00" font-size="14" fill="#586d7e" font-weight="400" text-anchor="middle" >500</text>
+<line x1="814.11" y1="830" x2="814.11" y2="1175" stroke="#e7edf1" stroke-dasharray="2 6"/>
+<text x="814.11" y="1202.00" font-size="14" fill="#586d7e" font-weight="400" text-anchor="middle" >800</text>
+<line x1="985.00" y1="830" x2="985.00" y2="1175" stroke="#e7edf1" stroke-dasharray="2 6"/>
+<text x="985.00" y="1202.00" font-size="14" fill="#586d7e" font-weight="400" text-anchor="middle" >1000</text>
+<polyline points="216.00,830.00 301.44,830.00 386.89,830.00 557.78,830.00 814.11,830.00 985.00,830.00" fill="none" stroke="#0072B2" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="216.00" cy="830.00" r="6" fill="white" stroke="#0072B2" stroke-width="3"><title>L-BFGS-B: 10/10 trials at 50 mHa or better by 100 objective evaluations</title></circle>
+<circle cx="301.44" cy="830.00" r="6" fill="white" stroke="#0072B2" stroke-width="3"><title>L-BFGS-B: 10/10 trials at 50 mHa or better by 200 objective evaluations</title></circle>
+<circle cx="386.89" cy="830.00" r="6" fill="white" stroke="#0072B2" stroke-width="3"><title>L-BFGS-B: 10/10 trials at 50 mHa or better by 300 objective evaluations</title></circle>
+<circle cx="557.78" cy="830.00" r="6" fill="white" stroke="#0072B2" stroke-width="3"><title>L-BFGS-B: 10/10 trials at 50 mHa or better by 500 objective evaluations</title></circle>
+<circle cx="814.11" cy="830.00" r="6" fill="white" stroke="#0072B2" stroke-width="3"><title>L-BFGS-B: 10/10 trials at 50 mHa or better by 800 objective evaluations</title></circle>
+<circle cx="985.00" cy="830.00" r="6" fill="white" stroke="#0072B2" stroke-width="3"><title>L-BFGS-B: 10/10 trials at 50 mHa or better by 1000 objective evaluations</title></circle>
+<polyline points="216.00,830.00 301.44,830.00 386.89,830.00 557.78,830.00 814.11,830.00 985.00,830.00" fill="none" stroke="#009E73" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="216.00" cy="830.00" r="6" fill="white" stroke="#009E73" stroke-width="3"><title>SLSQP: 10/10 trials at 50 mHa or better by 100 objective evaluations</title></circle>
+<circle cx="301.44" cy="830.00" r="6" fill="white" stroke="#009E73" stroke-width="3"><title>SLSQP: 10/10 trials at 50 mHa or better by 200 objective evaluations</title></circle>
+<circle cx="386.89" cy="830.00" r="6" fill="white" stroke="#009E73" stroke-width="3"><title>SLSQP: 10/10 trials at 50 mHa or better by 300 objective evaluations</title></circle>
+<circle cx="557.78" cy="830.00" r="6" fill="white" stroke="#009E73" stroke-width="3"><title>SLSQP: 10/10 trials at 50 mHa or better by 500 objective evaluations</title></circle>
+<circle cx="814.11" cy="830.00" r="6" fill="white" stroke="#009E73" stroke-width="3"><title>SLSQP: 10/10 trials at 50 mHa or better by 800 objective evaluations</title></circle>
+<circle cx="985.00" cy="830.00" r="6" fill="white" stroke="#009E73" stroke-width="3"><title>SLSQP: 10/10 trials at 50 mHa or better by 1000 objective evaluations</title></circle>
+<polyline points="216.00,1175.00 301.44,1037.00 386.89,968.00 557.78,864.50 814.11,864.50 985.00,864.50" fill="none" stroke="#D55E00" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="216.00" cy="1175.00" r="6" fill="white" stroke="#D55E00" stroke-width="3"><title>COBYLA: 0/10 trials at 50 mHa or better by 100 objective evaluations</title></circle>
+<circle cx="301.44" cy="1037.00" r="6" fill="white" stroke="#D55E00" stroke-width="3"><title>COBYLA: 4/10 trials at 50 mHa or better by 200 objective evaluations</title></circle>
+<circle cx="386.89" cy="968.00" r="6" fill="white" stroke="#D55E00" stroke-width="3"><title>COBYLA: 6/10 trials at 50 mHa or better by 300 objective evaluations</title></circle>
+<circle cx="557.78" cy="864.50" r="6" fill="white" stroke="#D55E00" stroke-width="3"><title>COBYLA: 9/10 trials at 50 mHa or better by 500 objective evaluations</title></circle>
+<circle cx="814.11" cy="864.50" r="6" fill="white" stroke="#D55E00" stroke-width="3"><title>COBYLA: 9/10 trials at 50 mHa or better by 800 objective evaluations</title></circle>
+<circle cx="985.00" cy="864.50" r="6" fill="white" stroke="#D55E00" stroke-width="3"><title>COBYLA: 9/10 trials at 50 mHa or better by 1000 objective evaluations</title></circle>
+<polyline points="216.00,1175.00 301.44,1175.00 386.89,1175.00 557.78,1175.00 814.11,1175.00 985.00,1175.00" fill="none" stroke="#CC79A7" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="216.00" cy="1175.00" r="6" fill="white" stroke="#CC79A7" stroke-width="3"><title>Powell: 0/10 trials at 50 mHa or better by 100 objective evaluations</title></circle>
+<circle cx="301.44" cy="1175.00" r="6" fill="white" stroke="#CC79A7" stroke-width="3"><title>Powell: 0/10 trials at 50 mHa or better by 200 objective evaluations</title></circle>
+<circle cx="386.89" cy="1175.00" r="6" fill="white" stroke="#CC79A7" stroke-width="3"><title>Powell: 0/10 trials at 50 mHa or better by 300 objective evaluations</title></circle>
+<circle cx="557.78" cy="1175.00" r="6" fill="white" stroke="#CC79A7" stroke-width="3"><title>Powell: 0/10 trials at 50 mHa or better by 500 objective evaluations</title></circle>
+<circle cx="814.11" cy="1175.00" r="6" fill="white" stroke="#CC79A7" stroke-width="3"><title>Powell: 0/10 trials at 50 mHa or better by 800 objective evaluations</title></circle>
+<circle cx="985.00" cy="1175.00" r="6" fill="white" stroke="#CC79A7" stroke-width="3"><title>Powell: 0/10 trials at 50 mHa or better by 1000 objective evaluations</title></circle>
+<polyline points="216.00,1175.00 301.44,1175.00 386.89,1175.00 557.78,1175.00 814.11,1175.00 985.00,1175.00" fill="none" stroke="#667085" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="216.00" cy="1175.00" r="6" fill="white" stroke="#667085" stroke-width="3"><title>SPSA: 0/10 trials at 50 mHa or better by 100 objective evaluations</title></circle>
+<circle cx="301.44" cy="1175.00" r="6" fill="white" stroke="#667085" stroke-width="3"><title>SPSA: 0/10 trials at 50 mHa or better by 200 objective evaluations</title></circle>
+<circle cx="386.89" cy="1175.00" r="6" fill="white" stroke="#667085" stroke-width="3"><title>SPSA: 0/10 trials at 50 mHa or better by 300 objective evaluations</title></circle>
+<circle cx="557.78" cy="1175.00" r="6" fill="white" stroke="#667085" stroke-width="3"><title>SPSA: 0/10 trials at 50 mHa or better by 500 objective evaluations</title></circle>
+<circle cx="814.11" cy="1175.00" r="6" fill="white" stroke="#667085" stroke-width="3"><title>SPSA: 0/10 trials at 50 mHa or better by 800 objective evaluations</title></circle>
+<circle cx="985.00" cy="1175.00" r="6" fill="white" stroke="#667085" stroke-width="3"><title>SPSA: 0/10 trials at 50 mHa or better by 1000 objective evaluations</title></circle>
+<line x1="216" y1="1175" x2="985" y2="1175" stroke="#34495e" stroke-width="2"/>
+<text x="600.50" y="1228.00" font-size="15" fill="#182b3b" font-weight="500" text-anchor="middle" >Objective evaluations (checkpoint budget)</text>
+<text x="1170.00" y="778.00" font-size="25" fill="#182b3b" font-weight="700" text-anchor="start" >≤ 100 mHa</text>
+<line x1="1246" y1="1175.00" x2="2015" y2="1175.00" stroke="#e7edf1"/>
+<text x="1232.00" y="1181.00" font-size="14" fill="#586d7e" font-weight="400" text-anchor="end" >0%</text>
+<line x1="1246" y1="1088.75" x2="2015" y2="1088.75" stroke="#e7edf1"/>
+<text x="1232.00" y="1094.75" font-size="14" fill="#586d7e" font-weight="400" text-anchor="end" >25%</text>
+<line x1="1246" y1="1002.50" x2="2015" y2="1002.50" stroke="#e7edf1"/>
+<text x="1232.00" y="1008.50" font-size="14" fill="#586d7e" font-weight="400" text-anchor="end" >50%</text>
+<line x1="1246" y1="916.25" x2="2015" y2="916.25" stroke="#e7edf1"/>
+<text x="1232.00" y="922.25" font-size="14" fill="#586d7e" font-weight="400" text-anchor="end" >75%</text>
+<line x1="1246" y1="830.00" x2="2015" y2="830.00" stroke="#e7edf1"/>
+<text x="1232.00" y="836.00" font-size="14" fill="#586d7e" font-weight="400" text-anchor="end" >100%</text>
+<line x1="1246.00" y1="830" x2="1246.00" y2="1175" stroke="#e7edf1" stroke-dasharray="2 6"/>
+<text x="1246.00" y="1202.00" font-size="14" fill="#586d7e" font-weight="400" text-anchor="middle" >100</text>
+<line x1="1331.44" y1="830" x2="1331.44" y2="1175" stroke="#e7edf1" stroke-dasharray="2 6"/>
+<text x="1331.44" y="1202.00" font-size="14" fill="#586d7e" font-weight="400" text-anchor="middle" >200</text>
+<line x1="1416.89" y1="830" x2="1416.89" y2="1175" stroke="#e7edf1" stroke-dasharray="2 6"/>
+<text x="1416.89" y="1202.00" font-size="14" fill="#586d7e" font-weight="400" text-anchor="middle" >300</text>
+<line x1="1587.78" y1="830" x2="1587.78" y2="1175" stroke="#e7edf1" stroke-dasharray="2 6"/>
+<text x="1587.78" y="1202.00" font-size="14" fill="#586d7e" font-weight="400" text-anchor="middle" >500</text>
+<line x1="1844.11" y1="830" x2="1844.11" y2="1175" stroke="#e7edf1" stroke-dasharray="2 6"/>
+<text x="1844.11" y="1202.00" font-size="14" fill="#586d7e" font-weight="400" text-anchor="middle" >800</text>
+<line x1="2015.00" y1="830" x2="2015.00" y2="1175" stroke="#e7edf1" stroke-dasharray="2 6"/>
+<text x="2015.00" y="1202.00" font-size="14" fill="#586d7e" font-weight="400" text-anchor="middle" >1000</text>
+<polyline points="1246.00,830.00 1331.44,830.00 1416.89,830.00 1587.78,830.00 1844.11,830.00 2015.00,830.00" fill="none" stroke="#0072B2" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="1246.00" cy="830.00" r="6" fill="white" stroke="#0072B2" stroke-width="3"><title>L-BFGS-B: 10/10 trials at 100 mHa or better by 100 objective evaluations</title></circle>
+<circle cx="1331.44" cy="830.00" r="6" fill="white" stroke="#0072B2" stroke-width="3"><title>L-BFGS-B: 10/10 trials at 100 mHa or better by 200 objective evaluations</title></circle>
+<circle cx="1416.89" cy="830.00" r="6" fill="white" stroke="#0072B2" stroke-width="3"><title>L-BFGS-B: 10/10 trials at 100 mHa or better by 300 objective evaluations</title></circle>
+<circle cx="1587.78" cy="830.00" r="6" fill="white" stroke="#0072B2" stroke-width="3"><title>L-BFGS-B: 10/10 trials at 100 mHa or better by 500 objective evaluations</title></circle>
+<circle cx="1844.11" cy="830.00" r="6" fill="white" stroke="#0072B2" stroke-width="3"><title>L-BFGS-B: 10/10 trials at 100 mHa or better by 800 objective evaluations</title></circle>
+<circle cx="2015.00" cy="830.00" r="6" fill="white" stroke="#0072B2" stroke-width="3"><title>L-BFGS-B: 10/10 trials at 100 mHa or better by 1000 objective evaluations</title></circle>
+<polyline points="1246.00,830.00 1331.44,830.00 1416.89,830.00 1587.78,830.00 1844.11,830.00 2015.00,830.00" fill="none" stroke="#009E73" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="1246.00" cy="830.00" r="6" fill="white" stroke="#009E73" stroke-width="3"><title>SLSQP: 10/10 trials at 100 mHa or better by 100 objective evaluations</title></circle>
+<circle cx="1331.44" cy="830.00" r="6" fill="white" stroke="#009E73" stroke-width="3"><title>SLSQP: 10/10 trials at 100 mHa or better by 200 objective evaluations</title></circle>
+<circle cx="1416.89" cy="830.00" r="6" fill="white" stroke="#009E73" stroke-width="3"><title>SLSQP: 10/10 trials at 100 mHa or better by 300 objective evaluations</title></circle>
+<circle cx="1587.78" cy="830.00" r="6" fill="white" stroke="#009E73" stroke-width="3"><title>SLSQP: 10/10 trials at 100 mHa or better by 500 objective evaluations</title></circle>
+<circle cx="1844.11" cy="830.00" r="6" fill="white" stroke="#009E73" stroke-width="3"><title>SLSQP: 10/10 trials at 100 mHa or better by 800 objective evaluations</title></circle>
+<circle cx="2015.00" cy="830.00" r="6" fill="white" stroke="#009E73" stroke-width="3"><title>SLSQP: 10/10 trials at 100 mHa or better by 1000 objective evaluations</title></circle>
+<polyline points="1246.00,1175.00 1331.44,899.00 1416.89,864.50 1587.78,864.50 1844.11,864.50 2015.00,864.50" fill="none" stroke="#D55E00" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="1246.00" cy="1175.00" r="6" fill="white" stroke="#D55E00" stroke-width="3"><title>COBYLA: 0/10 trials at 100 mHa or better by 100 objective evaluations</title></circle>
+<circle cx="1331.44" cy="899.00" r="6" fill="white" stroke="#D55E00" stroke-width="3"><title>COBYLA: 8/10 trials at 100 mHa or better by 200 objective evaluations</title></circle>
+<circle cx="1416.89" cy="864.50" r="6" fill="white" stroke="#D55E00" stroke-width="3"><title>COBYLA: 9/10 trials at 100 mHa or better by 300 objective evaluations</title></circle>
+<circle cx="1587.78" cy="864.50" r="6" fill="white" stroke="#D55E00" stroke-width="3"><title>COBYLA: 9/10 trials at 100 mHa or better by 500 objective evaluations</title></circle>
+<circle cx="1844.11" cy="864.50" r="6" fill="white" stroke="#D55E00" stroke-width="3"><title>COBYLA: 9/10 trials at 100 mHa or better by 800 objective evaluations</title></circle>
+<circle cx="2015.00" cy="864.50" r="6" fill="white" stroke="#D55E00" stroke-width="3"><title>COBYLA: 9/10 trials at 100 mHa or better by 1000 objective evaluations</title></circle>
+<polyline points="1246.00,1175.00 1331.44,1175.00 1416.89,1175.00 1587.78,1140.50 1844.11,1140.50 2015.00,1140.50" fill="none" stroke="#CC79A7" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="1246.00" cy="1175.00" r="6" fill="white" stroke="#CC79A7" stroke-width="3"><title>Powell: 0/10 trials at 100 mHa or better by 100 objective evaluations</title></circle>
+<circle cx="1331.44" cy="1175.00" r="6" fill="white" stroke="#CC79A7" stroke-width="3"><title>Powell: 0/10 trials at 100 mHa or better by 200 objective evaluations</title></circle>
+<circle cx="1416.89" cy="1175.00" r="6" fill="white" stroke="#CC79A7" stroke-width="3"><title>Powell: 0/10 trials at 100 mHa or better by 300 objective evaluations</title></circle>
+<circle cx="1587.78" cy="1140.50" r="6" fill="white" stroke="#CC79A7" stroke-width="3"><title>Powell: 1/10 trials at 100 mHa or better by 500 objective evaluations</title></circle>
+<circle cx="1844.11" cy="1140.50" r="6" fill="white" stroke="#CC79A7" stroke-width="3"><title>Powell: 1/10 trials at 100 mHa or better by 800 objective evaluations</title></circle>
+<circle cx="2015.00" cy="1140.50" r="6" fill="white" stroke="#CC79A7" stroke-width="3"><title>Powell: 1/10 trials at 100 mHa or better by 1000 objective evaluations</title></circle>
+<polyline points="1246.00,1175.00 1331.44,1175.00 1416.89,1140.50 1587.78,1175.00 1844.11,1175.00 2015.00,1175.00" fill="none" stroke="#667085" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="1246.00" cy="1175.00" r="6" fill="white" stroke="#667085" stroke-width="3"><title>SPSA: 0/10 trials at 100 mHa or better by 100 objective evaluations</title></circle>
+<circle cx="1331.44" cy="1175.00" r="6" fill="white" stroke="#667085" stroke-width="3"><title>SPSA: 0/10 trials at 100 mHa or better by 200 objective evaluations</title></circle>
+<circle cx="1416.89" cy="1140.50" r="6" fill="white" stroke="#667085" stroke-width="3"><title>SPSA: 1/10 trials at 100 mHa or better by 300 objective evaluations</title></circle>
+<circle cx="1587.78" cy="1175.00" r="6" fill="white" stroke="#667085" stroke-width="3"><title>SPSA: 0/10 trials at 100 mHa or better by 500 objective evaluations</title></circle>
+<circle cx="1844.11" cy="1175.00" r="6" fill="white" stroke="#667085" stroke-width="3"><title>SPSA: 0/10 trials at 100 mHa or better by 800 objective evaluations</title></circle>
+<circle cx="2015.00" cy="1175.00" r="6" fill="white" stroke="#667085" stroke-width="3"><title>SPSA: 0/10 trials at 100 mHa or better by 1000 objective evaluations</title></circle>
+<line x1="1246" y1="1175" x2="2015" y2="1175" stroke="#34495e" stroke-width="2"/>
+<text x="1630.50" y="1228.00" font-size="15" fill="#182b3b" font-weight="500" text-anchor="middle" >Objective evaluations (checkpoint budget)</text>
+<line x1="160" y1="1320" x2="194" y2="1320" stroke="#0072B2" stroke-width="4"/>
+<text x="204.00" y="1326.00" font-size="16" fill="#182b3b" font-weight="600" text-anchor="start" >L-BFGS-B</text>
+<line x1="470" y1="1320" x2="504" y2="1320" stroke="#009E73" stroke-width="4"/>
+<text x="514.00" y="1326.00" font-size="16" fill="#182b3b" font-weight="600" text-anchor="start" >SLSQP</text>
+<line x1="780" y1="1320" x2="814" y2="1320" stroke="#D55E00" stroke-width="4"/>
+<text x="824.00" y="1326.00" font-size="16" fill="#182b3b" font-weight="600" text-anchor="start" >COBYLA</text>
+<line x1="1090" y1="1320" x2="1124" y2="1320" stroke="#CC79A7" stroke-width="4"/>
+<text x="1134.00" y="1326.00" font-size="16" fill="#182b3b" font-weight="600" text-anchor="start" >Powell</text>
+<line x1="1400" y1="1320" x2="1434" y2="1320" stroke="#667085" stroke-width="4"/>
+<text x="1444.00" y="1326.00" font-size="16" fill="#182b3b" font-weight="600" text-anchor="start" >SPSA</text>
+<text x="100.00" y="1380.00" font-size="15" fill="#586d7e" font-weight="400" text-anchor="start" >10 starts per optimizer. No start met 1.6 mHa at any checkpoint. Early-terminated trials carry their final result forward; fractions are descriptive.</text>
+<text x="2100.00" y="1380.00" font-size="14" fill="#586d7e" font-weight="500" text-anchor="end" >SOURCE: heldout_checkpoints.csv</text>
+</svg>

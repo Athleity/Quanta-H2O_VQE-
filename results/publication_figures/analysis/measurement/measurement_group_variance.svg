@@ -1,0 +1,637 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="1260" viewBox="0 0 1900 1260">
+<style>text{font-family:Inter,Segoe UI,Arial,sans-serif} .mono{font-family:Consolas,monospace}</style>
+<rect width="1900" height="1260" fill="#091522"/>
+<text x="82.00" y="75.00" font-size="42" fill="#f3f7fb" font-weight="700" text-anchor="start" >Where does the finite-shot uncertainty come from?</text>
+<text x="84.00" y="116.00" font-size="23" fill="#9fb0c2" font-weight="400" text-anchor="start" >Variance attribution across the 276 qubit-wise-commuting measurement groups</text>
+<text x="84.00" y="160.00" font-size="18" fill="#9fb0c2" font-weight="400" text-anchor="start" >Fixed PUCCSD(1) parameters · synthetic noisy Aer · 16 shots per group · one seed</text>
+<rect x="84" y="190" width="330" height="116" rx="14" fill="#122235" stroke="#2b4057"/>
+<text x="104.00" y="222.00" font-size="14" fill="#9fb0c2" font-weight="700" text-anchor="start" >MEASUREMENT GROUPS</text>
+<text x="104.00" y="267.00" font-size="29" fill="#f3f7fb" font-weight="700" text-anchor="start" >276</text>
+<text x="104.00" y="290.00" font-size="14" fill="#9fb0c2" font-weight="400" text-anchor="start" >all groups retained</text>
+<rect x="450" y="190" width="330" height="116" rx="14" fill="#122235" stroke="#2b4057"/>
+<text x="470.00" y="222.00" font-size="14" fill="#9fb0c2" font-weight="700" text-anchor="start" >TOP 10 VARIANCE SHARE</text>
+<text x="470.00" y="267.00" font-size="29" fill="#f3f7fb" font-weight="700" text-anchor="start" >76.3%</text>
+<text x="470.00" y="290.00" font-size="14" fill="#9fb0c2" font-weight="400" text-anchor="start" >of propagated sampling variance</text>
+<rect x="816" y="190" width="330" height="116" rx="14" fill="#122235" stroke="#2b4057"/>
+<text x="836.00" y="222.00" font-size="14" fill="#9fb0c2" font-weight="700" text-anchor="start" >EFFECTIVE GROUP COUNT</text>
+<text x="836.00" y="267.00" font-size="29" fill="#f3f7fb" font-weight="700" text-anchor="start" >12.2</text>
+<text x="836.00" y="290.00" font-size="14" fill="#9fb0c2" font-weight="400" text-anchor="start" >inverse-Simpson concentration</text>
+<rect x="1182" y="190" width="330" height="116" rx="14" fill="#122235" stroke="#2b4057"/>
+<text x="1202.00" y="222.00" font-size="14" fill="#9fb0c2" font-weight="700" text-anchor="start" >RECONSTRUCTED TOTAL SE</text>
+<text x="1202.00" y="267.00" font-size="29" fill="#f3f7fb" font-weight="700" text-anchor="start" >570.4 mHa</text>
+<text x="1202.00" y="290.00" font-size="14" fill="#9fb0c2" font-weight="400" text-anchor="start" >reported 570.4 mHa</text>
+<rect x="70" y="342" width="1020" height="790" rx="18" fill="#0e1d2e" stroke="#293d52"/>
+<text x="105.00" y="393.00" font-size="15" fill="#58d6bd" font-weight="700" text-anchor="start" >GROUP-LEVEL MAP</text>
+<text x="105.00" y="433.00" font-size="23" fill="#f3f7fb" font-weight="650" text-anchor="start" >Groups are ordered by variance contribution, largest first</text>
+<text x="360.00" y="556.00" font-size="16" fill="#9fb0c2" font-weight="600" text-anchor="end" >Group SE (mHa)</text>
+<text x="360.00" y="674.00" font-size="16" fill="#9fb0c2" font-weight="600" text-anchor="end" >Share of total variance</text>
+<rect x="390.00" y="530" width="1.86" height="42" rx="1" fill="#dceb50"><title>Rank 1; group 8; group SE 255.673 mHa; variance share 20.090%</title></rect>
+<rect x="390.00" y="648" width="1.86" height="42" rx="1" fill="#dceb50"><title>Rank 1; group 8; group SE 255.673 mHa; variance share 20.090%</title></rect>
+<rect x="392.36" y="530" width="1.86" height="42" rx="1" fill="#bfe058"><title>Rank 2; group 11; group SE 190.798 mHa; variance share 11.188%</title></rect>
+<rect x="392.36" y="648" width="1.86" height="42" rx="1" fill="#9fd561"><title>Rank 2; group 11; group SE 190.798 mHa; variance share 11.188%</title></rect>
+<rect x="394.71" y="530" width="1.86" height="42" rx="1" fill="#abd95e"><title>Rank 3; group 14; group SE 155.524 mHa; variance share 7.434%</title></rect>
+<rect x="394.71" y="648" width="1.86" height="42" rx="1" fill="#75c56e"><title>Rank 3; group 14; group SE 155.524 mHa; variance share 7.434%</title></rect>
+<rect x="397.07" y="530" width="1.86" height="42" rx="1" fill="#aad95e"><title>Rank 4; group 15; group SE 154.842 mHa; variance share 7.369%</title></rect>
+<rect x="397.07" y="648" width="1.86" height="42" rx="1" fill="#74c56e"><title>Rank 4; group 15; group SE 154.842 mHa; variance share 7.369%</title></rect>
+<rect x="399.42" y="530" width="1.86" height="42" rx="1" fill="#a9d85f"><title>Rank 5; group 97; group SE 152.507 mHa; variance share 7.148%</title></rect>
+<rect x="399.42" y="648" width="1.86" height="42" rx="1" fill="#71c46f"><title>Rank 5; group 97; group SE 152.507 mHa; variance share 7.148%</title></rect>
+<rect x="401.78" y="530" width="1.86" height="42" rx="1" fill="#9cd362"><title>Rank 6; group 96; group SE 133.712 mHa; variance share 5.495%</title></rect>
+<rect x="401.78" y="648" width="1.86" height="42" rx="1" fill="#5dba75"><title>Rank 6; group 96; group SE 133.712 mHa; variance share 5.495%</title></rect>
+<rect x="404.13" y="530" width="1.86" height="42" rx="1" fill="#96d164"><title>Rank 7; group 85; group SE 126.522 mHa; variance share 4.920%</title></rect>
+<rect x="404.13" y="648" width="1.86" height="42" rx="1" fill="#58b677"><title>Rank 7; group 85; group SE 126.522 mHa; variance share 4.920%</title></rect>
+<rect x="406.49" y="530" width="1.86" height="42" rx="1" fill="#94d065"><title>Rank 8; group 125; group SE 123.882 mHa; variance share 4.717%</title></rect>
+<rect x="406.49" y="648" width="1.86" height="42" rx="1" fill="#56b577"><title>Rank 8; group 125; group SE 123.882 mHa; variance share 4.717%</title></rect>
+<rect x="408.84" y="530" width="1.86" height="42" rx="1" fill="#91cf66"><title>Rank 9; group 124; group SE 119.881 mHa; variance share 4.417%</title></rect>
+<rect x="408.84" y="648" width="1.86" height="42" rx="1" fill="#53b378"><title>Rank 9; group 124; group SE 119.881 mHa; variance share 4.417%</title></rect>
+<rect x="411.20" y="530" width="1.86" height="42" rx="1" fill="#85cb69"><title>Rank 10; group 119; group SE 106.744 mHa; variance share 3.502%</title></rect>
+<rect x="411.20" y="648" width="1.86" height="42" rx="1" fill="#49ab7c"><title>Rank 10; group 119; group SE 106.744 mHa; variance share 3.502%</title></rect>
+<rect x="413.55" y="530" width="1.86" height="42" rx="1" fill="#7fc96b"><title>Rank 11; group 86; group SE 100.059 mHa; variance share 3.077%</title></rect>
+<rect x="413.55" y="648" width="1.86" height="42" rx="1" fill="#43a77e"><title>Rank 11; group 86; group SE 100.059 mHa; variance share 3.077%</title></rect>
+<rect x="415.91" y="530" width="1.86" height="42" rx="1" fill="#62be73"><title>Rank 12; group 1; group SE 74.678 mHa; variance share 1.714%</title></rect>
+<rect x="415.91" y="648" width="1.86" height="42" rx="1" fill="#299487"><title>Rank 12; group 1; group SE 74.678 mHa; variance share 1.714%</title></rect>
+<rect x="418.26" y="530" width="1.86" height="42" rx="1" fill="#5ebb74"><title>Rank 13; group 252; group SE 68.871 mHa; variance share 1.458%</title></rect>
+<rect x="418.26" y="648" width="1.86" height="42" rx="1" fill="#238e89"><title>Rank 13; group 252; group SE 68.871 mHa; variance share 1.458%</title></rect>
+<rect x="420.62" y="530" width="1.86" height="42" rx="1" fill="#58b776"><title>Rank 14; group 174; group SE 59.727 mHa; variance share 1.096%</title></rect>
+<rect x="420.62" y="648" width="1.86" height="42" rx="1" fill="#238584"><title>Rank 14; group 174; group SE 59.727 mHa; variance share 1.096%</title></rect>
+<rect x="422.97" y="530" width="1.86" height="42" rx="1" fill="#57b677"><title>Rank 15; group 4; group SE 57.369 mHa; variance share 1.012%</title></rect>
+<rect x="422.97" y="648" width="1.86" height="42" rx="1" fill="#238283"><title>Rank 15; group 4; group SE 57.369 mHa; variance share 1.012%</title></rect>
+<rect x="425.33" y="530" width="1.86" height="42" rx="1" fill="#55b478"><title>Rank 16; group 142; group SE 54.915 mHa; variance share 0.927%</title></rect>
+<rect x="425.33" y="648" width="1.86" height="42" rx="1" fill="#247f81"><title>Rank 16; group 142; group SE 54.915 mHa; variance share 0.927%</title></rect>
+<rect x="427.68" y="530" width="1.86" height="42" rx="1" fill="#54b478"><title>Rank 17; group 195; group SE 54.416 mHa; variance share 0.910%</title></rect>
+<rect x="427.68" y="648" width="1.86" height="42" rx="1" fill="#247f81"><title>Rank 17; group 195; group SE 54.416 mHa; variance share 0.910%</title></rect>
+<rect x="430.04" y="530" width="1.86" height="42" rx="1" fill="#54b378"><title>Rank 18; group 253; group SE 53.391 mHa; variance share 0.876%</title></rect>
+<rect x="430.04" y="648" width="1.86" height="42" rx="1" fill="#247e81"><title>Rank 18; group 253; group SE 53.391 mHa; variance share 0.876%</title></rect>
+<rect x="432.39" y="530" width="1.86" height="42" rx="1" fill="#4dae7a"><title>Rank 19; group 2; group SE 45.565 mHa; variance share 0.638%</title></rect>
+<rect x="432.39" y="648" width="1.86" height="42" rx="1" fill="#24737c"><title>Rank 19; group 2; group SE 45.565 mHa; variance share 0.638%</title></rect>
+<rect x="434.75" y="530" width="1.86" height="42" rx="1" fill="#4aac7b"><title>Rank 20; group 254; group SE 42.788 mHa; variance share 0.563%</title></rect>
+<rect x="434.75" y="648" width="1.86" height="42" rx="1" fill="#246f7a"><title>Rank 20; group 254; group SE 42.788 mHa; variance share 0.563%</title></rect>
+<rect x="437.10" y="530" width="1.86" height="42" rx="1" fill="#49ab7c"><title>Rank 21; group 133; group SE 41.658 mHa; variance share 0.533%</title></rect>
+<rect x="437.10" y="648" width="1.86" height="42" rx="1" fill="#246e79"><title>Rank 21; group 133; group SE 41.658 mHa; variance share 0.533%</title></rect>
+<rect x="439.46" y="530" width="1.86" height="42" rx="1" fill="#46a97d"><title>Rank 22; group 12; group SE 39.034 mHa; variance share 0.468%</title></rect>
+<rect x="439.46" y="648" width="1.86" height="42" rx="1" fill="#246a77"><title>Rank 22; group 12; group SE 39.034 mHa; variance share 0.468%</title></rect>
+<rect x="441.81" y="530" width="1.86" height="42" rx="1" fill="#46a97d"><title>Rank 23; group 9; group SE 38.841 mHa; variance share 0.464%</title></rect>
+<rect x="441.81" y="648" width="1.86" height="42" rx="1" fill="#246a77"><title>Rank 23; group 9; group SE 38.841 mHa; variance share 0.464%</title></rect>
+<rect x="444.17" y="530" width="1.86" height="42" rx="1" fill="#46a97d"><title>Rank 24; group 41; group SE 38.822 mHa; variance share 0.463%</title></rect>
+<rect x="444.17" y="648" width="1.86" height="42" rx="1" fill="#246a77"><title>Rank 24; group 41; group SE 38.822 mHa; variance share 0.463%</title></rect>
+<rect x="446.52" y="530" width="1.86" height="42" rx="1" fill="#45a87d"><title>Rank 25; group 126; group SE 37.966 mHa; variance share 0.443%</title></rect>
+<rect x="446.52" y="648" width="1.86" height="42" rx="1" fill="#246876"><title>Rank 25; group 126; group SE 37.966 mHa; variance share 0.443%</title></rect>
+<rect x="448.88" y="530" width="1.86" height="42" rx="1" fill="#43a77e"><title>Rank 26; group 188; group SE 36.017 mHa; variance share 0.399%</title></rect>
+<rect x="448.88" y="648" width="1.86" height="42" rx="1" fill="#256575"><title>Rank 26; group 188; group SE 36.017 mHa; variance share 0.399%</title></rect>
+<rect x="451.23" y="530" width="1.86" height="42" rx="1" fill="#42a67e"><title>Rank 27; group 118; group SE 35.731 mHa; variance share 0.392%</title></rect>
+<rect x="451.23" y="648" width="1.86" height="42" rx="1" fill="#256575"><title>Rank 27; group 118; group SE 35.731 mHa; variance share 0.392%</title></rect>
+<rect x="453.59" y="530" width="1.86" height="42" rx="1" fill="#40a57f"><title>Rank 28; group 178; group SE 33.933 mHa; variance share 0.354%</title></rect>
+<rect x="453.59" y="648" width="1.86" height="42" rx="1" fill="#256273"><title>Rank 28; group 178; group SE 33.933 mHa; variance share 0.354%</title></rect>
+<rect x="455.94" y="530" width="1.86" height="42" rx="1" fill="#3fa47f"><title>Rank 29; group 13; group SE 32.888 mHa; variance share 0.332%</title></rect>
+<rect x="455.94" y="648" width="1.86" height="42" rx="1" fill="#256072"><title>Rank 29; group 13; group SE 32.888 mHa; variance share 0.332%</title></rect>
+<rect x="458.30" y="530" width="1.86" height="42" rx="1" fill="#3ea37f"><title>Rank 30; group 7; group SE 32.413 mHa; variance share 0.323%</title></rect>
+<rect x="458.30" y="648" width="1.86" height="42" rx="1" fill="#255f72"><title>Rank 30; group 7; group SE 32.413 mHa; variance share 0.323%</title></rect>
+<rect x="460.65" y="530" width="1.86" height="42" rx="1" fill="#3ea380"><title>Rank 31; group 189; group SE 32.112 mHa; variance share 0.317%</title></rect>
+<rect x="460.65" y="648" width="1.86" height="42" rx="1" fill="#255f72"><title>Rank 31; group 189; group SE 32.112 mHa; variance share 0.317%</title></rect>
+<rect x="463.01" y="530" width="1.86" height="42" rx="1" fill="#3ea380"><title>Rank 32; group 10; group SE 32.083 mHa; variance share 0.316%</title></rect>
+<rect x="463.01" y="648" width="1.86" height="42" rx="1" fill="#255f72"><title>Rank 32; group 10; group SE 32.083 mHa; variance share 0.316%</title></rect>
+<rect x="465.36" y="530" width="1.86" height="42" rx="1" fill="#3ea380"><title>Rank 33; group 61; group SE 31.997 mHa; variance share 0.315%</title></rect>
+<rect x="465.36" y="648" width="1.86" height="42" rx="1" fill="#255e72"><title>Rank 33; group 61; group SE 31.997 mHa; variance share 0.315%</title></rect>
+<rect x="467.72" y="530" width="1.86" height="42" rx="1" fill="#3da280"><title>Rank 34; group 117; group SE 31.106 mHa; variance share 0.297%</title></rect>
+<rect x="467.72" y="648" width="1.86" height="42" rx="1" fill="#255d71"><title>Rank 34; group 117; group SE 31.106 mHa; variance share 0.297%</title></rect>
+<rect x="470.07" y="530" width="1.86" height="42" rx="1" fill="#3ca280"><title>Rank 35; group 187; group SE 31.002 mHa; variance share 0.295%</title></rect>
+<rect x="470.07" y="648" width="1.86" height="42" rx="1" fill="#255d71"><title>Rank 35; group 187; group SE 31.002 mHa; variance share 0.295%</title></rect>
+<rect x="472.43" y="530" width="1.86" height="42" rx="1" fill="#3ba181"><title>Rank 36; group 227; group SE 29.984 mHa; variance share 0.276%</title></rect>
+<rect x="472.43" y="648" width="1.86" height="42" rx="1" fill="#255b70"><title>Rank 36; group 227; group SE 29.984 mHa; variance share 0.276%</title></rect>
+<rect x="474.78" y="530" width="1.86" height="42" rx="1" fill="#3ba181"><title>Rank 37; group 184; group SE 29.835 mHa; variance share 0.274%</title></rect>
+<rect x="474.78" y="648" width="1.86" height="42" rx="1" fill="#255b70"><title>Rank 37; group 184; group SE 29.835 mHa; variance share 0.274%</title></rect>
+<rect x="477.14" y="530" width="1.86" height="42" rx="1" fill="#3ba181"><title>Rank 38; group 236; group SE 29.729 mHa; variance share 0.272%</title></rect>
+<rect x="477.14" y="648" width="1.86" height="42" rx="1" fill="#255b70"><title>Rank 38; group 236; group SE 29.729 mHa; variance share 0.272%</title></rect>
+<rect x="479.49" y="530" width="1.86" height="42" rx="1" fill="#3ba181"><title>Rank 39; group 6; group SE 29.705 mHa; variance share 0.271%</title></rect>
+<rect x="479.49" y="648" width="1.86" height="42" rx="1" fill="#255a6f"><title>Rank 39; group 6; group SE 29.705 mHa; variance share 0.271%</title></rect>
+<rect x="481.85" y="530" width="1.86" height="42" rx="1" fill="#399f81"><title>Rank 40; group 37; group SE 28.490 mHa; variance share 0.249%</title></rect>
+<rect x="481.85" y="648" width="1.86" height="42" rx="1" fill="#24586d"><title>Rank 40; group 37; group SE 28.490 mHa; variance share 0.249%</title></rect>
+<rect x="484.20" y="530" width="1.86" height="42" rx="1" fill="#399f81"><title>Rank 41; group 196; group SE 28.451 mHa; variance share 0.249%</title></rect>
+<rect x="484.20" y="648" width="1.86" height="42" rx="1" fill="#24586d"><title>Rank 41; group 196; group SE 28.451 mHa; variance share 0.249%</title></rect>
+<rect x="486.56" y="530" width="1.86" height="42" rx="1" fill="#389f82"><title>Rank 42; group 182; group SE 28.223 mHa; variance share 0.245%</title></rect>
+<rect x="486.56" y="648" width="1.86" height="42" rx="1" fill="#24586d"><title>Rank 42; group 182; group SE 28.223 mHa; variance share 0.245%</title></rect>
+<rect x="488.91" y="530" width="1.86" height="42" rx="1" fill="#389f82"><title>Rank 43; group 76; group SE 28.032 mHa; variance share 0.242%</title></rect>
+<rect x="488.91" y="648" width="1.86" height="42" rx="1" fill="#24586d"><title>Rank 43; group 76; group SE 28.032 mHa; variance share 0.242%</title></rect>
+<rect x="491.27" y="530" width="1.86" height="42" rx="1" fill="#369d82"><title>Rank 44; group 186; group SE 26.740 mHa; variance share 0.220%</title></rect>
+<rect x="491.27" y="648" width="1.86" height="42" rx="1" fill="#24556b"><title>Rank 44; group 186; group SE 26.740 mHa; variance share 0.220%</title></rect>
+<rect x="493.62" y="530" width="1.86" height="42" rx="1" fill="#369d82"><title>Rank 45; group 192; group SE 26.446 mHa; variance share 0.215%</title></rect>
+<rect x="493.62" y="648" width="1.86" height="42" rx="1" fill="#24556a"><title>Rank 45; group 192; group SE 26.446 mHa; variance share 0.215%</title></rect>
+<rect x="495.98" y="530" width="1.86" height="42" rx="1" fill="#349c83"><title>Rank 46; group 64; group SE 25.625 mHa; variance share 0.202%</title></rect>
+<rect x="495.98" y="648" width="1.86" height="42" rx="1" fill="#235369"><title>Rank 46; group 64; group SE 25.625 mHa; variance share 0.202%</title></rect>
+<rect x="498.33" y="530" width="1.86" height="42" rx="1" fill="#329a84"><title>Rank 47; group 139; group SE 24.089 mHa; variance share 0.178%</title></rect>
+<rect x="498.33" y="648" width="1.86" height="42" rx="1" fill="#235066"><title>Rank 47; group 139; group SE 24.089 mHa; variance share 0.178%</title></rect>
+<rect x="500.69" y="530" width="1.86" height="42" rx="1" fill="#309984"><title>Rank 48; group 238; group SE 23.342 mHa; variance share 0.167%</title></rect>
+<rect x="500.69" y="648" width="1.86" height="42" rx="1" fill="#234f65"><title>Rank 48; group 238; group SE 23.342 mHa; variance share 0.167%</title></rect>
+<rect x="503.04" y="530" width="1.86" height="42" rx="1" fill="#309885"><title>Rank 49; group 229; group SE 22.852 mHa; variance share 0.161%</title></rect>
+<rect x="503.04" y="648" width="1.86" height="42" rx="1" fill="#224e64"><title>Rank 49; group 229; group SE 22.852 mHa; variance share 0.161%</title></rect>
+<rect x="505.40" y="530" width="1.86" height="42" rx="1" fill="#2f9885"><title>Rank 50; group 260; group SE 22.654 mHa; variance share 0.158%</title></rect>
+<rect x="505.40" y="648" width="1.86" height="42" rx="1" fill="#224e63"><title>Rank 50; group 260; group SE 22.654 mHa; variance share 0.158%</title></rect>
+<rect x="507.75" y="530" width="1.86" height="42" rx="1" fill="#2f9885"><title>Rank 51; group 112; group SE 22.391 mHa; variance share 0.154%</title></rect>
+<rect x="507.75" y="648" width="1.86" height="42" rx="1" fill="#224d63"><title>Rank 51; group 112; group SE 22.391 mHa; variance share 0.154%</title></rect>
+<rect x="510.11" y="530" width="1.86" height="42" rx="1" fill="#2f9885"><title>Rank 52; group 239; group SE 22.328 mHa; variance share 0.153%</title></rect>
+<rect x="510.11" y="648" width="1.86" height="42" rx="1" fill="#224d63"><title>Rank 52; group 239; group SE 22.328 mHa; variance share 0.153%</title></rect>
+<rect x="512.46" y="530" width="1.86" height="42" rx="1" fill="#2d9785"><title>Rank 53; group 18; group SE 21.677 mHa; variance share 0.144%</title></rect>
+<rect x="512.46" y="648" width="1.86" height="42" rx="1" fill="#224c62"><title>Rank 53; group 18; group SE 21.677 mHa; variance share 0.144%</title></rect>
+<rect x="514.82" y="530" width="1.86" height="42" rx="1" fill="#2a9487"><title>Rank 54; group 24; group SE 19.868 mHa; variance share 0.121%</title></rect>
+<rect x="514.82" y="648" width="1.86" height="42" rx="1" fill="#21495e"><title>Rank 54; group 24; group SE 19.868 mHa; variance share 0.121%</title></rect>
+<rect x="517.17" y="530" width="1.86" height="42" rx="1" fill="#299487"><title>Rank 55; group 58; group SE 19.773 mHa; variance share 0.120%</title></rect>
+<rect x="517.17" y="648" width="1.86" height="42" rx="1" fill="#21485e"><title>Rank 55; group 58; group SE 19.773 mHa; variance share 0.120%</title></rect>
+<rect x="519.53" y="530" width="1.86" height="42" rx="1" fill="#238f89"><title>Rank 56; group 55; group SE 16.663 mHa; variance share 0.085%</title></rect>
+<rect x="519.53" y="648" width="1.86" height="42" rx="1" fill="#204258"><title>Rank 56; group 55; group SE 16.663 mHa; variance share 0.085%</title></rect>
+<rect x="521.88" y="530" width="1.86" height="42" rx="1" fill="#238a87"><title>Rank 57; group 203; group SE 14.583 mHa; variance share 0.065%</title></rect>
+<rect x="521.88" y="648" width="1.86" height="42" rx="1" fill="#1f3e55"><title>Rank 57; group 203; group SE 14.583 mHa; variance share 0.065%</title></rect>
+<rect x="524.24" y="530" width="1.86" height="42" rx="1" fill="#238a86"><title>Rank 58; group 143; group SE 14.314 mHa; variance share 0.063%</title></rect>
+<rect x="524.24" y="648" width="1.86" height="42" rx="1" fill="#1f3e54"><title>Rank 58; group 143; group SE 14.314 mHa; variance share 0.063%</title></rect>
+<rect x="526.59" y="530" width="1.86" height="42" rx="1" fill="#238785"><title>Rank 59; group 208; group SE 13.353 mHa; variance share 0.055%</title></rect>
+<rect x="526.59" y="648" width="1.86" height="42" rx="1" fill="#1f3c52"><title>Rank 59; group 208; group SE 13.353 mHa; variance share 0.055%</title></rect>
+<rect x="528.95" y="530" width="1.86" height="42" rx="1" fill="#238785"><title>Rank 60; group 276; group SE 13.073 mHa; variance share 0.053%</title></rect>
+<rect x="528.95" y="648" width="1.86" height="42" rx="1" fill="#1f3c52"><title>Rank 60; group 276; group SE 13.073 mHa; variance share 0.053%</title></rect>
+<rect x="531.30" y="530" width="1.86" height="42" rx="1" fill="#238685"><title>Rank 61; group 116; group SE 12.902 mHa; variance share 0.051%</title></rect>
+<rect x="531.30" y="648" width="1.86" height="42" rx="1" fill="#1f3b52"><title>Rank 61; group 116; group SE 12.902 mHa; variance share 0.051%</title></rect>
+<rect x="533.66" y="530" width="1.86" height="42" rx="1" fill="#238685"><title>Rank 62; group 249; group SE 12.859 mHa; variance share 0.051%</title></rect>
+<rect x="533.66" y="648" width="1.86" height="42" rx="1" fill="#1f3b52"><title>Rank 62; group 249; group SE 12.859 mHa; variance share 0.051%</title></rect>
+<rect x="536.01" y="530" width="1.86" height="42" rx="1" fill="#238684"><title>Rank 63; group 135; group SE 12.641 mHa; variance share 0.049%</title></rect>
+<rect x="536.01" y="648" width="1.86" height="42" rx="1" fill="#1f3b51"><title>Rank 63; group 135; group SE 12.641 mHa; variance share 0.049%</title></rect>
+<rect x="538.37" y="530" width="1.86" height="42" rx="1" fill="#238484"><title>Rank 64; group 191; group SE 12.201 mHa; variance share 0.046%</title></rect>
+<rect x="538.37" y="648" width="1.86" height="42" rx="1" fill="#1f3a50"><title>Rank 64; group 191; group SE 12.201 mHa; variance share 0.046%</title></rect>
+<rect x="540.72" y="530" width="1.86" height="42" rx="1" fill="#238383"><title>Rank 65; group 27; group SE 11.532 mHa; variance share 0.041%</title></rect>
+<rect x="540.72" y="648" width="1.86" height="42" rx="1" fill="#1e394f"><title>Rank 65; group 27; group SE 11.532 mHa; variance share 0.041%</title></rect>
+<rect x="543.08" y="530" width="1.86" height="42" rx="1" fill="#248182"><title>Rank 66; group 247; group SE 10.977 mHa; variance share 0.037%</title></rect>
+<rect x="543.08" y="648" width="1.86" height="42" rx="1" fill="#1e384e"><title>Rank 66; group 247; group SE 10.977 mHa; variance share 0.037%</title></rect>
+<rect x="545.43" y="530" width="1.86" height="42" rx="1" fill="#248182"><title>Rank 67; group 136; group SE 10.807 mHa; variance share 0.036%</title></rect>
+<rect x="545.43" y="648" width="1.86" height="42" rx="1" fill="#1e384e"><title>Rank 67; group 136; group SE 10.807 mHa; variance share 0.036%</title></rect>
+<rect x="547.79" y="530" width="1.86" height="42" rx="1" fill="#247e81"><title>Rank 68; group 106; group SE 10.018 mHa; variance share 0.031%</title></rect>
+<rect x="547.79" y="648" width="1.86" height="42" rx="1" fill="#1e364d"><title>Rank 68; group 106; group SE 10.018 mHa; variance share 0.031%</title></rect>
+<rect x="550.14" y="530" width="1.86" height="42" rx="1" fill="#247d80"><title>Rank 69; group 52; group SE 9.593 mHa; variance share 0.028%</title></rect>
+<rect x="550.14" y="648" width="1.86" height="42" rx="1" fill="#1e364c"><title>Rank 69; group 52; group SE 9.593 mHa; variance share 0.028%</title></rect>
+<rect x="552.50" y="530" width="1.86" height="42" rx="1" fill="#247d80"><title>Rank 70; group 53; group SE 9.593 mHa; variance share 0.028%</title></rect>
+<rect x="552.50" y="648" width="1.86" height="42" rx="1" fill="#1e364c"><title>Rank 70; group 53; group SE 9.593 mHa; variance share 0.028%</title></rect>
+<rect x="554.86" y="530" width="1.86" height="42" rx="1" fill="#247d80"><title>Rank 71; group 54; group SE 9.593 mHa; variance share 0.028%</title></rect>
+<rect x="554.86" y="648" width="1.86" height="42" rx="1" fill="#1e364c"><title>Rank 71; group 54; group SE 9.593 mHa; variance share 0.028%</title></rect>
+<rect x="557.21" y="530" width="1.86" height="42" rx="1" fill="#247c80"><title>Rank 72; group 130; group SE 9.386 mHa; variance share 0.027%</title></rect>
+<rect x="557.21" y="648" width="1.86" height="42" rx="1" fill="#1e354c"><title>Rank 72; group 130; group SE 9.386 mHa; variance share 0.027%</title></rect>
+<rect x="559.57" y="530" width="1.86" height="42" rx="1" fill="#247c80"><title>Rank 73; group 170; group SE 9.372 mHa; variance share 0.027%</title></rect>
+<rect x="559.57" y="648" width="1.86" height="42" rx="1" fill="#1e354c"><title>Rank 73; group 170; group SE 9.372 mHa; variance share 0.027%</title></rect>
+<rect x="561.92" y="530" width="1.86" height="42" rx="1" fill="#247c80"><title>Rank 74; group 144; group SE 9.277 mHa; variance share 0.026%</title></rect>
+<rect x="561.92" y="648" width="1.86" height="42" rx="1" fill="#1e354c"><title>Rank 74; group 144; group SE 9.277 mHa; variance share 0.026%</title></rect>
+<rect x="564.28" y="530" width="1.86" height="42" rx="1" fill="#247c80"><title>Rank 75; group 197; group SE 9.212 mHa; variance share 0.026%</title></rect>
+<rect x="564.28" y="648" width="1.86" height="42" rx="1" fill="#1e354c"><title>Rank 75; group 197; group SE 9.212 mHa; variance share 0.026%</title></rect>
+<rect x="566.63" y="530" width="1.86" height="42" rx="1" fill="#247a7f"><title>Rank 76; group 167; group SE 8.785 mHa; variance share 0.024%</title></rect>
+<rect x="566.63" y="648" width="1.86" height="42" rx="1" fill="#1d344b"><title>Rank 76; group 167; group SE 8.785 mHa; variance share 0.024%</title></rect>
+<rect x="568.99" y="530" width="1.86" height="42" rx="1" fill="#24787e"><title>Rank 77; group 141; group SE 8.302 mHa; variance share 0.021%</title></rect>
+<rect x="568.99" y="648" width="1.86" height="42" rx="1" fill="#1d344a"><title>Rank 77; group 141; group SE 8.302 mHa; variance share 0.021%</title></rect>
+<rect x="571.34" y="530" width="1.86" height="42" rx="1" fill="#24787e"><title>Rank 78; group 46; group SE 8.227 mHa; variance share 0.021%</title></rect>
+<rect x="571.34" y="648" width="1.86" height="42" rx="1" fill="#1d344a"><title>Rank 78; group 46; group SE 8.227 mHa; variance share 0.021%</title></rect>
+<rect x="573.70" y="530" width="1.86" height="42" rx="1" fill="#24777e"><title>Rank 79; group 40; group SE 8.064 mHa; variance share 0.020%</title></rect>
+<rect x="573.70" y="648" width="1.86" height="42" rx="1" fill="#1d334a"><title>Rank 79; group 40; group SE 8.064 mHa; variance share 0.020%</title></rect>
+<rect x="576.05" y="530" width="1.86" height="42" rx="1" fill="#24777d"><title>Rank 80; group 262; group SE 7.964 mHa; variance share 0.019%</title></rect>
+<rect x="576.05" y="648" width="1.86" height="42" rx="1" fill="#1d334a"><title>Rank 80; group 262; group SE 7.964 mHa; variance share 0.019%</title></rect>
+<rect x="578.41" y="530" width="1.86" height="42" rx="1" fill="#24767d"><title>Rank 81; group 34; group SE 7.815 mHa; variance share 0.019%</title></rect>
+<rect x="578.41" y="648" width="1.86" height="42" rx="1" fill="#1d334a"><title>Rank 81; group 34; group SE 7.815 mHa; variance share 0.019%</title></rect>
+<rect x="580.76" y="530" width="1.86" height="42" rx="1" fill="#24767d"><title>Rank 82; group 39; group SE 7.771 mHa; variance share 0.019%</title></rect>
+<rect x="580.76" y="648" width="1.86" height="42" rx="1" fill="#1d334a"><title>Rank 82; group 39; group SE 7.771 mHa; variance share 0.019%</title></rect>
+<rect x="583.12" y="530" width="1.86" height="42" rx="1" fill="#24767d"><title>Rank 83; group 111; group SE 7.734 mHa; variance share 0.018%</title></rect>
+<rect x="583.12" y="648" width="1.86" height="42" rx="1" fill="#1d334a"><title>Rank 83; group 111; group SE 7.734 mHa; variance share 0.018%</title></rect>
+<rect x="585.47" y="530" width="1.86" height="42" rx="1" fill="#24757c"><title>Rank 84; group 5; group SE 7.359 mHa; variance share 0.017%</title></rect>
+<rect x="585.47" y="648" width="1.86" height="42" rx="1" fill="#1d3249"><title>Rank 84; group 5; group SE 7.359 mHa; variance share 0.017%</title></rect>
+<rect x="587.83" y="530" width="1.86" height="42" rx="1" fill="#24747c"><title>Rank 85; group 33; group SE 7.226 mHa; variance share 0.016%</title></rect>
+<rect x="587.83" y="648" width="1.86" height="42" rx="1" fill="#1d3249"><title>Rank 85; group 33; group SE 7.226 mHa; variance share 0.016%</title></rect>
+<rect x="590.18" y="530" width="1.86" height="42" rx="1" fill="#24747c"><title>Rank 86; group 162; group SE 7.194 mHa; variance share 0.016%</title></rect>
+<rect x="590.18" y="648" width="1.86" height="42" rx="1" fill="#1d3249"><title>Rank 86; group 162; group SE 7.194 mHa; variance share 0.016%</title></rect>
+<rect x="592.54" y="530" width="1.86" height="42" rx="1" fill="#24737b"><title>Rank 87; group 100; group SE 6.931 mHa; variance share 0.015%</title></rect>
+<rect x="592.54" y="648" width="1.86" height="42" rx="1" fill="#1d3249"><title>Rank 87; group 100; group SE 6.931 mHa; variance share 0.015%</title></rect>
+<rect x="594.89" y="530" width="1.86" height="42" rx="1" fill="#24727b"><title>Rank 88; group 269; group SE 6.804 mHa; variance share 0.014%</title></rect>
+<rect x="594.89" y="648" width="1.86" height="42" rx="1" fill="#1d3248"><title>Rank 88; group 269; group SE 6.804 mHa; variance share 0.014%</title></rect>
+<rect x="597.25" y="530" width="1.86" height="42" rx="1" fill="#24727b"><title>Rank 89; group 57; group SE 6.749 mHa; variance share 0.014%</title></rect>
+<rect x="597.25" y="648" width="1.86" height="42" rx="1" fill="#1d3248"><title>Rank 89; group 57; group SE 6.749 mHa; variance share 0.014%</title></rect>
+<rect x="599.60" y="530" width="1.86" height="42" rx="1" fill="#24727b"><title>Rank 90; group 138; group SE 6.680 mHa; variance share 0.014%</title></rect>
+<rect x="599.60" y="648" width="1.86" height="42" rx="1" fill="#1d3148"><title>Rank 90; group 138; group SE 6.680 mHa; variance share 0.014%</title></rect>
+<rect x="601.96" y="530" width="1.86" height="42" rx="1" fill="#24717b"><title>Rank 91; group 137; group SE 6.632 mHa; variance share 0.014%</title></rect>
+<rect x="601.96" y="648" width="1.86" height="42" rx="1" fill="#1d3148"><title>Rank 91; group 137; group SE 6.632 mHa; variance share 0.014%</title></rect>
+<rect x="604.31" y="530" width="1.86" height="42" rx="1" fill="#24717b"><title>Rank 92; group 149; group SE 6.620 mHa; variance share 0.013%</title></rect>
+<rect x="604.31" y="648" width="1.86" height="42" rx="1" fill="#1d3148"><title>Rank 92; group 149; group SE 6.620 mHa; variance share 0.013%</title></rect>
+<rect x="606.67" y="530" width="1.86" height="42" rx="1" fill="#24717b"><title>Rank 93; group 51; group SE 6.606 mHa; variance share 0.013%</title></rect>
+<rect x="606.67" y="648" width="1.86" height="42" rx="1" fill="#1d3148"><title>Rank 93; group 51; group SE 6.606 mHa; variance share 0.013%</title></rect>
+<rect x="609.02" y="530" width="1.86" height="42" rx="1" fill="#24707a"><title>Rank 94; group 165; group SE 6.380 mHa; variance share 0.013%</title></rect>
+<rect x="609.02" y="648" width="1.86" height="42" rx="1" fill="#1d3148"><title>Rank 94; group 165; group SE 6.380 mHa; variance share 0.013%</title></rect>
+<rect x="611.38" y="530" width="1.86" height="42" rx="1" fill="#24707a"><title>Rank 95; group 110; group SE 6.372 mHa; variance share 0.012%</title></rect>
+<rect x="611.38" y="648" width="1.86" height="42" rx="1" fill="#1d3148"><title>Rank 95; group 110; group SE 6.372 mHa; variance share 0.012%</title></rect>
+<rect x="613.73" y="530" width="1.86" height="42" rx="1" fill="#24707a"><title>Rank 96; group 42; group SE 6.347 mHa; variance share 0.012%</title></rect>
+<rect x="613.73" y="648" width="1.86" height="42" rx="1" fill="#1d3148"><title>Rank 96; group 42; group SE 6.347 mHa; variance share 0.012%</title></rect>
+<rect x="616.09" y="530" width="1.86" height="42" rx="1" fill="#246f7a"><title>Rank 97; group 32; group SE 6.160 mHa; variance share 0.012%</title></rect>
+<rect x="616.09" y="648" width="1.86" height="42" rx="1" fill="#1d3148"><title>Rank 97; group 32; group SE 6.160 mHa; variance share 0.012%</title></rect>
+<rect x="618.44" y="530" width="1.86" height="42" rx="1" fill="#246f7a"><title>Rank 98; group 3; group SE 6.087 mHa; variance share 0.011%</title></rect>
+<rect x="618.44" y="648" width="1.86" height="42" rx="1" fill="#1d3148"><title>Rank 98; group 3; group SE 6.087 mHa; variance share 0.011%</title></rect>
+<rect x="620.80" y="530" width="1.86" height="42" rx="1" fill="#246e79"><title>Rank 99; group 59; group SE 5.843 mHa; variance share 0.010%</title></rect>
+<rect x="620.80" y="648" width="1.86" height="42" rx="1" fill="#1d3047"><title>Rank 99; group 59; group SE 5.843 mHa; variance share 0.010%</title></rect>
+<rect x="623.15" y="530" width="1.86" height="42" rx="1" fill="#246d79"><title>Rank 100; group 44; group SE 5.784 mHa; variance share 0.010%</title></rect>
+<rect x="623.15" y="648" width="1.86" height="42" rx="1" fill="#1d3047"><title>Rank 100; group 44; group SE 5.784 mHa; variance share 0.010%</title></rect>
+<rect x="625.51" y="530" width="1.86" height="42" rx="1" fill="#246d79"><title>Rank 101; group 268; group SE 5.778 mHa; variance share 0.010%</title></rect>
+<rect x="625.51" y="648" width="1.86" height="42" rx="1" fill="#1d3047"><title>Rank 101; group 268; group SE 5.778 mHa; variance share 0.010%</title></rect>
+<rect x="627.86" y="530" width="1.86" height="42" rx="1" fill="#246d79"><title>Rank 102; group 150; group SE 5.766 mHa; variance share 0.010%</title></rect>
+<rect x="627.86" y="648" width="1.86" height="42" rx="1" fill="#1d3047"><title>Rank 102; group 150; group SE 5.766 mHa; variance share 0.010%</title></rect>
+<rect x="630.22" y="530" width="1.86" height="42" rx="1" fill="#246d79"><title>Rank 103; group 43; group SE 5.694 mHa; variance share 0.010%</title></rect>
+<rect x="630.22" y="648" width="1.86" height="42" rx="1" fill="#1d3047"><title>Rank 103; group 43; group SE 5.694 mHa; variance share 0.010%</title></rect>
+<rect x="632.57" y="530" width="1.86" height="42" rx="1" fill="#246c78"><title>Rank 104; group 177; group SE 5.516 mHa; variance share 0.009%</title></rect>
+<rect x="632.57" y="648" width="1.86" height="42" rx="1" fill="#1d3047"><title>Rank 104; group 177; group SE 5.516 mHa; variance share 0.009%</title></rect>
+<rect x="634.93" y="530" width="1.86" height="42" rx="1" fill="#246c78"><title>Rank 105; group 63; group SE 5.479 mHa; variance share 0.009%</title></rect>
+<rect x="634.93" y="648" width="1.86" height="42" rx="1" fill="#1d3047"><title>Rank 105; group 63; group SE 5.479 mHa; variance share 0.009%</title></rect>
+<rect x="637.28" y="530" width="1.86" height="42" rx="1" fill="#246c78"><title>Rank 106; group 26; group SE 5.467 mHa; variance share 0.009%</title></rect>
+<rect x="637.28" y="648" width="1.86" height="42" rx="1" fill="#1d3047"><title>Rank 106; group 26; group SE 5.467 mHa; variance share 0.009%</title></rect>
+<rect x="639.64" y="530" width="1.86" height="42" rx="1" fill="#246b78"><title>Rank 107; group 168; group SE 5.354 mHa; variance share 0.009%</title></rect>
+<rect x="639.64" y="648" width="1.86" height="42" rx="1" fill="#1d3047"><title>Rank 107; group 168; group SE 5.354 mHa; variance share 0.009%</title></rect>
+<rect x="641.99" y="530" width="1.86" height="42" rx="1" fill="#246b78"><title>Rank 108; group 79; group SE 5.347 mHa; variance share 0.009%</title></rect>
+<rect x="641.99" y="648" width="1.86" height="42" rx="1" fill="#1d3047"><title>Rank 108; group 79; group SE 5.347 mHa; variance share 0.009%</title></rect>
+<rect x="644.35" y="530" width="1.86" height="42" rx="1" fill="#246b78"><title>Rank 109; group 21; group SE 5.331 mHa; variance share 0.009%</title></rect>
+<rect x="644.35" y="648" width="1.86" height="42" rx="1" fill="#1d3047"><title>Rank 109; group 21; group SE 5.331 mHa; variance share 0.009%</title></rect>
+<rect x="646.70" y="530" width="1.86" height="42" rx="1" fill="#246b78"><title>Rank 110; group 78; group SE 5.317 mHa; variance share 0.009%</title></rect>
+<rect x="646.70" y="648" width="1.86" height="42" rx="1" fill="#1d3047"><title>Rank 110; group 78; group SE 5.317 mHa; variance share 0.009%</title></rect>
+<rect x="649.06" y="530" width="1.86" height="42" rx="1" fill="#246b78"><title>Rank 111; group 105; group SE 5.303 mHa; variance share 0.009%</title></rect>
+<rect x="649.06" y="648" width="1.86" height="42" rx="1" fill="#1d3047"><title>Rank 111; group 105; group SE 5.303 mHa; variance share 0.009%</title></rect>
+<rect x="651.41" y="530" width="1.86" height="42" rx="1" fill="#246a77"><title>Rank 112; group 50; group SE 5.252 mHa; variance share 0.008%</title></rect>
+<rect x="651.41" y="648" width="1.86" height="42" rx="1" fill="#1d3047"><title>Rank 112; group 50; group SE 5.252 mHa; variance share 0.008%</title></rect>
+<rect x="653.77" y="530" width="1.86" height="42" rx="1" fill="#246a77"><title>Rank 113; group 62; group SE 5.219 mHa; variance share 0.008%</title></rect>
+<rect x="653.77" y="648" width="1.86" height="42" rx="1" fill="#1d3047"><title>Rank 113; group 62; group SE 5.219 mHa; variance share 0.008%</title></rect>
+<rect x="656.12" y="530" width="1.86" height="42" rx="1" fill="#246a77"><title>Rank 114; group 151; group SE 5.198 mHa; variance share 0.008%</title></rect>
+<rect x="656.12" y="648" width="1.86" height="42" rx="1" fill="#1d3047"><title>Rank 114; group 151; group SE 5.198 mHa; variance share 0.008%</title></rect>
+<rect x="658.48" y="530" width="1.86" height="42" rx="1" fill="#246a77"><title>Rank 115; group 56; group SE 5.188 mHa; variance share 0.008%</title></rect>
+<rect x="658.48" y="648" width="1.86" height="42" rx="1" fill="#1d3047"><title>Rank 115; group 56; group SE 5.188 mHa; variance share 0.008%</title></rect>
+<rect x="660.83" y="530" width="1.86" height="42" rx="1" fill="#246a77"><title>Rank 116; group 152; group SE 5.124 mHa; variance share 0.008%</title></rect>
+<rect x="660.83" y="648" width="1.86" height="42" rx="1" fill="#1d3047"><title>Rank 116; group 152; group SE 5.124 mHa; variance share 0.008%</title></rect>
+<rect x="663.19" y="530" width="1.86" height="42" rx="1" fill="#246a77"><title>Rank 117; group 20; group SE 5.100 mHa; variance share 0.008%</title></rect>
+<rect x="663.19" y="648" width="1.86" height="42" rx="1" fill="#1d3047"><title>Rank 117; group 20; group SE 5.100 mHa; variance share 0.008%</title></rect>
+<rect x="665.54" y="530" width="1.86" height="42" rx="1" fill="#246977"><title>Rank 118; group 171; group SE 5.027 mHa; variance share 0.008%</title></rect>
+<rect x="665.54" y="648" width="1.86" height="42" rx="1" fill="#1d3046"><title>Rank 118; group 171; group SE 5.027 mHa; variance share 0.008%</title></rect>
+<rect x="667.90" y="530" width="1.86" height="42" rx="1" fill="#246977"><title>Rank 119; group 190; group SE 5.019 mHa; variance share 0.008%</title></rect>
+<rect x="667.90" y="648" width="1.86" height="42" rx="1" fill="#1d3046"><title>Rank 119; group 190; group SE 5.019 mHa; variance share 0.008%</title></rect>
+<rect x="670.25" y="530" width="1.86" height="42" rx="1" fill="#246977"><title>Rank 120; group 65; group SE 4.974 mHa; variance share 0.008%</title></rect>
+<rect x="670.25" y="648" width="1.86" height="42" rx="1" fill="#1c3046"><title>Rank 120; group 65; group SE 4.974 mHa; variance share 0.008%</title></rect>
+<rect x="672.61" y="530" width="1.86" height="42" rx="1" fill="#246977"><title>Rank 121; group 98; group SE 4.962 mHa; variance share 0.008%</title></rect>
+<rect x="672.61" y="648" width="1.86" height="42" rx="1" fill="#1c3046"><title>Rank 121; group 98; group SE 4.962 mHa; variance share 0.008%</title></rect>
+<rect x="674.96" y="530" width="1.86" height="42" rx="1" fill="#246876"><title>Rank 122; group 19; group SE 4.859 mHa; variance share 0.007%</title></rect>
+<rect x="674.96" y="648" width="1.86" height="42" rx="1" fill="#1c2f46"><title>Rank 122; group 19; group SE 4.859 mHa; variance share 0.007%</title></rect>
+<rect x="677.32" y="530" width="1.86" height="42" rx="1" fill="#246876"><title>Rank 123; group 158; group SE 4.833 mHa; variance share 0.007%</title></rect>
+<rect x="677.32" y="648" width="1.86" height="42" rx="1" fill="#1c2f46"><title>Rank 123; group 158; group SE 4.833 mHa; variance share 0.007%</title></rect>
+<rect x="679.67" y="530" width="1.86" height="42" rx="1" fill="#256776"><title>Rank 124; group 68; group SE 4.628 mHa; variance share 0.007%</title></rect>
+<rect x="679.67" y="648" width="1.86" height="42" rx="1" fill="#1c2f46"><title>Rank 124; group 68; group SE 4.628 mHa; variance share 0.007%</title></rect>
+<rect x="682.03" y="530" width="1.86" height="42" rx="1" fill="#256776"><title>Rank 125; group 22; group SE 4.627 mHa; variance share 0.007%</title></rect>
+<rect x="682.03" y="648" width="1.86" height="42" rx="1" fill="#1c2f46"><title>Rank 125; group 22; group SE 4.627 mHa; variance share 0.007%</title></rect>
+<rect x="684.38" y="530" width="1.86" height="42" rx="1" fill="#256776"><title>Rank 126; group 271; group SE 4.580 mHa; variance share 0.006%</title></rect>
+<rect x="684.38" y="648" width="1.86" height="42" rx="1" fill="#1c2f46"><title>Rank 126; group 271; group SE 4.580 mHa; variance share 0.006%</title></rect>
+<rect x="686.74" y="530" width="1.86" height="42" rx="1" fill="#256675"><title>Rank 127; group 104; group SE 4.483 mHa; variance share 0.006%</title></rect>
+<rect x="686.74" y="648" width="1.86" height="42" rx="1" fill="#1c2f46"><title>Rank 127; group 104; group SE 4.483 mHa; variance share 0.006%</title></rect>
+<rect x="689.09" y="530" width="1.86" height="42" rx="1" fill="#256575"><title>Rank 128; group 263; group SE 4.350 mHa; variance share 0.006%</title></rect>
+<rect x="689.09" y="648" width="1.86" height="42" rx="1" fill="#1c2f46"><title>Rank 128; group 263; group SE 4.350 mHa; variance share 0.006%</title></rect>
+<rect x="691.45" y="530" width="1.86" height="42" rx="1" fill="#256575"><title>Rank 129; group 17; group SE 4.350 mHa; variance share 0.006%</title></rect>
+<rect x="691.45" y="648" width="1.86" height="42" rx="1" fill="#1c2f46"><title>Rank 129; group 17; group SE 4.350 mHa; variance share 0.006%</title></rect>
+<rect x="693.80" y="530" width="1.86" height="42" rx="1" fill="#256575"><title>Rank 130; group 157; group SE 4.348 mHa; variance share 0.006%</title></rect>
+<rect x="693.80" y="648" width="1.86" height="42" rx="1" fill="#1c2f46"><title>Rank 130; group 157; group SE 4.348 mHa; variance share 0.006%</title></rect>
+<rect x="696.16" y="530" width="1.86" height="42" rx="1" fill="#256575"><title>Rank 131; group 265; group SE 4.306 mHa; variance share 0.006%</title></rect>
+<rect x="696.16" y="648" width="1.86" height="42" rx="1" fill="#1c2f46"><title>Rank 131; group 265; group SE 4.306 mHa; variance share 0.006%</title></rect>
+<rect x="698.51" y="530" width="1.86" height="42" rx="1" fill="#256575"><title>Rank 132; group 60; group SE 4.287 mHa; variance share 0.006%</title></rect>
+<rect x="698.51" y="648" width="1.86" height="42" rx="1" fill="#1c2f46"><title>Rank 132; group 60; group SE 4.287 mHa; variance share 0.006%</title></rect>
+<rect x="700.87" y="530" width="1.86" height="42" rx="1" fill="#256374"><title>Rank 133; group 99; group SE 4.088 mHa; variance share 0.005%</title></rect>
+<rect x="700.87" y="648" width="1.86" height="42" rx="1" fill="#1c2f46"><title>Rank 133; group 99; group SE 4.088 mHa; variance share 0.005%</title></rect>
+<rect x="703.22" y="530" width="1.86" height="42" rx="1" fill="#256374"><title>Rank 134; group 35; group SE 3.992 mHa; variance share 0.005%</title></rect>
+<rect x="703.22" y="648" width="1.86" height="42" rx="1" fill="#1c2f46"><title>Rank 134; group 35; group SE 3.992 mHa; variance share 0.005%</title></rect>
+<rect x="705.58" y="530" width="1.86" height="42" rx="1" fill="#256374"><title>Rank 135; group 30; group SE 3.978 mHa; variance share 0.005%</title></rect>
+<rect x="705.58" y="648" width="1.86" height="42" rx="1" fill="#1c2f46"><title>Rank 135; group 30; group SE 3.978 mHa; variance share 0.005%</title></rect>
+<rect x="707.93" y="530" width="1.86" height="42" rx="1" fill="#256273"><title>Rank 136; group 36; group SE 3.924 mHa; variance share 0.005%</title></rect>
+<rect x="707.93" y="648" width="1.86" height="42" rx="1" fill="#1c2f46"><title>Rank 136; group 36; group SE 3.924 mHa; variance share 0.005%</title></rect>
+<rect x="710.29" y="530" width="1.86" height="42" rx="1" fill="#256173"><title>Rank 137; group 48; group SE 3.824 mHa; variance share 0.004%</title></rect>
+<rect x="710.29" y="648" width="1.86" height="42" rx="1" fill="#1c2f45"><title>Rank 137; group 48; group SE 3.824 mHa; variance share 0.004%</title></rect>
+<rect x="712.64" y="530" width="1.86" height="42" rx="1" fill="#256073"><title>Rank 138; group 49; group SE 3.651 mHa; variance share 0.004%</title></rect>
+<rect x="712.64" y="648" width="1.86" height="42" rx="1" fill="#1c2e45"><title>Rank 138; group 49; group SE 3.651 mHa; variance share 0.004%</title></rect>
+<rect x="715.00" y="530" width="1.86" height="42" rx="1" fill="#256072"><title>Rank 139; group 193; group SE 3.646 mHa; variance share 0.004%</title></rect>
+<rect x="715.00" y="648" width="1.86" height="42" rx="1" fill="#1c2e45"><title>Rank 139; group 193; group SE 3.646 mHa; variance share 0.004%</title></rect>
+<rect x="717.36" y="530" width="1.86" height="42" rx="1" fill="#256072"><title>Rank 140; group 194; group SE 3.566 mHa; variance share 0.004%</title></rect>
+<rect x="717.36" y="648" width="1.86" height="42" rx="1" fill="#1c2e45"><title>Rank 140; group 194; group SE 3.566 mHa; variance share 0.004%</title></rect>
+<rect x="719.71" y="530" width="1.86" height="42" rx="1" fill="#255f72"><title>Rank 141; group 217; group SE 3.493 mHa; variance share 0.004%</title></rect>
+<rect x="719.71" y="648" width="1.86" height="42" rx="1" fill="#1c2e45"><title>Rank 141; group 217; group SE 3.493 mHa; variance share 0.004%</title></rect>
+<rect x="722.07" y="530" width="1.86" height="42" rx="1" fill="#255f72"><title>Rank 142; group 173; group SE 3.491 mHa; variance share 0.004%</title></rect>
+<rect x="722.07" y="648" width="1.86" height="42" rx="1" fill="#1c2e45"><title>Rank 142; group 173; group SE 3.491 mHa; variance share 0.004%</title></rect>
+<rect x="724.42" y="530" width="1.86" height="42" rx="1" fill="#255f72"><title>Rank 143; group 264; group SE 3.454 mHa; variance share 0.004%</title></rect>
+<rect x="724.42" y="648" width="1.86" height="42" rx="1" fill="#1c2e45"><title>Rank 143; group 264; group SE 3.454 mHa; variance share 0.004%</title></rect>
+<rect x="726.78" y="530" width="1.86" height="42" rx="1" fill="#255e72"><title>Rank 144; group 175; group SE 3.386 mHa; variance share 0.004%</title></rect>
+<rect x="726.78" y="648" width="1.86" height="42" rx="1" fill="#1c2e45"><title>Rank 144; group 175; group SE 3.386 mHa; variance share 0.004%</title></rect>
+<rect x="729.13" y="530" width="1.86" height="42" rx="1" fill="#255e71"><title>Rank 145; group 242; group SE 3.336 mHa; variance share 0.003%</title></rect>
+<rect x="729.13" y="648" width="1.86" height="42" rx="1" fill="#1c2e45"><title>Rank 145; group 242; group SE 3.336 mHa; variance share 0.003%</title></rect>
+<rect x="731.49" y="530" width="1.86" height="42" rx="1" fill="#255d71"><title>Rank 146; group 16; group SE 3.301 mHa; variance share 0.003%</title></rect>
+<rect x="731.49" y="648" width="1.86" height="42" rx="1" fill="#1c2e45"><title>Rank 146; group 16; group SE 3.301 mHa; variance share 0.003%</title></rect>
+<rect x="733.84" y="530" width="1.86" height="42" rx="1" fill="#255d71"><title>Rank 147; group 244; group SE 3.274 mHa; variance share 0.003%</title></rect>
+<rect x="733.84" y="648" width="1.86" height="42" rx="1" fill="#1c2e45"><title>Rank 147; group 244; group SE 3.274 mHa; variance share 0.003%</title></rect>
+<rect x="736.20" y="530" width="1.86" height="42" rx="1" fill="#255d71"><title>Rank 148; group 47; group SE 3.251 mHa; variance share 0.003%</title></rect>
+<rect x="736.20" y="648" width="1.86" height="42" rx="1" fill="#1c2e45"><title>Rank 148; group 47; group SE 3.251 mHa; variance share 0.003%</title></rect>
+<rect x="738.55" y="530" width="1.86" height="42" rx="1" fill="#255c70"><title>Rank 149; group 222; group SE 3.095 mHa; variance share 0.003%</title></rect>
+<rect x="738.55" y="648" width="1.86" height="42" rx="1" fill="#1c2e45"><title>Rank 149; group 222; group SE 3.095 mHa; variance share 0.003%</title></rect>
+<rect x="740.91" y="530" width="1.86" height="42" rx="1" fill="#255b70"><title>Rank 150; group 240; group SE 3.021 mHa; variance share 0.003%</title></rect>
+<rect x="740.91" y="648" width="1.86" height="42" rx="1" fill="#1c2e45"><title>Rank 150; group 240; group SE 3.021 mHa; variance share 0.003%</title></rect>
+<rect x="743.26" y="530" width="1.86" height="42" rx="1" fill="#255b70"><title>Rank 151; group 241; group SE 2.993 mHa; variance share 0.003%</title></rect>
+<rect x="743.26" y="648" width="1.86" height="42" rx="1" fill="#1c2e45"><title>Rank 151; group 241; group SE 2.993 mHa; variance share 0.003%</title></rect>
+<rect x="745.62" y="530" width="1.86" height="42" rx="1" fill="#255b70"><title>Rank 152; group 29; group SE 2.979 mHa; variance share 0.003%</title></rect>
+<rect x="745.62" y="648" width="1.86" height="42" rx="1" fill="#1c2e45"><title>Rank 152; group 29; group SE 2.979 mHa; variance share 0.003%</title></rect>
+<rect x="747.97" y="530" width="1.86" height="42" rx="1" fill="#255a6f"><title>Rank 153; group 233; group SE 2.842 mHa; variance share 0.002%</title></rect>
+<rect x="747.97" y="648" width="1.86" height="42" rx="1" fill="#1c2e45"><title>Rank 153; group 233; group SE 2.842 mHa; variance share 0.002%</title></rect>
+<rect x="750.33" y="530" width="1.86" height="42" rx="1" fill="#25596f"><title>Rank 154; group 243; group SE 2.824 mHa; variance share 0.002%</title></rect>
+<rect x="750.33" y="648" width="1.86" height="42" rx="1" fill="#1c2e45"><title>Rank 154; group 243; group SE 2.824 mHa; variance share 0.002%</title></rect>
+<rect x="752.68" y="530" width="1.86" height="42" rx="1" fill="#25596e"><title>Rank 155; group 103; group SE 2.756 mHa; variance share 0.002%</title></rect>
+<rect x="752.68" y="648" width="1.86" height="42" rx="1" fill="#1c2e45"><title>Rank 155; group 103; group SE 2.756 mHa; variance share 0.002%</title></rect>
+<rect x="755.04" y="530" width="1.86" height="42" rx="1" fill="#25596e"><title>Rank 156; group 109; group SE 2.748 mHa; variance share 0.002%</title></rect>
+<rect x="755.04" y="648" width="1.86" height="42" rx="1" fill="#1c2e45"><title>Rank 156; group 109; group SE 2.748 mHa; variance share 0.002%</title></rect>
+<rect x="757.39" y="530" width="1.86" height="42" rx="1" fill="#25596e"><title>Rank 157; group 237; group SE 2.741 mHa; variance share 0.002%</title></rect>
+<rect x="757.39" y="648" width="1.86" height="42" rx="1" fill="#1c2e45"><title>Rank 157; group 237; group SE 2.741 mHa; variance share 0.002%</title></rect>
+<rect x="759.75" y="530" width="1.86" height="42" rx="1" fill="#25596e"><title>Rank 158; group 234; group SE 2.725 mHa; variance share 0.002%</title></rect>
+<rect x="759.75" y="648" width="1.86" height="42" rx="1" fill="#1c2e45"><title>Rank 158; group 234; group SE 2.725 mHa; variance share 0.002%</title></rect>
+<rect x="762.10" y="530" width="1.86" height="42" rx="1" fill="#24586d"><title>Rank 159; group 183; group SE 2.676 mHa; variance share 0.002%</title></rect>
+<rect x="762.10" y="648" width="1.86" height="42" rx="1" fill="#1c2e45"><title>Rank 159; group 183; group SE 2.676 mHa; variance share 0.002%</title></rect>
+<rect x="764.46" y="530" width="1.86" height="42" rx="1" fill="#24586d"><title>Rank 160; group 147; group SE 2.619 mHa; variance share 0.002%</title></rect>
+<rect x="764.46" y="648" width="1.86" height="42" rx="1" fill="#1c2e45"><title>Rank 160; group 147; group SE 2.619 mHa; variance share 0.002%</title></rect>
+<rect x="766.81" y="530" width="1.86" height="42" rx="1" fill="#24576d"><title>Rank 161; group 235; group SE 2.592 mHa; variance share 0.002%</title></rect>
+<rect x="766.81" y="648" width="1.86" height="42" rx="1" fill="#1c2e45"><title>Rank 161; group 235; group SE 2.592 mHa; variance share 0.002%</title></rect>
+<rect x="769.17" y="530" width="1.86" height="42" rx="1" fill="#24576d"><title>Rank 162; group 180; group SE 2.590 mHa; variance share 0.002%</title></rect>
+<rect x="769.17" y="648" width="1.86" height="42" rx="1" fill="#1c2e45"><title>Rank 162; group 180; group SE 2.590 mHa; variance share 0.002%</title></rect>
+<rect x="771.52" y="530" width="1.86" height="42" rx="1" fill="#24576c"><title>Rank 163; group 154; group SE 2.558 mHa; variance share 0.002%</title></rect>
+<rect x="771.52" y="648" width="1.86" height="42" rx="1" fill="#1c2e45"><title>Rank 163; group 154; group SE 2.558 mHa; variance share 0.002%</title></rect>
+<rect x="773.88" y="530" width="1.86" height="42" rx="1" fill="#24566b"><title>Rank 164; group 38; group SE 2.407 mHa; variance share 0.002%</title></rect>
+<rect x="773.88" y="648" width="1.86" height="42" rx="1" fill="#1c2e45"><title>Rank 164; group 38; group SE 2.407 mHa; variance share 0.002%</title></rect>
+<rect x="776.23" y="530" width="1.86" height="42" rx="1" fill="#24556b"><title>Rank 165; group 66; group SE 2.374 mHa; variance share 0.002%</title></rect>
+<rect x="776.23" y="648" width="1.86" height="42" rx="1" fill="#1c2e45"><title>Rank 165; group 66; group SE 2.374 mHa; variance share 0.002%</title></rect>
+<rect x="778.59" y="530" width="1.86" height="42" rx="1" fill="#24556a"><title>Rank 166; group 153; group SE 2.353 mHa; variance share 0.002%</title></rect>
+<rect x="778.59" y="648" width="1.86" height="42" rx="1" fill="#1c2e45"><title>Rank 166; group 153; group SE 2.353 mHa; variance share 0.002%</title></rect>
+<rect x="780.94" y="530" width="1.86" height="42" rx="1" fill="#24556a"><title>Rank 167; group 146; group SE 2.295 mHa; variance share 0.002%</title></rect>
+<rect x="780.94" y="648" width="1.86" height="42" rx="1" fill="#1c2e45"><title>Rank 167; group 146; group SE 2.295 mHa; variance share 0.002%</title></rect>
+<rect x="783.30" y="530" width="1.86" height="42" rx="1" fill="#24546a"><title>Rank 168; group 115; group SE 2.286 mHa; variance share 0.002%</title></rect>
+<rect x="783.30" y="648" width="1.86" height="42" rx="1" fill="#1c2e45"><title>Rank 168; group 115; group SE 2.286 mHa; variance share 0.002%</title></rect>
+<rect x="785.65" y="530" width="1.86" height="42" rx="1" fill="#245469"><title>Rank 169; group 67; group SE 2.257 mHa; variance share 0.002%</title></rect>
+<rect x="785.65" y="648" width="1.86" height="42" rx="1" fill="#1c2e45"><title>Rank 169; group 67; group SE 2.257 mHa; variance share 0.002%</title></rect>
+<rect x="788.01" y="530" width="1.86" height="42" rx="1" fill="#245469"><title>Rank 170; group 270; group SE 2.255 mHa; variance share 0.002%</title></rect>
+<rect x="788.01" y="648" width="1.86" height="42" rx="1" fill="#1c2e45"><title>Rank 170; group 270; group SE 2.255 mHa; variance share 0.002%</title></rect>
+<rect x="790.36" y="530" width="1.86" height="42" rx="1" fill="#245469"><title>Rank 171; group 71; group SE 2.230 mHa; variance share 0.002%</title></rect>
+<rect x="790.36" y="648" width="1.86" height="42" rx="1" fill="#1c2e45"><title>Rank 171; group 71; group SE 2.230 mHa; variance share 0.002%</title></rect>
+<rect x="792.72" y="530" width="1.86" height="42" rx="1" fill="#245469"><title>Rank 172; group 87; group SE 2.211 mHa; variance share 0.002%</title></rect>
+<rect x="792.72" y="648" width="1.86" height="42" rx="1" fill="#1c2e44"><title>Rank 172; group 87; group SE 2.211 mHa; variance share 0.002%</title></rect>
+<rect x="795.07" y="530" width="1.86" height="42" rx="1" fill="#235368"><title>Rank 173; group 70; group SE 2.145 mHa; variance share 0.001%</title></rect>
+<rect x="795.07" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 173; group 70; group SE 2.145 mHa; variance share 0.001%</title></rect>
+<rect x="797.43" y="530" width="1.86" height="42" rx="1" fill="#235368"><title>Rank 174; group 219; group SE 2.144 mHa; variance share 0.001%</title></rect>
+<rect x="797.43" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 174; group 219; group SE 2.144 mHa; variance share 0.001%</title></rect>
+<rect x="799.78" y="530" width="1.86" height="42" rx="1" fill="#235268"><title>Rank 175; group 113; group SE 2.088 mHa; variance share 0.001%</title></rect>
+<rect x="799.78" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 175; group 113; group SE 2.088 mHa; variance share 0.001%</title></rect>
+<rect x="802.14" y="530" width="1.86" height="42" rx="1" fill="#235268"><title>Rank 176; group 114; group SE 2.076 mHa; variance share 0.001%</title></rect>
+<rect x="802.14" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 176; group 114; group SE 2.076 mHa; variance share 0.001%</title></rect>
+<rect x="804.49" y="530" width="1.86" height="42" rx="1" fill="#235167"><title>Rank 177; group 128; group SE 2.005 mHa; variance share 0.001%</title></rect>
+<rect x="804.49" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 177; group 128; group SE 2.005 mHa; variance share 0.001%</title></rect>
+<rect x="806.85" y="530" width="1.86" height="42" rx="1" fill="#235167"><title>Rank 178; group 185; group SE 2.004 mHa; variance share 0.001%</title></rect>
+<rect x="806.85" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 178; group 185; group SE 2.004 mHa; variance share 0.001%</title></rect>
+<rect x="809.20" y="530" width="1.86" height="42" rx="1" fill="#235167"><title>Rank 179; group 90; group SE 2.001 mHa; variance share 0.001%</title></rect>
+<rect x="809.20" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 179; group 90; group SE 2.001 mHa; variance share 0.001%</title></rect>
+<rect x="811.56" y="530" width="1.86" height="42" rx="1" fill="#235167"><title>Rank 180; group 221; group SE 1.989 mHa; variance share 0.001%</title></rect>
+<rect x="811.56" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 180; group 221; group SE 1.989 mHa; variance share 0.001%</title></rect>
+<rect x="813.91" y="530" width="1.86" height="42" rx="1" fill="#235166"><title>Rank 181; group 216; group SE 1.946 mHa; variance share 0.001%</title></rect>
+<rect x="813.91" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 181; group 216; group SE 1.946 mHa; variance share 0.001%</title></rect>
+<rect x="816.27" y="530" width="1.86" height="42" rx="1" fill="#235166"><title>Rank 182; group 267; group SE 1.946 mHa; variance share 0.001%</title></rect>
+<rect x="816.27" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 182; group 267; group SE 1.946 mHa; variance share 0.001%</title></rect>
+<rect x="818.62" y="530" width="1.86" height="42" rx="1" fill="#235066"><title>Rank 183; group 220; group SE 1.911 mHa; variance share 0.001%</title></rect>
+<rect x="818.62" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 183; group 220; group SE 1.911 mHa; variance share 0.001%</title></rect>
+<rect x="820.98" y="530" width="1.86" height="42" rx="1" fill="#235066"><title>Rank 184; group 164; group SE 1.910 mHa; variance share 0.001%</title></rect>
+<rect x="820.98" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 184; group 164; group SE 1.910 mHa; variance share 0.001%</title></rect>
+<rect x="823.33" y="530" width="1.86" height="42" rx="1" fill="#235066"><title>Rank 185; group 179; group SE 1.900 mHa; variance share 0.001%</title></rect>
+<rect x="823.33" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 185; group 179; group SE 1.900 mHa; variance share 0.001%</title></rect>
+<rect x="825.69" y="530" width="1.86" height="42" rx="1" fill="#235065"><title>Rank 186; group 73; group SE 1.870 mHa; variance share 0.001%</title></rect>
+<rect x="825.69" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 186; group 73; group SE 1.870 mHa; variance share 0.001%</title></rect>
+<rect x="828.04" y="530" width="1.86" height="42" rx="1" fill="#234f65"><title>Rank 187; group 206; group SE 1.812 mHa; variance share 0.001%</title></rect>
+<rect x="828.04" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 187; group 206; group SE 1.812 mHa; variance share 0.001%</title></rect>
+<rect x="830.40" y="530" width="1.86" height="42" rx="1" fill="#234f65"><title>Rank 188; group 101; group SE 1.800 mHa; variance share 0.001%</title></rect>
+<rect x="830.40" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 188; group 101; group SE 1.800 mHa; variance share 0.001%</title></rect>
+<rect x="832.75" y="530" width="1.86" height="42" rx="1" fill="#234f65"><title>Rank 189; group 82; group SE 1.794 mHa; variance share 0.001%</title></rect>
+<rect x="832.75" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 189; group 82; group SE 1.794 mHa; variance share 0.001%</title></rect>
+<rect x="835.11" y="530" width="1.86" height="42" rx="1" fill="#234f65"><title>Rank 190; group 91; group SE 1.794 mHa; variance share 0.001%</title></rect>
+<rect x="835.11" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 190; group 91; group SE 1.794 mHa; variance share 0.001%</title></rect>
+<rect x="837.46" y="530" width="1.86" height="42" rx="1" fill="#234f64"><title>Rank 191; group 181; group SE 1.770 mHa; variance share 0.001%</title></rect>
+<rect x="837.46" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 191; group 181; group SE 1.770 mHa; variance share 0.001%</title></rect>
+<rect x="839.82" y="530" width="1.86" height="42" rx="1" fill="#234f64"><title>Rank 192; group 202; group SE 1.769 mHa; variance share 0.001%</title></rect>
+<rect x="839.82" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 192; group 202; group SE 1.769 mHa; variance share 0.001%</title></rect>
+<rect x="842.17" y="530" width="1.86" height="42" rx="1" fill="#234f64"><title>Rank 193; group 127; group SE 1.760 mHa; variance share 0.001%</title></rect>
+<rect x="842.17" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 193; group 127; group SE 1.760 mHa; variance share 0.001%</title></rect>
+<rect x="844.53" y="530" width="1.86" height="42" rx="1" fill="#234e64"><title>Rank 194; group 251; group SE 1.731 mHa; variance share 0.001%</title></rect>
+<rect x="844.53" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 194; group 251; group SE 1.731 mHa; variance share 0.001%</title></rect>
+<rect x="846.88" y="530" width="1.86" height="42" rx="1" fill="#224e64"><title>Rank 195; group 31; group SE 1.720 mHa; variance share 0.001%</title></rect>
+<rect x="846.88" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 195; group 31; group SE 1.720 mHa; variance share 0.001%</title></rect>
+<rect x="849.24" y="530" width="1.86" height="42" rx="1" fill="#224e64"><title>Rank 196; group 161; group SE 1.716 mHa; variance share 0.001%</title></rect>
+<rect x="849.24" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 196; group 161; group SE 1.716 mHa; variance share 0.001%</title></rect>
+<rect x="851.59" y="530" width="1.86" height="42" rx="1" fill="#224e64"><title>Rank 197; group 212; group SE 1.715 mHa; variance share 0.001%</title></rect>
+<rect x="851.59" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 197; group 212; group SE 1.715 mHa; variance share 0.001%</title></rect>
+<rect x="853.95" y="530" width="1.86" height="42" rx="1" fill="#224e64"><title>Rank 198; group 131; group SE 1.712 mHa; variance share 0.001%</title></rect>
+<rect x="853.95" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 198; group 131; group SE 1.712 mHa; variance share 0.001%</title></rect>
+<rect x="856.30" y="530" width="1.86" height="42" rx="1" fill="#224e63"><title>Rank 199; group 231; group SE 1.674 mHa; variance share 0.001%</title></rect>
+<rect x="856.30" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 199; group 231; group SE 1.674 mHa; variance share 0.001%</title></rect>
+<rect x="858.66" y="530" width="1.86" height="42" rx="1" fill="#224d63"><title>Rank 200; group 132; group SE 1.657 mHa; variance share 0.001%</title></rect>
+<rect x="858.66" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 200; group 132; group SE 1.657 mHa; variance share 0.001%</title></rect>
+<rect x="861.01" y="530" width="1.86" height="42" rx="1" fill="#224d63"><title>Rank 201; group 25; group SE 1.646 mHa; variance share 0.001%</title></rect>
+<rect x="861.01" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 201; group 25; group SE 1.646 mHa; variance share 0.001%</title></rect>
+<rect x="863.37" y="530" width="1.86" height="42" rx="1" fill="#224d63"><title>Rank 202; group 213; group SE 1.629 mHa; variance share 0.001%</title></rect>
+<rect x="863.37" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 202; group 213; group SE 1.629 mHa; variance share 0.001%</title></rect>
+<rect x="865.72" y="530" width="1.86" height="42" rx="1" fill="#224d63"><title>Rank 203; group 200; group SE 1.624 mHa; variance share 0.001%</title></rect>
+<rect x="865.72" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 203; group 200; group SE 1.624 mHa; variance share 0.001%</title></rect>
+<rect x="868.08" y="530" width="1.86" height="42" rx="1" fill="#224d62"><title>Rank 204; group 140; group SE 1.610 mHa; variance share 0.001%</title></rect>
+<rect x="868.08" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 204; group 140; group SE 1.610 mHa; variance share 0.001%</title></rect>
+<rect x="870.43" y="530" width="1.86" height="42" rx="1" fill="#224d62"><title>Rank 205; group 129; group SE 1.605 mHa; variance share 0.001%</title></rect>
+<rect x="870.43" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 205; group 129; group SE 1.605 mHa; variance share 0.001%</title></rect>
+<rect x="872.79" y="530" width="1.86" height="42" rx="1" fill="#224c62"><title>Rank 206; group 248; group SE 1.581 mHa; variance share 0.001%</title></rect>
+<rect x="872.79" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 206; group 248; group SE 1.581 mHa; variance share 0.001%</title></rect>
+<rect x="875.14" y="530" width="1.86" height="42" rx="1" fill="#224c62"><title>Rank 207; group 107; group SE 1.569 mHa; variance share 0.001%</title></rect>
+<rect x="875.14" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 207; group 107; group SE 1.569 mHa; variance share 0.001%</title></rect>
+<rect x="877.50" y="530" width="1.86" height="42" rx="1" fill="#224c62"><title>Rank 208; group 159; group SE 1.545 mHa; variance share 0.001%</title></rect>
+<rect x="877.50" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 208; group 159; group SE 1.545 mHa; variance share 0.001%</title></rect>
+<rect x="879.86" y="530" width="1.86" height="42" rx="1" fill="#224c61"><title>Rank 209; group 77; group SE 1.514 mHa; variance share 0.001%</title></rect>
+<rect x="879.86" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 209; group 77; group SE 1.514 mHa; variance share 0.001%</title></rect>
+<rect x="882.21" y="530" width="1.86" height="42" rx="1" fill="#224b61"><title>Rank 210; group 198; group SE 1.503 mHa; variance share 0.001%</title></rect>
+<rect x="882.21" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 210; group 198; group SE 1.503 mHa; variance share 0.001%</title></rect>
+<rect x="884.57" y="530" width="1.86" height="42" rx="1" fill="#224b61"><title>Rank 211; group 88; group SE 1.502 mHa; variance share 0.001%</title></rect>
+<rect x="884.57" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 211; group 88; group SE 1.502 mHa; variance share 0.001%</title></rect>
+<rect x="886.92" y="530" width="1.86" height="42" rx="1" fill="#224b61"><title>Rank 212; group 232; group SE 1.476 mHa; variance share 0.001%</title></rect>
+<rect x="886.92" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 212; group 232; group SE 1.476 mHa; variance share 0.001%</title></rect>
+<rect x="889.28" y="530" width="1.86" height="42" rx="1" fill="#224b61"><title>Rank 213; group 121; group SE 1.476 mHa; variance share 0.001%</title></rect>
+<rect x="889.28" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 213; group 121; group SE 1.476 mHa; variance share 0.001%</title></rect>
+<rect x="891.63" y="530" width="1.86" height="42" rx="1" fill="#224b61"><title>Rank 214; group 23; group SE 1.471 mHa; variance share 0.001%</title></rect>
+<rect x="891.63" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 214; group 23; group SE 1.471 mHa; variance share 0.001%</title></rect>
+<rect x="893.99" y="530" width="1.86" height="42" rx="1" fill="#224b61"><title>Rank 215; group 123; group SE 1.469 mHa; variance share 0.001%</title></rect>
+<rect x="893.99" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 215; group 123; group SE 1.469 mHa; variance share 0.001%</title></rect>
+<rect x="896.34" y="530" width="1.86" height="42" rx="1" fill="#224b60"><title>Rank 216; group 83; group SE 1.455 mHa; variance share 0.001%</title></rect>
+<rect x="896.34" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 216; group 83; group SE 1.455 mHa; variance share 0.001%</title></rect>
+<rect x="898.70" y="530" width="1.86" height="42" rx="1" fill="#224b60"><title>Rank 217; group 226; group SE 1.442 mHa; variance share 0.001%</title></rect>
+<rect x="898.70" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 217; group 226; group SE 1.442 mHa; variance share 0.001%</title></rect>
+<rect x="901.05" y="530" width="1.86" height="42" rx="1" fill="#224a60"><title>Rank 218; group 250; group SE 1.400 mHa; variance share 0.001%</title></rect>
+<rect x="901.05" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 218; group 250; group SE 1.400 mHa; variance share 0.001%</title></rect>
+<rect x="903.41" y="530" width="1.86" height="42" rx="1" fill="#224a60"><title>Rank 219; group 160; group SE 1.399 mHa; variance share 0.001%</title></rect>
+<rect x="903.41" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 219; group 160; group SE 1.399 mHa; variance share 0.001%</title></rect>
+<rect x="905.76" y="530" width="1.86" height="42" rx="1" fill="#224a60"><title>Rank 220; group 122; group SE 1.383 mHa; variance share 0.001%</title></rect>
+<rect x="905.76" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 220; group 122; group SE 1.383 mHa; variance share 0.001%</title></rect>
+<rect x="908.12" y="530" width="1.86" height="42" rx="1" fill="#22495f"><title>Rank 221; group 259; group SE 1.356 mHa; variance share 0.001%</title></rect>
+<rect x="908.12" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 221; group 259; group SE 1.356 mHa; variance share 0.001%</title></rect>
+<rect x="910.47" y="530" width="1.86" height="42" rx="1" fill="#22495f"><title>Rank 222; group 218; group SE 1.352 mHa; variance share 0.001%</title></rect>
+<rect x="910.47" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 222; group 218; group SE 1.352 mHa; variance share 0.001%</title></rect>
+<rect x="912.83" y="530" width="1.86" height="42" rx="1" fill="#22495f"><title>Rank 223; group 225; group SE 1.350 mHa; variance share 0.001%</title></rect>
+<rect x="912.83" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 223; group 225; group SE 1.350 mHa; variance share 0.001%</title></rect>
+<rect x="915.18" y="530" width="1.86" height="42" rx="1" fill="#22495f"><title>Rank 224; group 224; group SE 1.350 mHa; variance share 0.001%</title></rect>
+<rect x="915.18" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 224; group 224; group SE 1.350 mHa; variance share 0.001%</title></rect>
+<rect x="917.54" y="530" width="1.86" height="42" rx="1" fill="#22495f"><title>Rank 225; group 163; group SE 1.347 mHa; variance share 0.001%</title></rect>
+<rect x="917.54" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 225; group 163; group SE 1.347 mHa; variance share 0.001%</title></rect>
+<rect x="919.89" y="530" width="1.86" height="42" rx="1" fill="#22495f"><title>Rank 226; group 148; group SE 1.341 mHa; variance share 0.001%</title></rect>
+<rect x="919.89" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 226; group 148; group SE 1.341 mHa; variance share 0.001%</title></rect>
+<rect x="922.25" y="530" width="1.86" height="42" rx="1" fill="#21495f"><title>Rank 227; group 223; group SE 1.325 mHa; variance share 0.001%</title></rect>
+<rect x="922.25" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 227; group 223; group SE 1.325 mHa; variance share 0.001%</title></rect>
+<rect x="924.60" y="530" width="1.86" height="42" rx="1" fill="#21495f"><title>Rank 228; group 261; group SE 1.319 mHa; variance share 0.001%</title></rect>
+<rect x="924.60" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 228; group 261; group SE 1.319 mHa; variance share 0.001%</title></rect>
+<rect x="926.96" y="530" width="1.86" height="42" rx="1" fill="#21495f"><title>Rank 229; group 145; group SE 1.318 mHa; variance share 0.001%</title></rect>
+<rect x="926.96" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 229; group 145; group SE 1.318 mHa; variance share 0.001%</title></rect>
+<rect x="929.31" y="530" width="1.86" height="42" rx="1" fill="#21495e"><title>Rank 230; group 201; group SE 1.299 mHa; variance share 0.001%</title></rect>
+<rect x="929.31" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 230; group 201; group SE 1.299 mHa; variance share 0.001%</title></rect>
+<rect x="931.67" y="530" width="1.86" height="42" rx="1" fill="#21495e"><title>Rank 231; group 120; group SE 1.294 mHa; variance share 0.001%</title></rect>
+<rect x="931.67" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 231; group 120; group SE 1.294 mHa; variance share 0.001%</title></rect>
+<rect x="934.02" y="530" width="1.86" height="42" rx="1" fill="#21485e"><title>Rank 232; group 258; group SE 1.280 mHa; variance share 0.001%</title></rect>
+<rect x="934.02" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 232; group 258; group SE 1.280 mHa; variance share 0.001%</title></rect>
+<rect x="936.38" y="530" width="1.86" height="42" rx="1" fill="#21485e"><title>Rank 233; group 134; group SE 1.276 mHa; variance share 0.001%</title></rect>
+<rect x="936.38" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 233; group 134; group SE 1.276 mHa; variance share 0.001%</title></rect>
+<rect x="938.73" y="530" width="1.86" height="42" rx="1" fill="#21485e"><title>Rank 234; group 166; group SE 1.242 mHa; variance share 0.000%</title></rect>
+<rect x="938.73" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 234; group 166; group SE 1.242 mHa; variance share 0.000%</title></rect>
+<rect x="941.09" y="530" width="1.86" height="42" rx="1" fill="#21485d"><title>Rank 235; group 156; group SE 1.226 mHa; variance share 0.000%</title></rect>
+<rect x="941.09" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 235; group 156; group SE 1.226 mHa; variance share 0.000%</title></rect>
+<rect x="943.44" y="530" width="1.86" height="42" rx="1" fill="#21465c"><title>Rank 236; group 155; group SE 1.155 mHa; variance share 0.000%</title></rect>
+<rect x="943.44" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 236; group 155; group SE 1.155 mHa; variance share 0.000%</title></rect>
+<rect x="945.80" y="530" width="1.86" height="42" rx="1" fill="#21465c"><title>Rank 237; group 72; group SE 1.149 mHa; variance share 0.000%</title></rect>
+<rect x="945.80" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 237; group 72; group SE 1.149 mHa; variance share 0.000%</title></rect>
+<rect x="948.15" y="530" width="1.86" height="42" rx="1" fill="#21465c"><title>Rank 238; group 69; group SE 1.127 mHa; variance share 0.000%</title></rect>
+<rect x="948.15" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 238; group 69; group SE 1.127 mHa; variance share 0.000%</title></rect>
+<rect x="950.51" y="530" width="1.86" height="42" rx="1" fill="#21465b"><title>Rank 239; group 214; group SE 1.096 mHa; variance share 0.000%</title></rect>
+<rect x="950.51" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 239; group 214; group SE 1.096 mHa; variance share 0.000%</title></rect>
+<rect x="952.86" y="530" width="1.86" height="42" rx="1" fill="#21455b"><title>Rank 240; group 215; group SE 1.085 mHa; variance share 0.000%</title></rect>
+<rect x="952.86" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 240; group 215; group SE 1.085 mHa; variance share 0.000%</title></rect>
+<rect x="955.22" y="530" width="1.86" height="42" rx="1" fill="#21455b"><title>Rank 241; group 172; group SE 1.075 mHa; variance share 0.000%</title></rect>
+<rect x="955.22" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 241; group 172; group SE 1.075 mHa; variance share 0.000%</title></rect>
+<rect x="957.57" y="530" width="1.86" height="42" rx="1" fill="#21455b"><title>Rank 242; group 169; group SE 1.065 mHa; variance share 0.000%</title></rect>
+<rect x="957.57" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 242; group 169; group SE 1.065 mHa; variance share 0.000%</title></rect>
+<rect x="959.93" y="530" width="1.86" height="42" rx="1" fill="#21455b"><title>Rank 243; group 275; group SE 1.037 mHa; variance share 0.000%</title></rect>
+<rect x="959.93" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 243; group 275; group SE 1.037 mHa; variance share 0.000%</title></rect>
+<rect x="962.28" y="530" width="1.86" height="42" rx="1" fill="#20445a"><title>Rank 244; group 199; group SE 0.988 mHa; variance share 0.000%</title></rect>
+<rect x="962.28" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 244; group 199; group SE 0.988 mHa; variance share 0.000%</title></rect>
+<rect x="964.64" y="530" width="1.86" height="42" rx="1" fill="#20445a"><title>Rank 245; group 266; group SE 0.979 mHa; variance share 0.000%</title></rect>
+<rect x="964.64" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 245; group 266; group SE 0.979 mHa; variance share 0.000%</title></rect>
+<rect x="966.99" y="530" width="1.86" height="42" rx="1" fill="#204359"><title>Rank 246; group 273; group SE 0.922 mHa; variance share 0.000%</title></rect>
+<rect x="966.99" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 246; group 273; group SE 0.922 mHa; variance share 0.000%</title></rect>
+<rect x="969.35" y="530" width="1.86" height="42" rx="1" fill="#204258"><title>Rank 247; group 176; group SE 0.892 mHa; variance share 0.000%</title></rect>
+<rect x="969.35" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 247; group 176; group SE 0.892 mHa; variance share 0.000%</title></rect>
+<rect x="971.70" y="530" width="1.86" height="42" rx="1" fill="#204056"><title>Rank 248; group 28; group SE 0.769 mHa; variance share 0.000%</title></rect>
+<rect x="971.70" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 248; group 28; group SE 0.769 mHa; variance share 0.000%</title></rect>
+<rect x="974.06" y="530" width="1.86" height="42" rx="1" fill="#203f55"><title>Rank 249; group 45; group SE 0.719 mHa; variance share 0.000%</title></rect>
+<rect x="974.06" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 249; group 45; group SE 0.719 mHa; variance share 0.000%</title></rect>
+<rect x="976.41" y="530" width="1.86" height="42" rx="1" fill="#1f3e55"><title>Rank 250; group 75; group SE 0.691 mHa; variance share 0.000%</title></rect>
+<rect x="976.41" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 250; group 75; group SE 0.691 mHa; variance share 0.000%</title></rect>
+<rect x="978.77" y="530" width="1.86" height="42" rx="1" fill="#1f3e55"><title>Rank 251; group 211; group SE 0.687 mHa; variance share 0.000%</title></rect>
+<rect x="978.77" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 251; group 211; group SE 0.687 mHa; variance share 0.000%</title></rect>
+<rect x="981.12" y="530" width="1.86" height="42" rx="1" fill="#1f3e54"><title>Rank 252; group 81; group SE 0.667 mHa; variance share 0.000%</title></rect>
+<rect x="981.12" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 252; group 81; group SE 0.667 mHa; variance share 0.000%</title></rect>
+<rect x="983.48" y="530" width="1.86" height="42" rx="1" fill="#1f3d54"><title>Rank 253; group 209; group SE 0.642 mHa; variance share 0.000%</title></rect>
+<rect x="983.48" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 253; group 209; group SE 0.642 mHa; variance share 0.000%</title></rect>
+<rect x="985.83" y="530" width="1.86" height="42" rx="1" fill="#1f3d53"><title>Rank 254; group 205; group SE 0.617 mHa; variance share 0.000%</title></rect>
+<rect x="985.83" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 254; group 205; group SE 0.617 mHa; variance share 0.000%</title></rect>
+<rect x="988.19" y="530" width="1.86" height="42" rx="1" fill="#1f3d53"><title>Rank 255; group 84; group SE 0.606 mHa; variance share 0.000%</title></rect>
+<rect x="988.19" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 255; group 84; group SE 0.606 mHa; variance share 0.000%</title></rect>
+<rect x="990.54" y="530" width="1.86" height="42" rx="1" fill="#1f3d53"><title>Rank 256; group 246; group SE 0.597 mHa; variance share 0.000%</title></rect>
+<rect x="990.54" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 256; group 246; group SE 0.597 mHa; variance share 0.000%</title></rect>
+<rect x="992.90" y="530" width="1.86" height="42" rx="1" fill="#1f3c52"><title>Rank 257; group 89; group SE 0.571 mHa; variance share 0.000%</title></rect>
+<rect x="992.90" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 257; group 89; group SE 0.571 mHa; variance share 0.000%</title></rect>
+<rect x="995.25" y="530" width="1.86" height="42" rx="1" fill="#1f3c52"><title>Rank 258; group 80; group SE 0.558 mHa; variance share 0.000%</title></rect>
+<rect x="995.25" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 258; group 80; group SE 0.558 mHa; variance share 0.000%</title></rect>
+<rect x="997.61" y="530" width="1.86" height="42" rx="1" fill="#1f3b52"><title>Rank 259; group 74; group SE 0.547 mHa; variance share 0.000%</title></rect>
+<rect x="997.61" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 259; group 74; group SE 0.547 mHa; variance share 0.000%</title></rect>
+<rect x="999.96" y="530" width="1.86" height="42" rx="1" fill="#1f3b52"><title>Rank 260; group 245; group SE 0.538 mHa; variance share 0.000%</title></rect>
+<rect x="999.96" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 260; group 245; group SE 0.538 mHa; variance share 0.000%</title></rect>
+<rect x="1002.32" y="530" width="1.86" height="42" rx="1" fill="#1f3b51"><title>Rank 261; group 255; group SE 0.526 mHa; variance share 0.000%</title></rect>
+<rect x="1002.32" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 261; group 255; group SE 0.526 mHa; variance share 0.000%</title></rect>
+<rect x="1004.67" y="530" width="1.86" height="42" rx="1" fill="#1f3a51"><title>Rank 262; group 228; group SE 0.494 mHa; variance share 0.000%</title></rect>
+<rect x="1004.67" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 262; group 228; group SE 0.494 mHa; variance share 0.000%</title></rect>
+<rect x="1007.03" y="530" width="1.86" height="42" rx="1" fill="#1f3a51"><title>Rank 263; group 230; group SE 0.493 mHa; variance share 0.000%</title></rect>
+<rect x="1007.03" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 263; group 230; group SE 0.493 mHa; variance share 0.000%</title></rect>
+<rect x="1009.38" y="530" width="1.86" height="42" rx="1" fill="#1f3a51"><title>Rank 264; group 210; group SE 0.483 mHa; variance share 0.000%</title></rect>
+<rect x="1009.38" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 264; group 210; group SE 0.483 mHa; variance share 0.000%</title></rect>
+<rect x="1011.74" y="530" width="1.86" height="42" rx="1" fill="#1f3a50"><title>Rank 265; group 272; group SE 0.481 mHa; variance share 0.000%</title></rect>
+<rect x="1011.74" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 265; group 272; group SE 0.481 mHa; variance share 0.000%</title></rect>
+<rect x="1014.09" y="530" width="1.86" height="42" rx="1" fill="#1e384f"><title>Rank 266; group 94; group SE 0.394 mHa; variance share 0.000%</title></rect>
+<rect x="1014.09" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 266; group 94; group SE 0.394 mHa; variance share 0.000%</title></rect>
+<rect x="1016.45" y="530" width="1.86" height="42" rx="1" fill="#1e364c"><title>Rank 267; group 92; group SE 0.294 mHa; variance share 0.000%</title></rect>
+<rect x="1016.45" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 267; group 92; group SE 0.294 mHa; variance share 0.000%</title></rect>
+<rect x="1018.80" y="530" width="1.86" height="42" rx="1" fill="#1e354c"><title>Rank 268; group 204; group SE 0.285 mHa; variance share 0.000%</title></rect>
+<rect x="1018.80" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 268; group 204; group SE 0.285 mHa; variance share 0.000%</title></rect>
+<rect x="1021.16" y="530" width="1.86" height="42" rx="1" fill="#1e354c"><title>Rank 269; group 207; group SE 0.274 mHa; variance share 0.000%</title></rect>
+<rect x="1021.16" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 269; group 207; group SE 0.274 mHa; variance share 0.000%</title></rect>
+<rect x="1023.51" y="530" width="1.86" height="42" rx="1" fill="#1d354b"><title>Rank 270; group 102; group SE 0.259 mHa; variance share 0.000%</title></rect>
+<rect x="1023.51" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 270; group 102; group SE 0.259 mHa; variance share 0.000%</title></rect>
+<rect x="1025.87" y="530" width="1.86" height="42" rx="1" fill="#1d344b"><title>Rank 271; group 108; group SE 0.242 mHa; variance share 0.000%</title></rect>
+<rect x="1025.87" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 271; group 108; group SE 0.242 mHa; variance share 0.000%</title></rect>
+<rect x="1028.22" y="530" width="1.86" height="42" rx="1" fill="#1d344a"><title>Rank 272; group 95; group SE 0.224 mHa; variance share 0.000%</title></rect>
+<rect x="1028.22" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 272; group 95; group SE 0.224 mHa; variance share 0.000%</title></rect>
+<rect x="1030.58" y="530" width="1.86" height="42" rx="1" fill="#1d344a"><title>Rank 273; group 93; group SE 0.222 mHa; variance share 0.000%</title></rect>
+<rect x="1030.58" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 273; group 93; group SE 0.222 mHa; variance share 0.000%</title></rect>
+<rect x="1032.93" y="530" width="1.86" height="42" rx="1" fill="#1d3249"><title>Rank 274; group 274; group SE 0.158 mHa; variance share 0.000%</title></rect>
+<rect x="1032.93" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 274; group 274; group SE 0.158 mHa; variance share 0.000%</title></rect>
+<rect x="1035.29" y="530" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 275; group 256; group SE 0.002 mHa; variance share 0.000%</title></rect>
+<rect x="1035.29" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 275; group 256; group SE 0.002 mHa; variance share 0.000%</title></rect>
+<rect x="1037.64" y="530" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 276; group 257; group SE 0.002 mHa; variance share 0.000%</title></rect>
+<rect x="1037.64" y="648" width="1.86" height="42" rx="1" fill="#1c2d44"><title>Rank 276; group 257; group SE 0.002 mHa; variance share 0.000%</title></rect>
+<text x="390.00" y="719.00" font-size="13" fill="#9fb0c2" font-weight="400" text-anchor="start" >Rank 1</text>
+<text x="1040.00" y="719.00" font-size="13" fill="#9fb0c2" font-weight="400" text-anchor="end" >Rank 276</text>
+<text x="105.00" y="788.00" font-size="14" fill="#58d6bd" font-weight="700" text-anchor="start" >READ THE MAP</text>
+<text x="105.00" y="823.00" font-size="17" fill="#f3f7fb" font-weight="400" text-anchor="start" >Tile position is variance rank, not a physical qubit or molecular orbital.</text>
+<text x="105.00" y="854.00" font-size="17" fill="#f3f7fb" font-weight="400" text-anchor="start" >The first row encodes each group&#x27;s standard error; the second encodes its share</text>
+<text x="105.00" y="885.00" font-size="17" fill="#f3f7fb" font-weight="400" text-anchor="start" >of the summed estimator variance. Hover over any tile for its group index and values.</text>
+<text x="105.00" y="950.00" font-size="15" fill="#9fb0c2" font-weight="600" text-anchor="start" >Largest single group SE</text>
+<text x="105.00" y="982.00" font-size="22" fill="#ffbf55" font-weight="700" text-anchor="start" >Group 8 · 255.673 mHa</text>
+<text x="600.00" y="950.00" font-size="15" fill="#9fb0c2" font-weight="600" text-anchor="start" >Independent check</text>
+<text x="600.00" y="982.00" font-size="22" fill="#58d6bd" font-weight="700" text-anchor="start" >Quadrature of group SEs = 570.414 mHa</text>
+<text x="105.00" y="1058.00" font-size="14" fill="#9fb0c2" font-weight="400" text-anchor="start" >Group ordering is chosen only to expose uncertainty concentration.</text>
+<rect x="1120" y="342" width="710" height="790" rx="18" fill="#0e1d2e" stroke="#293d52"/>
+<text x="1155.00" y="393.00" font-size="15" fill="#ffbf55" font-weight="700" text-anchor="start" >CUMULATIVE VARIANCE</text>
+<text x="1155.00" y="433.00" font-size="23" fill="#f3f7fb" font-weight="650" text-anchor="start" >How quickly the error budget accumulates</text>
+<line x1="1210" y1="960.0" x2="1750" y2="960.0" stroke="#26384b"/>
+<text x="1196.00" y="965.00" font-size="13" fill="#9fb0c2" font-weight="400" text-anchor="end" >0%</text>
+<line x1="1210" y1="850.0" x2="1750" y2="850.0" stroke="#26384b"/>
+<text x="1196.00" y="855.00" font-size="13" fill="#9fb0c2" font-weight="400" text-anchor="end" >25%</text>
+<line x1="1210" y1="740.0" x2="1750" y2="740.0" stroke="#26384b"/>
+<text x="1196.00" y="745.00" font-size="13" fill="#9fb0c2" font-weight="400" text-anchor="end" >50%</text>
+<line x1="1210" y1="630.0" x2="1750" y2="630.0" stroke="#26384b"/>
+<text x="1196.00" y="635.00" font-size="13" fill="#9fb0c2" font-weight="400" text-anchor="end" >75%</text>
+<line x1="1210" y1="520.0" x2="1750" y2="520.0" stroke="#26384b"/>
+<text x="1196.00" y="525.00" font-size="13" fill="#9fb0c2" font-weight="400" text-anchor="end" >100%</text>
+<line x1="1210.0" y1="520" x2="1210.0" y2="960" stroke="#26384b" opacity="0.55"/>
+<text x="1210.00" y="985.00" font-size="12" fill="#9fb0c2" font-weight="400" text-anchor="middle" >1</text>
+<line x1="1227.7" y1="520" x2="1227.7" y2="960" stroke="#26384b" opacity="0.55"/>
+<text x="1227.67" y="985.00" font-size="12" fill="#9fb0c2" font-weight="400" text-anchor="middle" >10</text>
+<line x1="1257.1" y1="520" x2="1257.1" y2="960" stroke="#26384b" opacity="0.55"/>
+<text x="1257.13" y="985.00" font-size="12" fill="#9fb0c2" font-weight="400" text-anchor="middle" >25</text>
+<line x1="1306.2" y1="520" x2="1306.2" y2="960" stroke="#26384b" opacity="0.55"/>
+<text x="1306.22" y="985.00" font-size="12" fill="#9fb0c2" font-weight="400" text-anchor="middle" >50</text>
+<line x1="1404.4" y1="520" x2="1404.4" y2="960" stroke="#26384b" opacity="0.55"/>
+<text x="1404.40" y="985.00" font-size="12" fill="#9fb0c2" font-weight="400" text-anchor="middle" >100</text>
+<line x1="1502.6" y1="520" x2="1502.6" y2="960" stroke="#26384b" opacity="0.55"/>
+<text x="1502.58" y="985.00" font-size="12" fill="#9fb0c2" font-weight="400" text-anchor="middle" >150</text>
+<line x1="1600.8" y1="520" x2="1600.8" y2="960" stroke="#26384b" opacity="0.55"/>
+<text x="1600.76" y="985.00" font-size="12" fill="#9fb0c2" font-weight="400" text-anchor="middle" >200</text>
+<line x1="1750.0" y1="520" x2="1750.0" y2="960" stroke="#26384b" opacity="0.55"/>
+<text x="1750.00" y="985.00" font-size="12" fill="#9fb0c2" font-weight="400" text-anchor="middle" >276</text>
+<polyline points="1210.00,871.60 1211.96,822.37 1213.93,789.66 1215.89,757.24 1217.85,725.79 1219.82,701.61 1221.78,679.96 1223.75,659.21 1225.71,639.78 1227.67,624.37 1229.64,610.83 1231.60,603.29 1233.56,596.87 1235.53,592.05 1237.49,587.60 1239.45,583.52 1241.42,579.52 1243.38,575.66 1245.35,572.85 1247.31,570.38 1249.27,568.03 1251.24,565.97 1253.20,563.93 1255.16,561.89 1257.13,559.94 1259.09,558.19 1261.05,556.46 1263.02,554.91 1264.98,553.44 1266.95,552.02 1268.91,550.63 1270.87,549.24 1272.84,547.85 1274.80,546.54 1276.76,545.24 1278.73,544.03 1280.69,542.82 1282.65,541.63 1284.62,540.44 1286.58,539.34 1288.55,538.24 1290.51,537.17 1292.47,536.10 1294.44,535.14 1296.40,534.19 1298.36,533.30 1300.33,532.52 1302.29,531.78 1304.25,531.07 1306.22,530.38 1308.18,529.70 1310.15,529.03 1312.11,528.39 1314.07,527.86 1316.04,527.33 1318.00,526.96 1319.96,526.67 1321.93,526.39 1323.89,526.15 1325.85,525.92 1327.82,525.69 1329.78,525.47 1331.75,525.25 1333.71,525.05 1335.67,524.87 1337.64,524.71 1339.60,524.55 1341.56,524.42 1343.53,524.29 1345.49,524.17 1347.45,524.04 1349.42,523.92 1351.38,523.80 1353.35,523.69 1355.31,523.57 1357.27,523.47 1359.24,523.38 1361.20,523.28 1363.16,523.20 1365.13,523.11 1367.09,523.03 1369.05,522.95 1371.02,522.87 1372.98,522.79 1374.95,522.72 1376.91,522.65 1378.87,522.59 1380.84,522.52 1382.80,522.46 1384.76,522.40 1386.73,522.34 1388.69,522.28 1390.65,522.22 1392.62,522.17 1394.58,522.11 1396.55,522.06 1398.51,522.01 1400.47,521.96 1402.44,521.91 1404.40,521.87 1406.36,521.82 1408.33,521.78 1410.29,521.73 1412.25,521.69 1414.22,521.65 1416.18,521.61 1418.15,521.57 1420.11,521.53 1422.07,521.50 1424.04,521.46 1426.00,521.42 1427.96,521.38 1429.93,521.34 1431.89,521.31 1433.85,521.27 1435.82,521.24 1437.78,521.20 1439.75,521.17 1441.71,521.13 1443.67,521.10 1445.64,521.07 1447.60,521.03 1449.56,521.00 1451.53,520.97 1453.49,520.94 1455.45,520.92 1457.42,520.89 1459.38,520.86 1461.35,520.84 1463.31,520.81 1465.27,520.79 1467.24,520.76 1469.20,520.74 1471.16,520.72 1473.13,520.70 1475.09,520.68 1477.05,520.66 1479.02,520.64 1480.98,520.62 1482.95,520.60 1484.91,520.59 1486.87,520.57 1488.84,520.55 1490.80,520.54 1492.76,520.52 1494.73,520.51 1496.69,520.49 1498.65,520.48 1500.62,520.47 1502.58,520.45 1504.55,520.44 1506.51,520.43 1508.47,520.42 1510.44,520.41 1512.40,520.40 1514.36,520.39 1516.33,520.38 1518.29,520.37 1520.25,520.36 1522.22,520.35 1524.18,520.34 1526.15,520.33 1528.11,520.32 1530.07,520.31 1532.04,520.31 1534.00,520.30 1535.96,520.29 1537.93,520.29 1539.89,520.28 1541.85,520.27 1543.82,520.26 1545.78,520.26 1547.75,520.25 1549.71,520.25 1551.67,520.24 1553.64,520.23 1555.60,520.23 1557.56,520.22 1559.53,520.22 1561.49,520.21 1563.45,520.21 1565.42,520.20 1567.38,520.20 1569.35,520.19 1571.31,520.19 1573.27,520.18 1575.24,520.18 1577.20,520.17 1579.16,520.17 1581.13,520.16 1583.09,520.16 1585.05,520.16 1587.02,520.15 1588.98,520.15 1590.95,520.14 1592.91,520.14 1594.87,520.14 1596.84,520.13 1598.80,520.13 1600.76,520.12 1602.73,520.12 1604.69,520.12 1606.65,520.11 1608.62,520.11 1610.58,520.11 1612.55,520.10 1614.51,520.10 1616.47,520.10 1618.44,520.09 1620.40,520.09 1622.36,520.09 1624.33,520.08 1626.29,520.08 1628.25,520.08 1630.22,520.08 1632.18,520.07 1634.15,520.07 1636.11,520.07 1638.07,520.07 1640.04,520.06 1642.00,520.06 1643.96,520.06 1645.93,520.06 1647.89,520.05 1649.85,520.05 1651.82,520.05 1653.78,520.05 1655.75,520.04 1657.71,520.04 1659.67,520.04 1661.64,520.04 1663.60,520.03 1665.56,520.03 1667.53,520.03 1669.49,520.03 1671.45,520.03 1673.42,520.02 1675.38,520.02 1677.35,520.02 1679.31,520.02 1681.27,520.02 1683.24,520.02 1685.20,520.01 1687.16,520.01 1689.13,520.01 1691.09,520.01 1693.05,520.01 1695.02,520.01 1696.98,520.01 1698.95,520.01 1700.91,520.01 1702.87,520.01 1704.84,520.01 1706.80,520.01 1708.76,520.00 1710.73,520.00 1712.69,520.00 1714.65,520.00 1716.62,520.00 1718.58,520.00 1720.55,520.00 1722.51,520.00 1724.47,520.00 1726.44,520.00 1728.40,520.00 1730.36,520.00 1732.33,520.00 1734.29,520.00 1736.25,520.00 1738.22,520.00 1740.18,520.00 1742.15,520.00 1744.11,520.00 1746.07,520.00 1748.04,520.00 1750.00,520.00" fill="none" stroke="#58d6bd" stroke-width="4" stroke-linejoin="round"/>
+<text x="1480.00" y="1026.00" font-size="15" fill="#9fb0c2" font-weight="500" text-anchor="middle" >Measurement groups included, ranked by variance</text>
+<text x="1162" y="740.0" transform="rotate(-90 1162 740.0)" font-size="15" fill="#9fb0c2" text-anchor="middle">Cumulative share of total variance</text>
+<circle cx="1227.7" cy="624.4" r="7" fill="#ffbf55" stroke="#091522" stroke-width="2"/>
+<line x1="1227.7" y1="632.4" x2="1227.7" y2="1004" stroke="#ffbf55" stroke-dasharray="4 5" opacity=".8"/>
+<text x="1155.00" y="1014.00" font-size="16" fill="#ffbf55" font-weight="650" text-anchor="start" >Top 10 groups  76.3%</text>
+<circle cx="1257.1" cy="559.9" r="7" fill="#58d6bd" stroke="#091522" stroke-width="2"/>
+<line x1="1257.1" y1="567.9" x2="1257.1" y2="1038" stroke="#58d6bd" stroke-dasharray="4 5" opacity=".8"/>
+<text x="1155.00" y="1048.00" font-size="16" fill="#58d6bd" font-weight="650" text-anchor="start" >Top 25 groups  90.9%</text>
+<circle cx="1306.2" cy="530.4" r="7" fill="#ff806e" stroke="#091522" stroke-width="2"/>
+<line x1="1306.2" y1="538.4" x2="1306.2" y2="1072" stroke="#ff806e" stroke-dasharray="4 5" opacity=".8"/>
+<text x="1155.00" y="1082.00" font-size="16" fill="#ff806e" font-weight="650" text-anchor="start" >Top 50 groups  97.6%</text>
+<text x="1155.00" y="1110.00" font-size="14" fill="#9fb0c2" font-weight="400" text-anchor="start" >Interpretation: equal shots per group did not produce equal</text>
+<text x="1155.00" y="1132.00" font-size="14" fill="#9fb0c2" font-weight="400" text-anchor="start" >uncertainty contributions in this single synthetic run.</text>
+<line x1="80" y1="1170" x2="1820" y2="1170" stroke="#26384b"/>
+<text x="84.00" y="1204.00" font-size="15" fill="#9fb0c2" font-weight="400" text-anchor="start" >Synthetic depolarizing + readout Aer · 4,416 nominal shots · sampling uncertainty only · not IBM hardware</text>
+<text x="1815.00" y="1204.00" font-size="14" fill="#9fb0c2" font-weight="500" text-anchor="end" >SOURCE: puccsd-reps1-16shots.json</text>
+</svg>
