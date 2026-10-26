@@ -5,29 +5,29 @@
 <link rel="stylesheet" href="style.css"></head><body>
 <div id="stage">
  <canvas id="gl" tabindex="0" role="img" aria-label="Interactive 3D electron density of stretched water. Drag or arrow keys rotate, shift+drag or shift+arrows pan, wheel or plus/minus zoom, R resets."></canvas>
- <div id="labels" aria-hidden="true"></div>
+ <div id="labels" aria-hidden="true"><span></span><span></span><span></span></div>
  <header id="top">
-  <div id="brand"><h1>H<sub>2</sub>O</h1><p class="kicker">Electron density <span>ρ(r)</span></p><p id="headline" aria-live="polite">Loading…</p></div>
+  <div id="brand"><h1>H<sub>2</sub>O</h1><p class="kicker">Electron density <span>ρ(r)</span> · asymmetric O–H stretch</p>
+   <p id="headline" aria-live="polite">Loading…</p></div>
   <nav><button id="btn-controls" aria-expanded="false" aria-controls="drawer-controls">Controls</button><button id="btn-data" aria-expanded="false" aria-controls="drawer-data">Data</button></nav>
  </header>
- <div id="readout" aria-hidden="true"><span class="lab">Stretched O–H₂ bond</span><div class="big"><b id="r2val">2.20</b><i>Å</i></div></div>
- <div id="legend"><canvas id="legendbar" width="400" height="4"></canvas><div class="ticks"><span id="lt0"></span><span id="lt1"></span><span id="lt2"></span></div><small>ρ in e/bohr³ · log scale · color encodes ρ only</small></div>
- <div id="dock" role="group" aria-label="Geometry and source">
-  <div id="geoms" class="seg" role="radiogroup" aria-label="Geometry"></div><span class="sep"></span>
-  <div id="sources" class="seg" role="radiogroup" aria-label="Density source"></div><span class="sep"></span>
+ <div id="readout" aria-live="off"><span class="lab">O–H₂ bond length</span><div class="big"><b id="r2val">2.20</b><i>Å</i></div>
+  <span class="tag" id="rtag">computed geometry</span><span class="fix">O–H₁ = 0.96 Å fixed · ∠HOH = 104.5°</span></div>
+ <div id="legend"><h2>Density shells · e/bohr³</h2><ul id="shells"></ul><p class="key"><span class="solid"></span> fixed bond <span class="dash"></span> stretched bond</p></div>
+ <div id="transport">
+  <button id="btn-play" aria-pressed="false">Play stretch</button>
+  <div id="scrubwrap"><input id="scrub" type="range" min="1.8" max="2.6" step="0.001" value="2.2" aria-label="O–H₂ bond length in angstrom">
+   <div id="geoms" role="group" aria-label="Computed geometries"></div></div>
+  <div id="sources" class="seg" role="radiogroup" aria-label="Density source"></div>
   <button id="btn-rotate" aria-pressed="true">Auto-rotate</button>
  </div>
- <aside id="drawer-controls" class="drawer" aria-label="Display controls">
-  <h2>Display</h2>
-  <div class="row"><label for="iso">Isosurface</label><input id="iso" type="range" min="-3" max="0.5" step="0.01" value="-1.3"><output id="isov"></output></div>
-  <div class="row"><label for="sop">Opacity</label><input id="sop" type="range" min="0.05" max="1" step="0.01" value="0.55"></div>
-  <div class="row"><label for="vol">Glow</label><input id="vol" type="range" min="0" max="1" step="0.01" value="0.35"></div>
-  <div class="row"><label for="slc">Slice</label><input id="slc" type="range" min="0" max="1" step="0.01" value="0"></div>
-  <div class="row"><label for="sy">Slice y</label><input id="sy" type="range" min="-3" max="3" step="0.05" value="0"></div>
+ <aside id="drawer-controls" class="drawer" aria-label="Display controls"><h2>Display</h2>
+  <div class="row"><label for="lev">Shell level</label><input id="lev" type="range" min="-0.6" max="0.6" step="0.01" value="0"><output id="levv"></output></div>
+  <div class="row"><label for="sop">Glow</label><input id="sop" type="range" min="0.2" max="2.5" step="0.01" value="1"><output id="sopv"></output></div>
+  <div class="row"><label for="asz">Atom size</label><input id="asz" type="range" min="0.5" max="1.6" step="0.01" value="1"><output id="aszv"></output></div>
   <div class="btns"><button id="reset">Reset view</button><button id="fit">Fit molecule</button></div>
-  <p class="note">Drag rotate · Shift/right-drag pan · wheel or pinch zoom · arrows, +/−, R, F. Slice y = 0 is the molecular plane.</p>
-  <p class="note">Geometry: R₁ = 0.96 Å fixed · ∠HOH = 104.5° · R₂ stretched. Not equilibrium water; three precomputed geometries, nothing is computed live.</p>
- </aside>
+  <p class="note">Drag rotate · Shift/right-drag pan · wheel or pinch zoom · arrows, +/−, R, F · Esc closes panels.</p>
+  <p class="note">Shell level rescales all five isodensity surfaces (re-meshes on release). Glow only changes brightness.</p></aside>
  <aside id="drawer-data" class="drawer" aria-label="Data and checks"><h2>Data &amp; checks</h2><dl id="info"></dl><p class="note" id="srcnote"></p></aside>
  <div id="progress" role="status"><div id="bar"><i></i></div><span id="ptext">Loading density…</span></div><div id="error" role="alert" hidden></div>
 </div>
