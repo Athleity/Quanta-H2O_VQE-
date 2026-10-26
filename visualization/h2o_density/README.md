@@ -18,14 +18,20 @@ Browser smoke test: `pip install playwright && playwright install chromium && py
 ## Files
 - `generate_density.py` – integrals, RHF, CASCI, density grids, manifest
 - `data/manifest.json` – geometry, energies, normalization checks; `data/*.f16` – float16 density volumes (x fastest)
-- `web/index.html`, `style.css`, `app.js` – viewer (no dependencies)
+- `web/index.html`, `style.css`, `app.js` – viewer (WebGL2, no libraries; fonts load from Google Fonts with fallbacks)
 - `tests/browser_check.py` – headless-browser checks (see limitations)
 
 ## Reading the view
-ρ is in electrons/bohr³ and integrates to N = 10 electrons. It is **not** a probability density unless divided by 10. Colors (viridis, log scale) encode ρ only. The translucent surface is an isodensity level set by the slider; the plane slice at y = 0 is the molecular plane. Float16 storage on a 0.12 bohr grid gives grid sums of ~10.02–10.04; the manifest's Tr(PS) and fine-grid values are the accurate normalization.
+- **Glowing blue shells** are five isodensity surfaces of ρ(r) (0.004 … 2.5 e/bohr³, listed in the legend). ρ integrates to N = 10 electrons; it is **not** a probability density unless divided by 10.
+- **Atoms and bonds** are geometry only (O red, H white). The solid bond is the fixed O–H₁ (0.96 Å); the dashed bond is the stretched O–H₂.
+- **Bond-stretch animation / scrubber:** only R₂ = 1.80, 2.20, 2.60 Å are computed. Between them the atoms move continuously and the neighbouring densities cross-fade; the tag turns to "interpolated". Intermediate densities are not calculated.
+- Float16 storage on a 0.12 bohr grid gives grid sums of ~10.02-10.04; the manifest's Tr(PS) and fine-grid values are the accurate normalization.
 
 ## Controls
-Drag = rotate · Shift/right-drag = pan · wheel/pinch = zoom · arrows, +/−, R (reset), F (fit) · sliders for isosurface, opacity, glow, slice.
+Drag rotate · Shift/right-drag pan · wheel/pinch zoom · arrows, +/−, R (reset), F (fit) · Play/Pause stretch, scrubber, Auto-rotate · Controls drawer: shell level (re-meshes), glow, atom size.
+
+## Performance design
+No ray-marching: the 15 isosurfaces are meshed once at load (marching tetrahedra, ~1 s, yields between shells) and drawn as ordinary triangles (~110k per geometry), with adaptive resolution if the device is slow.
 
 ## Copy into your GitHub project
 Copy this whole folder to `visualization/h2o_density/` in your repo, then `git add visualization/h2o_density && git commit`. Nothing is pushed for you. Data is ~11 MB.
