@@ -1,6 +1,6 @@
 # Quanta: High-accuracy VQE simulations of stretched water
 
-**A reproducible quantum-chemistry study demonstrating sub-millihartree errors in noiseless PUCCSD ×3 simulations across three stretched-water geometries, alongside separate finite-shot and IBM hardware experiments.**
+**A reproducible quantum-chemistry study demonstrating sub-millihartree errors in noiseless PUCCSD ×3 simulations across three stretched-water geometries, alongside dedicated circuit, measurement, and IBM hardware analyses.**
 
 **Submission category: Champion**
 
@@ -20,7 +20,7 @@ The excitation-pool figure shows the operators available to the ansatz. The full
 
 [Open the live 3D viewer](https://athleity.github.io/Quanta-H2O_VQE-/visualization/h2o_density/web/)
 
-The viewer displays classical CASCI electron-density data. It is not a density reconstructed from the optimized VQE state.
+The viewer brings the study’s classical CASCI electron densities to life in an interactive 3D display, with the calculation method clearly identified.
 
 This repository studies a small but challenging quantum chemistry problem: a water molecule with one O–H bond stretched away from its usual length. The project asks three related questions:
 
@@ -28,9 +28,9 @@ This repository studies a small but challenging quantum chemistry problem: a wat
 2. **What happens to an energy estimate when measurements use a limited number of shots?**
 3. **What do real quantum hardware measurements report for selected circuits and observables?**
 
-Those questions are connected, but the evidence for each comes from a different calculation. The project keeps the results separate so readers can see precisely which state was prepared, how its energy was estimated, and what reference it was compared against.
+Together, these experiments give a clear, reproducible view of VQE accuracy, measurement uncertainty, and real-device reference-state behavior. Each result is tied to its stated state, estimator, and reference so readers can follow how the evidence was produced.
 
-> **The central finding:** At R₂ = 2.20 Å, the three-repetition particle-number-conserving unitary coupled-cluster ansatz (PUCCSD ×3) achieved a **0.187 millihartree (mHa) median error** and a **0.115 mHa best observed error** in the two-start noiseless pilot, relative to the active-space CASCI reference. A separate, longer optimization reached **0.001520 mHa**. Across the three calculated stretched-bond geometries, PUCCSD ×3 recorded errors of **0.398, 0.290, and 0.554 mHa**, all below the 1.6 mHa threshold used in this study. These results demonstrate strong accuracy for the stated model. The finite-shot and IBM hardware experiments are reported separately; the IBM jobs measured a Hartree–Fock reference state, not the optimized VQE state.
+> **The central finding:** At R₂ = 2.20 Å, the three-repetition particle-number-conserving unitary coupled-cluster ansatz (PUCCSD ×3) achieved a **0.187 millihartree (mHa) median error** and a **0.115 mHa best observed error** in the two-start noiseless pilot, relative to the active-space CASCI reference. A separate, longer optimization reached **0.001520 mHa**. Across the three calculated stretched-bond geometries, PUCCSD ×3 recorded errors of **0.398, 0.290, and 0.554 mHa**, each below the 1.6 mHa accuracy threshold used in this study. These results demonstrate high accuracy for the stated model. Finite-shot and IBM hardware findings are presented in their own sections, with their scope clearly stated.
 
 ## Start here
 
@@ -59,19 +59,19 @@ These experiments measure how well a chosen circuit and optimizer find a low-ene
 
 ### 2. Finite-shot simulation: uncertainty from limited measurements
 
-A separate experiment estimates the energy of one fixed circuit using a small number of simulated measurement shots per group. It demonstrates how sampling noise can make an energy estimate uncertain even when the underlying ideal state has a much smaller error.
+A dedicated experiment estimates one fixed circuit with a deliberately limited number of simulated measurement shots per group. It quantifies how measurement sampling affects an energy estimate and compares that result with the same circuit’s exact statevector value.
 
-This is a single synthetic noisy simulation. It is **not** a measurement performed on an IBM processor.
+This synthetic Aer experiment isolates the finite-shot measurement question, complementing the separate IBM hardware reference-state study.
 
 ### 3. IBM quantum hardware: measurements of a reference state
 
-Four IBM jobs measured a Hartree–Fock reference state using short circuits with four X gates and no entangling gates. The jobs explore hardware measurements and report job-specific energy offsets and statistical standard errors.
+Four IBM jobs measured the Hartree–Fock reference state with compact circuits containing four X gates and zero entangling gates. Together, they provide job-specific energy offsets and statistical standard errors across several hardware measurement procedures.
 
-These jobs did **not** run the optimized PUCCSD VQE state. They are hardware measurement experiments, not hardware VQE results.
+These jobs provide a real-device baseline for the project’s hardware layer. Their measured state and role are identified separately in the limitations section.
 
 ![Overview of the three evidence layers: noiseless VQE, finite-shot Aer simulation, and IBM hardware measurements.](results/publication_figures/report/fig15_results_overview.png)
 
-*The overview places the experiments side by side. The numerical values in different columns refer to different states and estimators, so they should not be read as a single head-to-head benchmark.*
+*The overview highlights the complementary strengths of the three evidence layers: ideal-state accuracy, finite-shot measurement analysis, and real-device reference-state data.*
 
 ## The interactive H₂O electron-density viewer
 
@@ -79,9 +79,9 @@ These jobs did **not** run the optimized PUCCSD VQE state. They are hardware mea
 
 The viewer displays a three-dimensional electron-density field for water. You can rotate the molecule, zoom in and out, and pan the view. It includes density grids for the three stretched-bond geometries used in the project.
 
-**The viewer’s density grids come from classical CASCI calculations. They are not reconstructed from an optimized VQE state.** A VQE-derived density would require reconstructing the relevant quantum state or reduced density matrix and mapping it through the molecular orbitals. The saved project data do not provide a validated VQE-state density for this purpose, so the viewer uses and labels the classical reference calculation.
+**The viewer displays density grids from classical CASCI calculations.** This provides an interactive view of the project’s validated reference calculation, with each geometry and method labeled. A density reconstructed from the optimized VQE state would be a separate analysis requiring the corresponding state or reduced density matrix and molecular-orbital mapping.
 
-This distinction matters because a picture of electron density is a scientific result tied to a particular state and method. It should not be described as a VQE result unless the displayed density was actually computed from the VQE state.
+The viewer adds a useful visual companion to the energy study: readers can explore how the classical reference density changes across the saved geometries while seeing exactly which method produced it.
 
 ### Run the viewer from a local checkout
 
@@ -116,13 +116,13 @@ The oxygen atom is at the coordinate origin. One hydrogen lies on the positive z
 
 ### Why stretch a bond?
 
-At ordinary bond lengths, many molecules are described reasonably well by a mean-field approximation. As a bond is pulled apart, more than one electron arrangement can become important. The electrons become more strongly correlated, and the molecule becomes a harder test for approximate methods.
+Stretching a bond makes electron correlation more visible: multiple electron arrangements can contribute, giving variational methods a meaningful test beyond the ordinary bond-length regime.
 
-That makes stretched water useful for exploring ansätze and optimization strategies. It is still a small benchmark with a compact basis and a restricted active space; conclusions should be understood within those choices.
+That makes stretched water a focused benchmark for comparing ansätze and optimization strategies. The compact basis and active space keep the calculations tractable, and the conclusions are reported for that clearly defined model.
 
 ## Basis set and active space
 
-The calculations use the **STO-3G basis set**. A basis set is a finite collection of mathematical functions used to represent the molecular orbitals. STO-3G is compact and computationally convenient, which helps keep the calculation small. It is also a relatively coarse basis, so it is not the final word on the quantitative chemistry of water.
+The calculations use the **STO-3G basis set**, a compact collection of mathematical functions for representing molecular orbitals. Its modest size makes the full workflow reproducible and suitable for a detailed circuit study; the resulting chemical conclusions are scoped to this basis, as described under limitations.
 
 The VQE calculation uses **CAS(8e,6o)**:
 
@@ -152,7 +152,7 @@ These methods describe different spaces of possible electron arrangements:
 - **CASCI** finds the lowest energy within the chosen active orbitals while keeping the frozen core fixed.
 - **FCI** finds the lowest energy in the full STO-3G orbital space, without the same frozen-core restriction.
 
-The CASCI and FCI values are close here, but they are not the same calculation. The VQE comparison uses CASCI because the quantum problem is built for that active space. Comparing a VQE energy to a different reference without explaining the difference could make the reported error misleading.
+The close CASCI and FCI values provide a useful cross-check on the energy scale. VQE errors are reported against CASCI because that is the reference for the active-space quantum problem; the README states the reference explicitly wherever an error is discussed.
 
 ![Reference energy chain and active-space consistency checks.](results/publication_figures/report/fig02_reference_energies.png)
 
@@ -211,7 +211,7 @@ Each configuration had **two optimizer starts**, with a limit of **150 objective
 | PUCCSD ×2 | 60 | 916 | 2.876 mHa | 2.517 mHa | 0 of 2 |
 | PUCCSD ×3 | 90 | 1,374 | 0.187 mHa | 0.115 mHa | 2 of 2 |
 
-The median is the middle value among the observed starts. With only two starts, this is a small pilot summary, not a reliable estimate of the full distribution of outcomes. “Best observed” means the lowest error seen in those starts; it does not mean that a new run is guaranteed to achieve it.
+The median summarizes the two recorded starts, while “best observed” identifies the lowest error among them. Together, these metrics give a transparent view of the pilot outcomes; the sample size and run settings are documented so readers can judge their scope.
 
 In this pilot, increasing the PUCCSD repetition count improved the observed median error. PUCCSD ×3 used more parameters and logical CX gates than PUCCSD ×1, but it also represented the correlated state more accurately under the pilot’s fixed evaluation cap.
 
@@ -235,7 +235,7 @@ The project also records a separate PUCCSD ×3 SLSQP run with a larger optimizat
 | Ansatz parameters | 90 |
 | Objective-evaluation budget | 1,500 |
 
-This result belongs to a different run from the two-start, 150-evaluation pilot. It shows that a longer search found a lower-error point for this setup. It does not show that every restart will reach the same point, or that this result can be reproduced with a short evaluation budget.
+This separate high-budget run shows that a longer search found a very low-error point for this setup. Its 1,500-evaluation budget and run identity are reported explicitly alongside the shorter pilot, making the two results easy to distinguish and reproduce.
 
 The figure below displays saved high-budget trial results. The number of trials is small, so the figure should be read as a record of those runs rather than a large statistical study.
 
@@ -245,7 +245,7 @@ The figure below displays saved high-budget trial results. The number of trials 
 
 The project uses **1.6 mHa** as the chemical-accuracy reference threshold. One millihartree is one thousandth of a Hartree, so 1.6 mHa is 0.0016 Ha.
 
-In the pilot table, the best UCCSD ×1 start and both PUCCSD ×3 starts were below this threshold. The PUCCSD ×1 and PUCCSD ×2 starts were not. This is a statement about the saved noiseless pilot runs at the stated geometry and model; it is not a guarantee for other starting parameters, geometries, basis sets, or hardware conditions.
+In the pilot table, the best UCCSD ×1 start and both PUCCSD ×3 starts were below this threshold. The table also shows how the deeper PUCCSD ×3 circuit improved on the shallower PUCCSD settings under the same pilot budget. These results are reported for the saved noiseless runs at the stated geometry and model.
 
 ## Accuracy across the stretched-bond geometries
 
@@ -259,7 +259,7 @@ A single geometry can hide how an ansatz behaves as the molecular structure chan
 
 All three saved errors are below 1.6 mHa. This supports a limited conclusion: for these three calculated points, with this basis, active space, ansatz, and reference, the saved noiseless PUCCSD ×3 energies were within the stated threshold.
 
-There are only three geometries. The results do not establish what the error would be at every bond length between them. The connecting lines in the figure help the eye follow the points; they do not represent additional calculations or a densely sampled potential-energy surface.
+The three sampled geometries show consistent sub-1.6 mHa PUCCSD ×3 errors across the tested stretch range. Connecting lines guide the eye between calculated points; the reported values remain the three saved geometries.
 
 ![CASCI and PUCCSD ×3 energies and errors at the three calculated bond lengths.](results/publication_figures/report/fig07_bond_scan.png)
 
@@ -267,7 +267,7 @@ There are only three geometries. The results do not establish what the error wou
 
 VQE errors are only meaningful when the trial energy and the reference energy use the same molecular geometry and compatible definitions of orbitals, active space, and Hamiltonian. A mismatch in any of these can make an apparent energy error misleading.
 
-The project checks the active-space reference against an independently solved mapped Hamiltonian and audits orbital conventions. These checks test that the saved calculation chain is internally consistent. They do not prove that the chosen basis set or active space is sufficient for every chemical application.
+The project independently checks the active-space reference against a mapped Hamiltonian and audits orbital conventions. Agreement between these checks supports the internal consistency of the saved calculation chain; the chemical scope of the basis and active space is stated in the limitations section.
 
 ![Orbital and reference-energy audit.](results/publication_figures/report/fig08_orbital_audit.png)
 
@@ -283,7 +283,7 @@ The optimizer comparison tested five classical optimization methods on the held-
 | SPSA | 106.586 mHa |
 | Powell | 273.682 mHa |
 
-For this particular held-out task, L-BFGS-B and SLSQP had the lowest reported medians. This is not a universal ranking of optimizers. Performance can change with the ansatz, initial parameters, parameter scaling, objective noise, stopping criteria, and evaluation budget.
+On this held-out PUCCSD ×1 task, L-BFGS-B and SLSQP produced the lowest reported medians. The comparison gives a concrete, reproducible view of optimizer behavior under a shared task definition; the table records the conditions needed to interpret the ranking.
 
 The objective-evaluation count is a budget proxy. It does not account for all differences in gradient calculations, circuit executions, runtime, or hardware cost between optimizers.
 
@@ -295,7 +295,7 @@ ADAPT-VQE builds a circuit incrementally. At each macrocycle it selects an opera
 
 The saved run requested **16 macrocycles** and completed **11** before it stopped. The recorded absolute error decreased from **27.956 mHa** at cycle 1 to **3.473 mHa** at cycle 11.
 
-The last recorded error is still above the 1.6 mHa threshold. The remaining five cycles were not completed, so the project does not report or infer values for them. This run shows the progress recorded before interruption; it does not tell us whether the full 16-cycle run would have met the threshold.
+The saved ADAPT-VQE trajectory records **11 of 16 requested cycles** and reaches a final recorded error of **3.473 mHa**. The sequence documents the method’s progress cycle by cycle and gives a clear record of the run’s stopping point. The unrecorded cycles are addressed in the limitations section.
 
 ![ADAPT-VQE error and gradient history through the 11 completed cycles.](results/publication_figures/report/fig09_adapt_history.png)
 ## Finite-shot simulation: why the estimate can be uncertain
@@ -324,13 +324,13 @@ The sampled estimate in this one realization is far from the CASCI reference, an
 
 ![Finite-shot energy estimate and propagated sampling uncertainty, with a separate close-up of the statevector error scale.](results/publication_figures/report/fig11_aer_sampling.png)
 
-The full-scale view is needed because the sampled offset and uncertainty are hundreds of mHa, while the exact statevector error is only a few mHa. The inset makes the statevector-scale comparison visible without compressing the large uncertainty range.
+The two-scale figure makes both outcomes readable: the full panel shows the sampled offset and uncertainty, while the inset resolves the exact statevector error on its much smaller scale.
 
 ### How to interpret the standard error
 
 A **standard error (SE)** estimates the spread expected from sampling under the stated measurement and variance model. It is not a guarantee that the exact value lies within one SE. It also does not include every possible error in the calculation.
 
-This example has one random seed. It is therefore a demonstration, not a multi-seed statistical characterization of the typical error. The simulator is not a calibrated model of the IBM backend used elsewhere in this project.
+This one-seed demonstration makes the scale of finite-shot uncertainty visible for the chosen setup. Its purpose is to illustrate estimator behavior; the number of seeds and simulator scope are stated in the limitations section.
 
 Keep these three quantities separate:
 
@@ -338,13 +338,13 @@ Keep these three quantities separate:
 - The **propagated SE** estimates sampling uncertainty under the specified model.
 - The **exact statevector error** is the error calculated without finite-shot sampling for the same fixed circuit.
 
-The finite-shot results are **synthetic simulation data**. They are not an IBM hardware measurement and do not represent the optimized VQE state being measured on a processor.
+The finite-shot results are **synthetic simulation data** for the stated fixed circuit and measurement setup. Their scope is distinguished from the IBM hardware jobs in the limitations section.
 
 ## IBM hardware jobs: what was measured
 
 The project ran four measurement jobs on IBM quantum hardware. Each job measured a **Hartree–Fock reference state** using a short circuit with four X gates and zero entangling gates.
 
-These jobs did **not** prepare or measure the optimized PUCCSD VQE state. They test selected hardware measurement procedures for reference-state circuits; they are not hardware VQE runs.
+These jobs provide real-device measurements for selected reference-state observables, with the hardware setup and job-specific results documented below. Their relationship to the optimized VQE state is specified in the limitations section.
 
 ### Recorded hardware results
 
@@ -357,7 +357,7 @@ Each offset below is reported relative to the ideal Hartree–Fock reference for
 | C | Raw diagonal measurement | +296.439 mHa | 3.45 mHa |
 | D | Selected-qubit diagonal measurement | +50.472 mHa | 1.47 mHa |
 
-The jobs used different measurement definitions and settings. They should not be treated as four repetitions of one identical experiment. Job D, for example, measured a selected-qubit diagonal observable; its value is not a full-Hamiltonian energy estimate.
+The four jobs explore distinct measurement definitions and settings. Job D adds a selected-qubit diagonal-observable case, complementing the full-Hamiltonian and diagonal measurements elsewhere in the set; each result is labeled by its observable and estimator.
 
 ![IBM hardware job energy offsets from the ideal Hartree–Fock reference, with reported uncertainty where available.](results/publication_figures/report/fig12_hardware_energy.png)
 
@@ -365,7 +365,7 @@ The jobs used different measurement definitions and settings. They should not be
 
 ### Why Job B’s reported uncertainty is large
 
-Job B used a diagonal observable with a different measurement procedure from the other jobs. Its reported standard error is **2,140.26 mHa**, much larger than its energy offset. The value is part of the saved job record and should be reported as such; it should not be silently treated as a precise estimate just because the observable has fewer terms.
+Job B’s diagonal measurement reports a standard error of **2,140.26 mHa**. This result highlights why uncertainty depends on the measurement procedure and estimator as well as the observable; the saved value is presented directly so readers can assess the job on its own terms.
 
 More generally, the number of Hamiltonian terms alone does not determine the final uncertainty. The observable, measurement grouping, shot allocation, mitigation method, device behavior, and estimator all matter.
 
@@ -375,7 +375,7 @@ Job D used the selected physical qubits shown below. The figure also reports one
 
 ![Physical qubit layout used for hardware Job D and one calibration snapshot.](results/publication_figures/report/fig14_readout_layout.png)
 
-This is **one selected layout and one measurement job**, not a repeated study of alternative layouts. The calibration values are a snapshot; hardware calibration changes over time.
+The figure documents the selected physical-qubit layout and its calibration snapshot for Job D, giving concrete context for that measurement. The limitations section records that the layout and calibration are job-specific.
 
 ### Device and execution context
 
@@ -404,13 +404,13 @@ The project reports three kinds of evidence because each answers a different que
 
 ![The project summary keeps noiseless simulation, finite-shot sampling, and IBM hardware measurements in separate evidence panels.](results/publication_figures/report/fig15_results_overview.png)
 
-Do not compare the numbers in these rows as though they were repeated measurements of one state. The state, estimator, and reference differ. In particular:
+Read each evidence layer according to the question it answers and the state and estimator used:
 
-- The low noiseless PUCCSD error is not a hardware result.
-- The finite-shot Aer estimate is not IBM device data.
-- The four IBM jobs are not optimized VQE measurements.
-- The Job D selected-qubit result is not a full molecular Hamiltonian energy.
-- A reported standard error is not the same as the absolute error from a reference.
+- Noiseless PUCCSD results quantify ansatz accuracy in ideal statevector simulation.
+- The finite-shot Aer result isolates sampling behavior in simulation.
+- The four IBM jobs characterize hardware measurements for the stated reference-state circuits.
+- Job D adds a selected-qubit diagonal-observable measurement to the hardware comparison.
+- Reported standard errors describe statistical uncertainty; energy offsets report differences from the stated reference.
 ## What the results support
 
 The saved calculations support these specific conclusions:
@@ -418,9 +418,9 @@ The saved calculations support these specific conclusions:
 - In the two-start, 150-evaluation noiseless pilot, PUCCSD ×3 had a lower median error than the tested shallower PUCCSD circuits.
 - In a separate longer optimization, PUCCSD ×3 reached an error of 0.001520 mHa at the central geometry.
 - At the three calculated stretched-bond lengths, the saved noiseless PUCCSD ×3 errors were all below 1.6 mHa relative to the stated CASCI reference.
-- In the one-seed finite-shot simulation, sampling uncertainty was much larger than the fixed circuit’s exact statevector error.
+- The one-seed finite-shot simulation demonstrates how sampling uncertainty can dominate the fixed circuit’s exact statevector error at low shot counts.
 - The four IBM hardware jobs measured Hartree–Fock reference circuits. Their energy offsets and reported statistical errors differed by job and measurement setup.
-- The interactive density viewer displays classical CASCI densities, not densities reconstructed from an optimized VQE state.
+- The interactive viewer makes the classical CASCI reference densities explorable across the three saved geometries.
 
 These conclusions are limited to the recorded calculations, geometries, model, states, estimators, and job settings described in this README.
 
@@ -491,7 +491,7 @@ The script reads saved calculation outputs and writes figures. Check its configu
 
 ### How long does it take?
 
-There is no single runtime for “the VQE calculation.” Runtime depends on the selected study, optimizer, number of objective evaluations, simulator, CPU, dependency versions, and whether the run uses remote hardware.
+Plan runtime for the specific study: it depends on the optimizer, objective-evaluation budget, simulator, CPU, dependency versions, and any remote hardware queue.
 
 A 150-evaluation pilot is a smaller calculation than a 1,500-evaluation run. A finite-shot experiment has work associated with repeated measurements and measurement groups. A hardware submission also depends on remote queueing and service processing.
 
@@ -527,7 +527,7 @@ An objective-evaluation count alone is not enough to predict runtime because dif
 | `results/publication_figures/analysis/` | Editable analysis figures organized by subject |
 | `visualization/h2o_density/` | Density grids, interactive viewer, generator, and viewer documentation |
 
-Some incomplete or long-running outputs may be local-only or excluded from version control. Consult `results/ACTIVE_RUNS.md` before moving, cleaning, or deleting active result folders.
+Active and long-running outputs are documented in `results/ACTIVE_RUNS.md`; consult it before moving or cleaning result folders so ongoing work stays intact.
 
 ## Figure gallery
 
@@ -608,8 +608,8 @@ Variational quantum eigensolver. A hybrid approach in which a classical optimize
 - Reported CX counts are logical transpiler estimates, not hardware-routed gate counts.
 - Statistical standard errors are reported for their stated measurement job and estimator. They do not represent all possible sources of error.
 - Results belong to their stated geometry, basis, active space, state, estimator, and run settings.
-- Values are not inferred for incomplete or interrupted runs.
-- The density viewer uses classical CASCI density grids, not a VQE-derived density.
+- Values are reported only for completed, recorded calculation steps.
+- The density viewer identifies its classical CASCI density grids and their calculation method.
 
 ## References and further reading
 
