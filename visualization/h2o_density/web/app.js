@@ -4,7 +4,7 @@ const errs = (window.__errors = []);
 window.addEventListener("error", (e) => errs.push(String(e.message)));
 function fail(m) { errs.push(m); const e = $("error"); e.hidden = false; e.textContent = m; $("progress").hidden = true; }
 
-const VIR = [[0.2777273272234177,0.005407344544966578,0.3340998053353061],[0.1050930431085774,1.404613529898575,1.384590162594685],[-0.3308618287255563,0.214847559468213,0.09509516302823659],[-4.634230498983486,-5.799100973351585,-19.33244095627987],[6.228269936347081,14.17993336680509,56.69055260068105],[4.776384997670288,-13.74514537774601,-65.35303263337234],[-5.435455855934631,4.645852612178535,26.3124352495832]];
+const VIR = [[0.0002189403691192265,0.001651004631001012,-0.01948089843709184],[0.1065134194856116,0.5639564367884091,3.932712388889277],[11.60249308247187,-3.972853965665698,-15.9423941062914],[-41.70399613139459,17.43639888205313,44.35414519872813],[77.162935699427,-33.40235894210092,-81.80730925738979],[-71.31942824499214,32.62606426397723,73.20951985803202],[25.13112622477341,-12.24266895238567,-23.07032500287172]]; // inferno
 function viridis(t) { return [0,1,2].map((k) => { let v = 0; for (let i = 6; i >= 0; i--) v = v * t + VIR[i][k]; return Math.min(1, Math.max(0, v)); }); }
 
 const VS = `#version 300 es
@@ -15,12 +15,12 @@ uniform sampler3D uTex; uniform vec3 uOrigin,uN,uEye,uRight,uUp,uFwd,uBmin,uBmax
 uniform vec2 uRes; uniform vec3 uAP[3]; uniform float uAR[3]; uniform vec3 uAC[3];
 out vec4 o;
 vec3 vir(float t){t=clamp(t,0.,1.);
- vec3 c0=vec3(0.2777273,0.0054073,0.3340998),c1=vec3(0.1050930,1.4046135,1.3845902),c2=vec3(-0.3308618,0.2148476,0.0950952),c3=vec3(-4.6342305,-5.7991010,-19.3324410),c4=vec3(6.2282699,14.1799334,56.6905526),c5=vec3(4.7763850,-13.7451454,-65.3530326),c6=vec3(-5.4354559,4.6458526,26.3124352);
+ vec3 c0=vec3(0.0002189,0.0016510,-0.0194809),c1=vec3(0.1065134,0.5639564,3.9327124),c2=vec3(11.6024931,-3.9728540,-15.9423941),c3=vec3(-41.7039961,17.4363989,44.3541452),c4=vec3(77.1629357,-33.4023589,-81.8073093),c5=vec3(-71.3194282,32.6260643,73.2095199),c6=vec3(25.1311262,-12.2426690,-23.0703250);
  return clamp(c0+t*(c1+t*(c2+t*(c3+t*(c4+t*(c5+t*c6))))),0.,1.);}
 float lg(vec3 p){vec3 uv=((p-uOrigin)/uH+0.5)/uN;return log2(max(texture(uTex,uv).r,1e-7))*0.30103;}
 void main(){
  vec2 q=(gl_FragCoord.xy/uRes)*2.-1.; vec3 rd=normalize(uFwd+uTan*(q.x*uAsp*uRight+q.y*uUp));
- vec3 bg=mix(vec3(0.03,0.04,0.07),vec3(0.075,0.095,0.15),1.-gl_FragCoord.y/uRes.y*0.9);
+ vec3 bg=vec3(0.);
  vec3 inv=1./rd, t1=(uBmin-uEye)*inv, t2=(uBmax-uEye)*inv; vec3 tm=min(t1,t2),tM=max(t1,t2);
  float t0=max(max(tm.x,max(tm.y,tm.z)),0.), te=min(tM.x,min(tM.y,tM.z));
  float tA=1e9; int kA=-1;
@@ -36,7 +36,7 @@ void main(){
    float a=1.-exp(-uVol*tn*tn*tn*uStep*7.); acc+=(1.-acc.a)*vec4(vir(tn)*a,a);
    if((pl-uIso)*(l-uIso)<0.){
     float ta=pt,tb=t; for(int k=0;k<5;k++){float tc=.5*(ta+tb);float lc=lg(uEye+rd*tc);if((lc-uIso)*(pl-uIso)<0.)tb=tc;else ta=tc;}
-    vec3 ps=uEye+rd*(.5*(ta+tb)); float e=uH;
+    vec3 ps=uEye+rd*(.5*(ta+tb)); float e=uH; 
     vec3 g=vec3(lg(ps+vec3(e,0,0))-lg(ps-vec3(e,0,0)),lg(ps+vec3(0,e,0))-lg(ps-vec3(0,e,0)),lg(ps+vec3(0,0,e))-lg(ps-vec3(0,0,e)));
     vec3 n=-normalize(g+1e-9); if(dot(n,rd)>0.)n=-n;
     float df=0.25+0.75*max(dot(n,-rd),0.); float sp=pow(max(dot(reflect(rd,n),-rd),0.),30.);
@@ -75,7 +75,7 @@ function basis() {
   const fwd = nrm(sub(cam.target, eye)), right = nrm(cross(fwd, [0, 1, 0])), up = cross(right, fwd);
   return { eye, fwd, right, up };
 }
-const ATOM = { O: { r: 0.42, c: [0.95, 0.25, 0.22] }, H: { r: 0.26, c: [0.92, 0.94, 0.98] } };
+const ATOM = { O: { r: 0.34, c: [1.0, 0.42, 0.22] }, H: { r: 0.2, c: [0.93, 0.92, 0.9] } };
 
 function centroid() { const a = S.ds.geometry.atoms.map((x) => x.xyz_bohr); return [0, 1, 2].map((k) => a.reduce((s, v) => s + v[k], 0) / a.length); }
 function resetView(keepAngles) {
@@ -155,11 +155,11 @@ function info() {
 }
 function controls() {
   const gs = [...new Set(S.man.datasets.map((d) => d.geometry_id))];
-  $("geoms").innerHTML = gs.map((g, i) => { const d = S.man.datasets.find((x) => x.geometry_id === g); return `<label><input type="radio" name="geom" value="${g}" ${i === 1 ? "checked" : ""}> R₂ = ${d.geometry.r2_angstrom.toFixed(2)} Å</label>`; }).join("");
+  $("geoms").innerHTML = gs.map((g, i) => { const d = S.man.datasets.find((x) => x.geometry_id === g); return `<label><input type="radio" name="geom" value="${g}" ${i === 1 ? "checked" : ""}>${d.geometry.r2_angstrom.toFixed(2)} Å</label>`; }).join("");
   S.geom = gs[1] || gs[0];
   const hasV = S.man.datasets.some((d) => d.source_kind === "vqe");
-  $("sources").innerHTML = `<label><input type="radio" name="src" value="casci" checked> CASCI reference (exact)</label>
-   <label class="${hasV ? "" : "dis"}"><input type="radio" name="src" value="vqe" ${hasV ? "" : "disabled"}> VQE-derived (saved PUCCSD state)${hasV ? "" : " — not generated"}</label>` + (hasV ? "" : `<p class="note">${S.man.vqe.reason}</p>`);
+  $("sources").innerHTML = `<label><input type="radio" name="src" value="casci" checked> CASCI reference · exact</label>
+   <label class="${hasV ? "" : "dis"}"><input type="radio" name="src" value="vqe" ${hasV ? "" : "disabled"}> VQE-derived · saved PUCCSD state${hasV ? "" : " — not generated"}</label>` + (hasV ? "" : `<p class="note">${S.man.vqe.reason}</p>`);
   document.querySelectorAll("input[name=geom]").forEach((e) => e.addEventListener("change", () => { S.geom = e.value; select(); }));
   document.querySelectorAll("input[name=src]").forEach((e) => e.addEventListener("change", () => { S.src = e.value; select(); }));
   const upd = () => { $("isov").textContent = (10 ** +$("iso").value).toPrecision(2); bump(false); };
