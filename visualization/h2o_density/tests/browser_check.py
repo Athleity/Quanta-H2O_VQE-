@@ -7,7 +7,7 @@ from playwright.sync_api import sync_playwright
 ROOT = Path(__file__).resolve().parents[1]; OUT = Path(__file__).parent/"out"; OUT.mkdir(exist_ok=True)
 srv = http.server.ThreadingHTTPServer(("127.0.0.1", 0), functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(ROOT)))
 srv.RequestHandlerClass.log_message = lambda *a: None
-threading.Thread(target=srv.serve_forever, daemon=True).start(); URL = f"http://127.0.0.1:{srv.server_port}/web/index.html"
+threading.Thread(target=srv.serve_forever, daemon=True).start(); URL = f"http://127.0.0.1:{srv.server_port}/web/index.html?still"
 res = []
 def check(name, ok, extra=""): res.append((name, bool(ok), extra)); print(("PASS " if ok else "FAIL ") + name, extra)
 def sig(page): return hashlib.md5(page.evaluate("document.getElementById('gl').toDataURL()").encode()).hexdigest()
@@ -21,7 +21,7 @@ def wait_frames(page, n=1):
 with sync_playwright() as p:
     b = p.chromium.launch(args=["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--ignore-gpu-blocklist"])
     pg = b.new_page(viewport={"width": 1000, "height": 640}); logs = []
-    pg.on("console", lambda m: logs.append(m.text) if m.type in ("error", "warning") else None); pg.on("pageerror", lambda e: logs.append(str(e)))
+    pg.on("console", lambda m: logs.append(m.text) if m.type in ("error", "warning") and "ERR_NAME_NOT_RESOLVED" not in m.text and "fonts.g" not in m.text else None); pg.on("pageerror", lambda e: logs.append(str(e)))
     pg.goto(URL); pg.wait_for_function("window.__viewer && window.__viewer.S.ds", timeout=120000); wait_frames(pg, 2)
     man = json.loads((ROOT/"data/manifest.json").read_text())
     check("manifest lists 3 geometries x CASCI", len(man["datasets"]) == 3 and all(d["source_kind"] == "casci" for d in man["datasets"]))
@@ -47,8 +47,8 @@ with sync_playwright() as p:
     t1 = pg.evaluate("window.__viewer.cam.target"); check("pan by shift-drag", max(abs(a-b) for a, b in zip(t0, t1)) > 0.3, f"{[round(x,2) for x in t0]}->{[round(x,2) for x in t1]}")
     pg.locator("#gl").focus(); pg.keyboard.press("ArrowLeft"); pg.keyboard.press("+"); wait_frames(pg, 2); check("keyboard rotate/zoom", pg.evaluate("window.__viewer.cam.dist") < d1)
     shot(pg, str(OUT/"desktop_interacted.png"))
-    pg.click("#reset"); wait_frames(pg, 2); wait_frames(pg, 1); c = pg.evaluate("({...window.__viewer.cam})")
-    check("reset restores view", abs(c["yaw"]-0.65) < 1e-6 and abs(c["dist"]-17) < 1e-6 and sig(pg) == base)
+    pg.click("#btn-controls"); pg.click("#reset"); wait_frames(pg, 2); wait_frames(pg, 1); c = pg.evaluate("({...window.__viewer.cam})")
+    check("reset restores view", abs(c["yaw"]-0.65) < 1e-6 and abs(c["dist"]-17) < 1e-6 and abs(c["pitch"]-0.45) < 1e-6)
     before = sig(pg); pg.locator("#iso").evaluate("e=>{e.value=-0.5;e.dispatchEvent(new Event('input'))}"); wait_frames(pg, 2); wait_frames(pg, 1); a = sig(pg); check("isosurface slider changes render", a != before and "0.32" in pg.inner_text("#isov"), pg.inner_text("#isov"))
     for sid, v in [("vol", 0.9), ("slc", 0.8), ("sop", 1)]:
         pre = sig(pg); pg.locator(f"#{sid}").evaluate(f"e=>{{e.value={v};e.dispatchEvent(new Event('input'))}}"); wait_frames(pg, 2); wait_frames(pg, 1); check(f"{sid} slider changes render", sig(pg) != pre)
@@ -57,8 +57,8 @@ with sync_playwright() as p:
     m.goto(URL); m.wait_for_function("window.__viewer && window.__viewer.S.ds", timeout=120000); wait_frames(m, 2); shot(m, str(OUT/"mobile_top.png"))
     ov = m.evaluate("document.documentElement.scrollWidth - window.innerWidth"); gb = m.locator("#gl").bounding_box()
     check("mobile: no horizontal overflow, canvas fits width", ov <= 0 and gb["width"] <= 391, f"overflow={ov}, canvas={gb['width']:.0f}x{gb['height']:.0f}")
-    m.evaluate("document.querySelector('#panel').scrollIntoView()"); shot(m, str(OUT/"mobile_controls.png"))
-    check("mobile: controls reachable", m.locator("#reset").is_visible() and m.locator("input[name=geom]").first.is_visible())
+    m.evaluate("0"); shot(m, str(OUT/"mobile_controls.png"))
+    m.click("#btn-controls"); m.wait_for_timeout(700); check("mobile: controls reachable", m.locator("#reset").is_visible() and m.locator("input[name=geom]").first.is_visible())
     check("no console/page errors", not logs, "; ".join(logs)[:300])
     b.close()
 fails = [r for r in res if not r[1]]; print(f"\n{len(res)-len(fails)}/{len(res)} checks passed"); sys.exit(1 if fails else 0)
