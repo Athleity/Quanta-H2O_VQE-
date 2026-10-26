@@ -1,0 +1,84 @@
+{
+  "project_archive": "user-supplied Quanta-H2O_VQE--main.zip",
+  "source_code": "src/h2o_vqe/engine.py::_run_single_vqe",
+  "ansatz": "Qiskit Nature PUCCSD, reps=3, initial_state=HartreeFock(6,(4,4),ParityMapper((4,4)))",
+  "geometry_angstrom": {
+    "fixed_oh": 0.96,
+    "stretched_oh": 2.2,
+    "hoh_angle_deg": 104.5
+  },
+  "model": "STO-3G frozen-core CAS(8e,6o), closed-shell (4 alpha, 4 beta)",
+  "mapping": "ParityMapper(num_particles=(4,4)); 12 spin-orbital qubits reduced to 10",
+  "logical_basis": [
+    "x",
+    "rx",
+    "ry",
+    "rz",
+    "cx"
+  ],
+  "optimization_level_for_atlas": 0,
+  "saved_trial": 0,
+  "saved_parameter_vector_length": 90,
+  "regenerated_level0_metrics": {
+    "qubits": 10,
+    "parameters": 90,
+    "size": 2950,
+    "depth": 1662,
+    "cx": 1746
+  },
+  "single_layer_metrics": {
+    "depth": 569,
+    "size": 982,
+    "ops": {
+      "cx": 582,
+      "ry": 234,
+      "rx": 102,
+      "rz": 64
+    }
+  },
+  "archived_level3_metrics": {
+    "depth": 1356,
+    "size": 2605,
+    "cx": 1374
+  },
+  "depth_profile": {
+    "metric": "per-layer gate occupancy plus cumulative total",
+    "layer_count": 1662,
+    "gate_count": 2950,
+    "mean_gates_per_layer": 1.7749699157641396,
+    "peak_gates_per_layer": 5,
+    "peak_layer_indices_zero_based": [
+      139,
+      143,
+      689,
+      690,
+      1235,
+      1236
+    ],
+    "gate_families": [
+      "x",
+      "rx",
+      "ry",
+      "rz",
+      "cx"
+    ]
+  },
+  "gate_atlas": {
+    "file": "puccsd3_gate_atlas.pdf",
+    "background": "white",
+    "pages": 52,
+    "asap_depth_layers_per_page": 32,
+    "gates_represented": 2950,
+    "parameter_angles_displayed_to_decimals": 3
+  },
+  "figure_design": {
+    "summary_background": "white",
+    "cx_map_colormap": "viridis sequential magnitude; categorical zero and invalid diagonal cells are nonwhite",
+    "parameter_map_colormap": "blue-slate-red diverging scale symmetric about zero with nonwhite neutral midpoint"
+  },
+  "limitations": [
+    "Level-3 values are compiler estimates without a backend coupling map.",
+    "No IBM hardware execution is represented.",
+    "The symbolic atlas displays the full parameterized circuit; gate_ledger.csv also records each operation's bound angle for saved pilot trial 0."
+  ]
+}
