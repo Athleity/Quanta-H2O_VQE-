@@ -6,13 +6,14 @@
 
 ## VQE circuit figures
 
-The first figure shows the circuit structure at a glance. The second shows the full scheduled circuit depth.
+The excitation-pool figure shows the operators available to the ansatz. The full-depth figure shows how the complete circuit is scheduled across its layers.
 
-![PUCCSD ×3 circuit architecture](results/publication_figures/circuit_figures/figure_01_circuit_architecture.png)
+![PUCCSD excitation pool](results/publication_figures/circuit_figures/figure_02_excitation_pool.png)
 
 ![Full-depth VQE circuit](results/publication_figures/circuit_figures/figure_06_full_depth_circuit.png)
 
 [Browse all circuit figures](results/publication_figures/circuit_figures/)
+
 ## Interactive H₂O electron-density viewer
 
 [![Screenshot of the interactive H₂O electron-density viewer](visualization/h2o_density/tests/screenshots/desktop_r2-2.20.png)](https://athleity.github.io/Quanta-H2O_VQE-/visualization/h2o_density/web/)
