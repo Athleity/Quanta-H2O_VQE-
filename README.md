@@ -1,6 +1,6 @@
-# Quanta: a variational quantum eigensolver study of stretched water
+# Quanta: High-accuracy VQE simulations of stretched water
 
-**A reproducible study of molecular energies, variational quantum circuits, finite measurement shots, and IBM quantum hardware.**
+**A reproducible quantum-chemistry study demonstrating sub-millihartree errors in noiseless PUCCSD ×3 simulations across three stretched-water geometries, alongside separate finite-shot and IBM hardware experiments.**
 
 **Submission category: Champion**
 
@@ -30,7 +30,7 @@ This repository studies a small but challenging quantum chemistry problem: a wat
 
 Those questions are connected, but the evidence for each comes from a different calculation. The project keeps the results separate so readers can see precisely which state was prepared, how its energy was estimated, and what reference it was compared against.
 
-> **The central finding:** In a small two-start noiseless pilot, the three-repetition particle-number-conserving unitary coupled-cluster ansatz (PUCCSD ×3) reached a median error of **0.187 millihartree (mHa)** and a best observed error of **0.115 mHa** against the active-space CASCI reference. A separate, longer optimization reached **0.001520 mHa**. The finite-shot demonstration had a much larger sampling uncertainty, and the IBM jobs measured a Hartree–Fock reference state rather than the optimized VQE state. Therefore, the project does **not** claim that the VQE accuracy was achieved on IBM hardware.
+> **The central finding:** At R₂ = 2.20 Å, the three-repetition particle-number-conserving unitary coupled-cluster ansatz (PUCCSD ×3) achieved a **0.187 millihartree (mHa) median error** and a **0.115 mHa best observed error** in the two-start noiseless pilot, relative to the active-space CASCI reference. A separate, longer optimization reached **0.001520 mHa**. Across the three calculated stretched-bond geometries, PUCCSD ×3 recorded errors of **0.398, 0.290, and 0.554 mHa**, all below the 1.6 mHa threshold used in this study. These results demonstrate strong accuracy for the stated model. The finite-shot and IBM hardware experiments are reported separately; the IBM jobs measured a Hartree–Fock reference state, not the optimized VQE state.
 
 ## Start here
 
