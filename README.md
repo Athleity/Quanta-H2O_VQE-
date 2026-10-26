@@ -17,6 +17,7 @@ The excitation-pool figure shows the operators available to the ansatz. The full
 ## Interactive H₂O electron-density viewer
 
 [![Screenshot of the interactive H₂O electron-density viewer](visualization/h2o_density/tests/screenshots/desktop_r2-2.20.png)](https://athleity.github.io/Quanta-H2O_VQE-/visualization/h2o_density/web/)
+[![Screenshot of the interactive H₂O electron-density viewer](visualization/h2o_density/tests/screenshots/desktop_2.20.png)](https://athleity.github.io/Quanta-H2O_VQE-/visualization/h2o_density/web/)
 
 [Open the live 3D viewer](https://athleity.github.io/Quanta-H2O_VQE-/visualization/h2o_density/web/)
 
