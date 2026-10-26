@@ -1,34 +1,111 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>H2O electron density · asymmetric O–H stretch</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter+Tight:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="style.css"></head><body>
-<div id="stage">
- <canvas id="gl" tabindex="0" role="img" aria-label="Interactive 3D electron density of stretched water. Drag or arrow keys rotate, shift+drag or shift+arrows pan, wheel or plus/minus zoom, R resets."></canvas>
- <div id="labels" aria-hidden="true"><span></span><span></span><span></span></div>
- <header id="top">
-  <div id="brand"><h1>H<sub>2</sub>O</h1><p class="kicker">Electron density <span>ρ(r)</span> · asymmetric O–H stretch</p>
-   <p id="headline" aria-live="polite">Loading…</p></div>
-  <nav><button id="btn-controls" aria-expanded="false" aria-controls="drawer-controls">Controls</button><button id="btn-data" aria-expanded="false" aria-controls="drawer-data">Data</button></nav>
- </header>
- <div id="readout" aria-live="off"><span class="lab">O–H₂ bond length</span><div class="big"><b id="r2val">2.20</b><i>Å</i></div>
-  <span class="tag" id="rtag">computed geometry</span><span class="fix">O–H₁ = 0.96 Å fixed · ∠HOH = 104.5°</span></div>
- <div id="legend"><h2>Density shells · e/bohr³</h2><ul id="shells"></ul><p class="key"><span class="solid"></span> fixed bond <span class="dash"></span> stretched bond</p></div>
- <div id="transport">
-  <button id="btn-play" aria-pressed="false">Play stretch</button>
-  <div id="scrubwrap"><input id="scrub" type="range" min="1.8" max="2.6" step="0.001" value="2.2" aria-label="O–H₂ bond length in angstrom">
-   <div id="geoms" role="group" aria-label="Computed geometries"></div></div>
-  <div id="sources" class="seg" role="radiogroup" aria-label="Density source"></div>
-  <button id="btn-rotate" aria-pressed="true">Auto-rotate</button>
- </div>
- <aside id="drawer-controls" class="drawer" aria-label="Display controls"><h2>Display</h2>
-  <div class="row"><label for="lev">Shell level</label><input id="lev" type="range" min="-0.6" max="0.6" step="0.01" value="0"><output id="levv"></output></div>
-  <div class="row"><label for="sop">Glow</label><input id="sop" type="range" min="0.2" max="2.5" step="0.01" value="1"><output id="sopv"></output></div>
-  <div class="row"><label for="asz">Atom size</label><input id="asz" type="range" min="0.5" max="1.6" step="0.01" value="1"><output id="aszv"></output></div>
-  <div class="btns"><button id="reset">Reset view</button><button id="fit">Fit molecule</button></div>
-  <p class="note">Drag rotate · Shift/right-drag pan · wheel or pinch zoom · arrows, +/−, R, F · Esc closes panels.</p>
-  <p class="note">Shell level rescales all five isodensity surfaces (re-meshes on release). Glow only changes brightness.</p></aside>
- <aside id="drawer-data" class="drawer" aria-label="Data and checks"><h2>Data &amp; checks</h2><dl id="info"></dl><p class="note" id="srcnote"></p></aside>
- <div id="progress" role="status"><div id="bar"><i></i></div><span id="ptext">Loading density…</span></div><div id="error" role="alert" hidden></div>
-</div>
-<script src="app.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>H2O electron density · asymmetric O–H stretch</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter+Tight:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="stage">
+    <canvas
+      id="gl"
+      tabindex="0"
+      role="img"
+      aria-label="Interactive 3D electron density of stretched water. Drag or arrow keys rotate, shift+drag or shift+arrows pan, wheel or plus/minus zoom, R resets."
+    ></canvas>
+
+    <div id="labels" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </div>
+
+    <header id="top">
+      <div id="brand">
+        <h1>H<sub>2</sub>O</h1>
+        <p class="kicker">Electron density <span>ρ(r)</span> · asymmetric O–H stretch</p>
+        <p id="headline" aria-live="polite">Loading…</p>
+      </div>
+      <nav>
+        <button id="btn-controls" aria-expanded="false" aria-controls="drawer-controls">Controls</button>
+        <button id="btn-data" aria-expanded="false" aria-controls="drawer-data">Data</button>
+      </nav>
+    </header>
+
+    <div id="readout" aria-live="off">
+      <span class="lab">O–H₂ bond length</span>
+      <div class="big"><b id="r2val">2.20</b><i>Å</i></div>
+      <span class="tag" id="rtag">computed geometry</span>
+      <span class="fix">O–H₁ = 0.96 Å fixed · ∠HOH = 104.5°</span>
+    </div>
+
+    <div id="legend">
+      <h2>Density shells · e/bohr³</h2>
+      <ul id="shells"></ul>
+      <p class="key"><span class="solid"></span> fixed bond <span class="dash"></span> stretched bond</p>
+    </div>
+
+    <div id="transport">
+      <button id="btn-play" aria-pressed="false">Play stretch</button>
+      <div id="scrubwrap">
+        <input
+          id="scrub"
+          type="range"
+          min="1.8"
+          max="2.6"
+          step="0.001"
+          value="2.2"
+          aria-label="O–H₂ bond length in angstrom"
+        >
+        <div id="geoms" role="group" aria-label="Computed geometries"></div>
+      </div>
+      <div id="sources" class="seg" role="radiogroup" aria-label="Density source"></div>
+      <button id="btn-rotate" aria-pressed="true">Auto-rotate</button>
+    </div>
+
+    <aside id="drawer-controls" class="drawer" aria-label="Display controls">
+      <h2>Display</h2>
+      <div class="row">
+        <label for="lev">Shell level</label>
+        <input id="lev" type="range" min="-0.6" max="0.6" step="0.01" value="0">
+        <output id="levv"></output>
+      </div>
+      <div class="row">
+        <label for="sop">Glow</label>
+        <input id="sop" type="range" min="0.2" max="2.5" step="0.01" value="1">
+        <output id="sopv"></output>
+      </div>
+      <div class="row">
+        <label for="asz">Atom size</label>
+        <input id="asz" type="range" min="0.5" max="1.6" step="0.01" value="1">
+        <output id="aszv"></output>
+      </div>
+      <div class="btns">
+        <button id="reset">Reset view</button>
+        <button id="fit">Fit molecule</button>
+      </div>
+      <p class="note">Drag to rotate · Shift/right-drag to pan · wheel or pinch to zoom · arrows, +/−, R, F · Esc closes panels.</p>
+      <p class="note">Shell level rescales all five isodensity surfaces (re-meshes on release). Glow only changes brightness.</p>
+    </aside>
+
+    <aside id="drawer-data" class="drawer" aria-label="Data and checks">
+      <h2>Data &amp; checks</h2>
+      <dl id="info"></dl>
+      <p class="note" id="srcnote"></p>
+    </aside>
+
+    <div id="progress" role="status">
+      <div id="bar"><i></i></div>
+      <span id="ptext">Loading density…</span>
+    </div>
+
+    <div id="error" role="alert" hidden></div>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="soundscape.js"></script>
+</body>
+</html>
