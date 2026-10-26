@@ -29,8 +29,8 @@ const narrow = () => window.innerWidth <= 820;
 
 // ---------------- WebGL setup ----------------
 const canvas = $("gl");
-const gl = canvas.getContext("webgl2", { antialias: true, alpha: false, powerPreference: "high-performance", preserveDrawingBuffer: true });
-const S = { man: null, sets: [], levMul: 1, r: 2.2, playing: !STILL, auto: !STILL, phase: 0, reveal: STILL ? 1 : 0, ready: false, dirty: true, lastInput: 0, interacting: false, q: 1, src: "casci", nearest: -1 };
+const gl = canvas.getContext("webgl2", { antialias: true, alpha: false, powerPreference: "high-performance", preserveDrawingBuffer: false });
+const S = { man: null, sets: [], levMul: 1, r: 2.2, playing: !STILL, auto: false, phase: 0, reveal: STILL ? 1 : 0, ready: false, dirty: true, lastInput: 0, interacting: false, q: 0.78, src: "casci", nearest: -1 };
 const cam = { yaw: DEF.yaw, pitch: DEF.pitch, dist: DEF.dist, target: [0, 0, 0] };
 let view = { w: 800, h: 600 }, camAnim = null, rTween = null, idleT, P = {}, SPH, CYL;
 
@@ -75,7 +75,7 @@ function cylMesh(seg = 48) {
 // ---------------- marching tetrahedra isosurface ----------------
 const CO = [[0,0,0],[1,0,0],[1,1,0],[0,1,0],[0,0,1],[1,0,1],[1,1,1],[0,1,1]];
 const TETS = [[0,5,1,6],[0,1,2,6],[0,2,3,6],[0,3,7,6],[0,7,4,6],[0,4,5,6]];
-function isoMesh(vol, nx, ny, nz, org, h, L, st) {
+async function isoMesh(vol, nx, ny, nz, org, h, L, st) {
   let buf = new Float32Array(1 << 16), len = 0;
   const push = (x, y, z, a, b, c) => { if (len + 6 > buf.length) { const nb = new Float32Array(buf.length * 2); nb.set(buf); buf = nb; } buf[len++] = x; buf[len++] = y; buf[len++] = z; buf[len++] = a; buf[len++] = b; buf[len++] = c; };
   const at = (i, j, k) => vol[Math.min(nx-1, Math.max(0, i)) + nx * (Math.min(ny-1, Math.max(0, j)) + ny * Math.min(nz-1, Math.max(0, k)))];
@@ -88,7 +88,9 @@ function isoMesh(vol, nx, ny, nz, org, h, L, st) {
     const l = Math.hypot(gx, gy, gz) || 1;
     return [org[0] + h * (ia + t * (ib - ia)), org[1] + h * (ja + t * (jb - ja)), org[2] + h * (ka + t * (kb - ka)), -gx / l, -gy / l, -gz / l];
   };
-  for (let k = 0; k < nz - st; k += st) for (let j = 0; j < ny - st; j += st) for (let i = 0; i < nx - st; i += st) {
+  for (let k = 0; k < nz - st; k += st) {
+    await tick(); // let the browser paint and process input between volume slices
+    for (let j = 0; j < ny - st; j += st) for (let i = 0; i < nx - st; i += st) {
     let mn = 1e30, mx = -1e30;
     for (let c = 0; c < 8; c++) { ci[c] = i + CO[c][0]*st; cj[c] = j + CO[c][1]*st; ck[c] = k + CO[c][2]*st; const x = vol[ci[c] + nx * (cj[c] + ny * ck[c])]; v[c] = x; if (x < mn) mn = x; if (x > mx) mx = x; }
     if (mn >= L || mx < L) continue;
@@ -100,24 +102,42 @@ function isoMesh(vol, nx, ny, nz, org, h, L, st) {
       else if (ins.length === 2) { const a = edge(ins[0], out[0]), b = edge(ins[0], out[1]), c = edge(ins[1], out[1]), d = edge(ins[1], out[0]); tri(a, b, c); tri(a, c, d); }
     }
   }
+  }
   return buf.slice(0, len);
 }
 const H2F = (() => { const t = new Float32Array(65536); for (let h = 0; h < 65536; h++) { const e = (h >> 10) & 31, m = h & 1023, s = h & 0x8000 ? -1 : 1; t[h] = s * (e === 0 ? m * 5.960464477539063e-8 : e === 31 ? 0 : Math.pow(2, e - 15) * (1 + m / 1024)); } return t; })();
-function subVolume(u16, n, o, h) {      // decode float16 -> float32 inside the box where rho > 3e-4
+async function subVolume(u16, n, o, h) { // decode float16 -> float32 while yielding so loading does not freeze the page
   const [nx, ny, nz] = n, mn = [nx, ny, nz], mx = [-1, -1, -1];
-  for (let z = 0; z < nz; z++) for (let y = 0; y < ny; y++) { const b = nx * (y + ny * z); for (let x = 0; x < nx; x++) if (H2F[u16[b + x]] > 3e-4) { if (x < mn[0]) mn[0] = x; if (x > mx[0]) mx[0] = x; if (y < mn[1]) mn[1] = y; if (y > mx[1]) mx[1] = y; if (z < mn[2]) mn[2] = z; if (z > mx[2]) mx[2] = z; } }
-  const lo = [0,1,2].map((k) => Math.max(0, mn[k] - 3)), hi = [0,1,2].map((k) => Math.min(n[k] - 1, mx[k] + 3)), d = [0,1,2].map((k) => hi[k] - lo[k] + 1);
+  for (let z = 0; z < nz; z++) {
+    if ((z & 3) === 0) await tick();
+    for (let y = 0; y < ny; y++) {
+      const b = nx * (y + ny * z);
+      for (let x = 0; x < nx; x++) if (H2F[u16[b + x]] > 3e-4) {
+        if (x < mn[0]) mn[0] = x; if (x > mx[0]) mx[0] = x;
+        if (y < mn[1]) mn[1] = y; if (y > mx[1]) mx[1] = y;
+        if (z < mn[2]) mn[2] = z; if (z > mx[2]) mx[2] = z;
+      }
+    }
+  }
+  const lo = [0, 1, 2].map((k) => Math.max(0, mn[k] - 3));
+  const hi = [0, 1, 2].map((k) => Math.min(n[k] - 1, mx[k] + 3));
+  const d = [0, 1, 2].map((k) => hi[k] - lo[k] + 1);
   const vol = new Float32Array(d[0] * d[1] * d[2]); let q = 0;
-  for (let z = lo[2]; z <= hi[2]; z++) for (let y = lo[1]; y <= hi[1]; y++) { const b = nx * (y + ny * z); for (let x = lo[0]; x <= hi[0]; x++) vol[q++] = H2F[u16[b + x]]; }
-  return { vol, d, org: [0,1,2].map((k) => o[k] + lo[k] * h), h };
-}
-const tick = () => new Promise((r) => setTimeout(r, 0));
+  for (let z = lo[2]; z <= hi[2]; z++) {
+    if (((z - lo[2]) & 3) === 0) await tick();
+    for (let y = lo[1]; y <= hi[1]; y++) {
+      const b = nx * (y + ny * z);
+      for (let x = lo[0]; x <= hi[0]; x++) vol[q++] = H2F[u16[b + x]];
+    }
+  }
+  return { vol, d, org: [0, 1, 2].map((k) => o[k] + lo[k] * h), h };
+}const tick = () => new Promise((r) => setTimeout(r, 0));
 async function buildMeshes(set, onStep) {
   for (const m of set.meshes || []) { gl.deleteVertexArray(m.v); gl.deleteBuffer(m.b); }
   set.meshes = [];
   for (let li = 0; li < BASE_LEVELS.length; li++) {
     const L = BASE_LEVELS[li] * S.levMul, st = L < 0.01 ? 2 : 1;
-    const data = isoMesh(set.sv.vol, set.sv.d[0], set.sv.d[1], set.sv.d[2], set.sv.org, set.sv.h, L, st);
+    const data = await isoMesh(set.sv.vol, set.sv.d[0], set.sv.d[1], set.sv.d[2], set.sv.org, set.sv.h, L, st);
     set.meshes.push(vao(data)); await tick(); if (onStep) onStep();
   }
 }
@@ -149,7 +169,7 @@ function bondM(A, B, rad) {
 // ---------------- drawing ----------------
 function draw() {
   if (!S.ready) return;
-  const dpr = Math.min(window.devicePixelRatio || 1, 2), k = Math.sqrt(Math.min(1, 4e6 / (view.w * view.h * dpr * dpr))) * S.q;
+  const dpr = Math.min(window.devicePixelRatio || 1, 2), k = Math.sqrt(Math.min(1, 2.4e6 / (view.w * view.h * dpr * dpr))) * S.q;
   const w = Math.max(2, Math.round(view.w * dpr * k)), h = Math.max(2, Math.round(view.h * dpr * k));
   if (canvas.width !== w || canvas.height !== h) { canvas.width = w; canvas.height = h; }
   gl.viewport(0, 0, w, h); gl.clearColor(0, 0, 0, 1); gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
@@ -195,7 +215,7 @@ function frame(now) {
     if (S.auto && now - S.lastInput > 2200 && !camAnim) { cam.yaw += 0.16 * dt; anim = true; }
   }
   if (anim || S.dirty) { const gap = now - (S.lastDraw || now); S.lastDraw = now;   // adaptive quality: slow GPU/CPU renderer -> fewer pixels, never a stalled page
-    if (anim && gap > 0 && gap < 400) { S.gapAvg = (S.gapAvg || gap) * 0.8 + gap * 0.2; if (S.gapAvg > 45 && S.q > 0.35) { S.q = Math.max(0.35, S.q * 0.85); S.gapAvg = 30; } else if (S.gapAvg < 20 && S.q < 1) S.q = Math.min(1, S.q * 1.05); } else if (!anim) S.q = Math.min(1, S.q * 1.3);
+    if (anim && gap > 0) { S.gapAvg = (S.gapAvg || gap) * 0.75 + gap * 0.25; if (S.gapAvg > 32 && S.q > 0.35) { S.q = Math.max(0.35, S.q * 0.78); S.gapAvg = 24; } else if (S.gapAvg < 19 && S.q < 1) S.q = Math.min(1, S.q * 1.025); } else if (!anim) S.q = Math.min(1, S.q * 1.3);
     S.dirty = false; if (Math.abs(S.r - shownR) > 1e-4) updateReadout(); try { draw(); } catch (e) { fail(String(e)); } }
 }
 function bump(interactive) { S.dirty = true; if (interactive) { S.interacting = true; S.lastInput = performance.now(); camAnim = null; clearTimeout(idleT); idleT = setTimeout(() => { S.interacting = false; }, 160); } }
@@ -203,7 +223,7 @@ function bump(interactive) { S.dirty = true; if (interactive) { S.interacting = 
 // ---------------- UI ----------------
 function nearestIdx(r) { let b = 0; S.sets.forEach((s, i) => { if (Math.abs(s.r2 - r) < Math.abs(S.sets[b].r2 - r)) b = i; }); return b; }
 function updateReadout() {
-  shownR = S.r; const t = S.r.toFixed(2); $("r2val").textContent = t; const hr = $("hr2"); if (hr) hr.textContent = t;
+  shownR = S.r; window.H2OSoundscape?.setGeometry(S.r); const t = S.r.toFixed(2); $("r2val").textContent = t; const hr = $("hr2"); if (hr) hr.textContent = t;
   const i = nearestIdx(S.r), exact = Math.abs(S.sets[i].r2 - S.r) < 0.006, tag = $("rtag");
   tag.textContent = exact ? "computed geometry" : "interpolated · atoms move, densities cross-fade"; tag.classList.toggle("interp", !exact);
   if (document.activeElement !== $("scrub") || S.playing || rTween) $("scrub").value = S.r;
@@ -289,7 +309,7 @@ function interaction() {
     for (const d of ds) {
       const resp = await fetch("../data/" + d.file); if (!resp.ok) throw new Error(`${d.file}: HTTP ${resp.status}`);
       const buf = await resp.arrayBuffer(), [nx, ny, nz] = d.shape_xyz; if (buf.byteLength !== nx*ny*nz*2) throw new Error(`${d.file}: unexpected size`);
-      const set = { ds: d, r2: d.geometry.r2_angstrom, sv: subVolume(new Uint16Array(buf), d.shape_xyz, d.origin_bohr, d.spacing_bohr) }; S.sets.push(set); adv(); await tick();
+      const set = { ds: d, r2: d.geometry.r2_angstrom, sv: await subVolume(new Uint16Array(buf), d.shape_xyz, d.origin_bohr, d.spacing_bohr) }; S.sets.push(set); adv(); await tick();
       await buildMeshes(set, adv);
     }
     window.__perf.meshMs = performance.now() - t0;
